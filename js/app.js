@@ -5,6 +5,9 @@
 let globe;
 let bookData = [];
 
+// 暴露给 window 以便测试
+window.bookData = bookData;
+
 // 地区颜色映射
 const regionColors = {
     "Europe": "#e74c3c",
@@ -39,11 +42,18 @@ const countryCoords = {
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
     loadBookData().then(() => {
-        initGlobe();
+        // 无论 Globe 是否初始化成功，都渲染列表
+        try {
+            initGlobe();
+        } catch (e) {
+            console.error('Globe 初始化失败:', e);
+        }
         renderBookList();
         updateStats();
         initSearch();
         initModal();
+    }).catch(err => {
+        console.error('数据加载失败:', err);
     });
 });
 
@@ -52,6 +62,7 @@ async function loadBookData() {
     try {
         const response = await fetch('data/douban_books.json');
         bookData = await response.json();
+        window.bookData = bookData; // 暴露给 window
         console.log(`已加载 ${bookData.length} 本图书数据`);
     } catch (error) {
         console.error('加载图书数据失败:', error);
