@@ -5,9 +5,6 @@
 let globe;
 let bookData = [];
 
-// 暴露给 window 以便测试
-window.bookData = bookData;
-
 // 地区颜色映射
 const regionColors = {
     "Europe": "#e74c3c",
@@ -17,7 +14,7 @@ const regionColors = {
     "Oceania": "#9b59b6"
 };
 
-// 国家坐标映射（用于点击检测）
+// 国家坐标映射
 const countryCoords = {
     "中国": { lat: 35.8617, lng: 104.1954 },
     "日本": { lat: 36.2048, lng: 138.2529 },
@@ -42,7 +39,6 @@ const countryCoords = {
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
     loadBookData().then(() => {
-        // 无论 Globe 是否初始化成功，都渲染列表
         try {
             initGlobe();
         } catch (e) {
@@ -62,12 +58,32 @@ async function loadBookData() {
     try {
         const response = await fetch('data/douban_books.json');
         bookData = await response.json();
-        window.bookData = bookData; // 暴露给 window
+        window.bookData = bookData;
         console.log(`已加载 ${bookData.length} 本图书数据`);
     } catch (error) {
         console.error('加载图书数据失败:', error);
         bookData = [];
     }
+}
+
+// 为每本书添加微小的随机偏移，避免重叠
+function addRandomOffset(books) {
+    return books.map((book, index) => {
+        const coords = countryCoords[book.country] || { lat: 0, lng: 0 };
+        // 基于索引生成伪随机偏移，确保同一本书位置固定
+        const seed = book.rank * 12345;
+        const pseudoRandom = (seed % 1000) / 1000;
+
+        // 计算偏移：使用泊松盘采样类似的算法
+        const angle = pseudoRandom * Math.PI * 2;
+        const radius = 2 + (pseudoRandom * 3); // 2-5度范围
+
+        return {
+            ...book,
+            lat: coords.lat + Math.sin(angle) * radius,
+            lng: coords.lng + Math.cos(angle) * radius
+        };
+    });
 }
 
 // 初始化 3D 地球
@@ -78,7 +94,10 @@ function initGlobe() {
         return;
     }
 
-    // 按国家分组书籍
+    // 为书籍添加偏移避免重叠
+    const booksWithOffset = addRandomOffset(bookData);
+
+    // 创建国家聚合点数据
     const booksByCountry = {};
     bookData.forEach(book => {
         const country = book.country;
@@ -88,7 +107,6 @@ function initGlobe() {
         booksByCountry[country].push(book);
     });
 
-    // 创建国家标记数据
     const countryPoints = Object.keys(booksByCountry).map(country => {
         const coords = countryCoords[country] || { lat: 0, lng: 0 };
         const books = booksByCountry[country];
@@ -97,7 +115,6 @@ function initGlobe() {
             lng: coords.lng,
             country: country,
             bookCount: books.length,
-            books: books.slice(0, 5), // 最多显示5本
             allBooks: books
         };
     }).filter(p => p.lat !== 0);
@@ -107,51 +124,39 @@ function initGlobe() {
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
         .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
         .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-        .pointsData(countryPoints)
+        .pointsData(booksWithOffset)
         .pointLat(d => d.lat)
         .pointLng(d => d.lng)
         .pointColor(d => regionColors[d.region] || '#3498db')
         .pointAltitude(0.02)
-        .pointRadius(d => Math.max(0.5, Math.min(2, Math.log(d.bookCount + 1) * 0.3)))
+        .pointRadius(d => Math.max(0.3, Math.min(0.8, 8 / Math.sqrt(bookData.length))))
         .pointsMerge(true)
         .pointLabel(d => {
-            const booksList = d.allBooks.slice(0, 10).map(b =>
-                `<div style="padding: 2px 5px; border-bottom: 1px solid #333;">
-                    <span style="color: #fff;">#${b.rank}</span> ${b.title}
-                </div>`
-            ).join('');
-
             return `
                 <div style="
                     background: rgba(26, 26, 46, 0.95);
                     color: white;
-                    padding: 15px;
-                    border-radius: 12px;
+                    padding: 12px;
+                    border-radius: 10px;
                     font-family: 'Noto Sans SC', sans-serif;
-                    min-width: 250px;
-                    max-height: 400px;
-                    overflow-y: auto;
+                    min-width: 180px;
+                    border: 1px solid ${regionColors[d.region] || '#3498db'};
                 ">
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: ${regionColors['Asia']};">
-                        📚 ${d.country}
+                    <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px; color: ${regionColors[d.region]};">
+                        📖 ${d.title}
                     </div>
-                    <div style="font-size: 14px; margin-bottom: 10px;">
-                        共 ${d.bookCount} 本图书
+                    <div style="font-size: 12px; opacity: 0.9;">
+                        ✍️ ${d.author}
                     </div>
-                    <div style="font-size: 12px;">
-                        ${booksList}
-                    </div>
-                    <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #444;">
-                        <a href="#" onclick="showCountryBooks('${d.country}'); return false;"
-                           style="color: #3498db; text-decoration: none; font-weight: bold;">
-                            查看全部书籍 →
-                        </a>
+                    <div style="font-size: 11px; margin-top: 5px; color: #888;">
+                        🌍 ${d.country} | ${d.year} | ⭐ ${d.rating}
                     </div>
                 </div>
             `;
         })
         .onPointClick(d => {
-            showCountryBooks(d.country);
+            showBookDetail(d);
+            highlightBook(d.rank);
         })
         .enablePointerInteraction(true);
 
@@ -169,64 +174,6 @@ function initGlobe() {
     resizeGlobe();
     window.addEventListener('resize', resizeGlobe);
 }
-
-// 显示某个国家的所有书籍
-window.showCountryBooks = function(country) {
-    const books = bookData.filter(b => b.country === country);
-
-    if (books.length === 0) {
-        alert('该国家没有找到书籍');
-        return;
-    }
-
-    const modal = document.getElementById('bookModal');
-    const modalBody = document.getElementById('modalBody');
-
-    const booksHtml = books.slice(0, 20).map(book => `
-        <div class="book-item-modal" data-rank="${book.rank}" onclick="showBookDetail(${JSON.stringify(book).replace(/"/g, '&quot;')})">
-            <span class="book-rank">${book.rank}</span>
-            <div class="book-info">
-                <div class="book-title">${book.title}</div>
-                <div class="book-author">${book.author} | ${book.year}</div>
-            </div>
-        </div>
-    `).join('');
-
-    modalBody.innerHTML = `
-        <h2>${country}</h2>
-        <p style="color: #a0a0b0; margin-bottom: 1rem;">共 ${books.length} 本图书</p>
-        <div class="book-list-modal">
-            ${booksHtml}
-        </div>
-    `;
-
-    modal.style.display = 'block';
-
-    // 添加点击样式
-    const style = document.createElement('style');
-    style.textContent = `
-        .book-item-modal {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-            border-bottom: 1px solid #333;
-        }
-        .book-item-modal:hover {
-            background: rgba(52, 152, 219, 0.2);
-        }
-        .book-info {
-            flex: 1;
-        }
-        .book-list-modal {
-            max-height: 500px;
-            overflow-y: auto;
-        }
-    `;
-    document.head.appendChild(style);
-};
 
 // 调整地球大小
 function resizeGlobe() {
@@ -307,10 +254,17 @@ function filterBooks(query) {
 
 // 聚焦到书籍
 function focusOnBook(book) {
+    // 计算偏移后的位置
+    const coords = countryCoords[book.country] || { lat: 0, lng: 0 };
+    const seed = book.rank * 12345;
+    const pseudoRandom = (seed % 1000) / 1000;
+    const angle = pseudoRandom * Math.PI * 2;
+    const radius = 2 + (pseudoRandom * 3);
+
     if (globe && globe.pointOfView) {
         globe.pointOfView({
-            lat: book.lat,
-            lng: book.lng,
+            lat: coords.lat + Math.sin(angle) * radius,
+            lng: coords.lng + Math.cos(angle) * radius,
             altitude: 1.5
         }, 1000);
     }
@@ -331,10 +285,6 @@ function highlightBook(rank) {
 
 // 显示书籍详情
 function showBookDetail(book) {
-    if (typeof book === 'string') {
-        book = JSON.parse(book);
-    }
-
     const modal = document.getElementById('bookModal');
     const modalBody = document.getElementById('modalBody');
 
@@ -344,12 +294,12 @@ function showBookDetail(book) {
         <p class="book-detail-author">作者：${book.author}</p>
         <span class="book-detail-country" style="background: ${regionColors[book.region] || '#3498db'};">${book.country} | ${book.region}</span>
         <div class="book-detail-description">
-            <p><strong>出版年份：</strong>${book.year}</p>
-            <p><strong>评分：</strong>${book.rating}</p>
-            <p><strong>类别：</strong>${book.category}</p>
-            <p><strong>出版社：</strong>${book.publisher}</p>
+            <p><strong>📅 出版年份：</strong>${book.year}</p>
+            <p><strong>⭐ 评分：</strong>${book.rating}</p>
+            <p><strong>📚 类别：</strong>${book.category}</p>
+            <p><strong>🏢 出版社：</strong>${book.publisher}</p>
             <hr style="margin: 1rem 0; border: none; border-top: 1px solid #333;">
-            <p>点击地图上的国家标记可查看该国所有书籍</p>
+            <p style="font-size: 12px; color: #888;">点击地图上的书籍标记可查看其他书籍信息</p>
         </div>
     `;
 
