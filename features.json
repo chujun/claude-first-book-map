@@ -1,0 +1,84 @@
+[
+  {
+    "category": "data",
+    "description": "从豆瓣获取前1000本图书数据",
+    "steps": [
+      "分析豆瓣图书榜单页面结构",
+      "编写爬虫脚本获取图书信息",
+      "清洗和整理数据",
+      "保存为JSON格式"
+    ],
+    "passes": true
+  },
+  {
+    "category": "data",
+    "description": "为每本图书添加国家/地区信息",
+    "steps": [
+      "根据作者信息确定作者国籍",
+      "为未知国籍的图书进行人工标注",
+      "添加国家中心坐标",
+      "验证数据完整性"
+    ],
+    "passes": true
+  },
+  {
+    "category": "feature",
+    "description": "添加按年代筛选功能",
+    "steps": [
+      "在侧边栏添加年代筛选器",
+      "实现按出版年代过滤书籍",
+      "更新地图标记显示"
+    ],
+    "passes": false
+  },
+  {
+    "category": "feature",
+    "description": "添加按地区筛选功能",
+    "steps": [
+      "在侧边栏添加地区筛选器",
+      "实现按地区过滤书籍",
+      "更新统计信息"
+    ],
+    "passes": false
+  },
+  {
+    "category": "feature",
+    "description": "优化地图标记显示",
+    "steps": [
+      "实现标记聚类避免重叠",
+      "添加标记动画效果",
+      "优化弹出框样式"
+    ],
+    "passes": false
+  },
+  {
+    "category": "feature",
+    "description": "添加书籍详情页",
+    "steps": [
+      "设计详情页布局",
+      "添加书籍封面图片",
+      "显示更详细的书籍信息"
+    ],
+    "passes": false
+  },
+  {
+    "category": "performance",
+    "description": "优化性能",
+    "steps": [
+      "实现数据懒加载",
+      "优化地图渲染",
+      "添加加载动画"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "改进UI/UX",
+    "steps": [
+      "优化移动端响应式设计",
+      "添加主题切换功能",
+      "改进交互体验"
+    ],
+    "passes": false
+  }
+]
