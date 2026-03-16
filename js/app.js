@@ -1,10 +1,9 @@
 // 全球书籍地图应用
-// 使用 Leaflet.js 实现交互式地图
+// 使用 Globe.gl 实现 3D 地球仪
 
 // 全局变量
-let map;
-let markers = [];
-let activeMarker = null;
+let globe;
+let isRotating = true;
 let bookData = [];
 
 // 地区颜色映射
@@ -18,13 +17,13 @@ const regionColors = {
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
-    // 加载图书数据
     loadBookData().then(() => {
-        initMap();
+        initGlobe();
         renderBookList();
         updateStats();
         initSearch();
         initModal();
+        initControls();
     });
 });
 
@@ -36,174 +35,90 @@ async function loadBookData() {
         console.log(`已加载 ${bookData.length} 本图书数据`);
     } catch (error) {
         console.error('加载图书数据失败:', error);
-        // 使用备用数据
         bookData = [];
     }
 }
 
-// 初始化地图
-function initMap() {
-    // 创建地图，初始中心为中国
-    map = L.map('map', {
-        center: [30, 0],
-        zoom: 2,
-        minZoom: 2,
-        maxZoom: 10,
-        worldCopyJump: true
-    });
-
-    // 添加瓦片图层 - 使用多种地图样式
-    const baseLayers = {
-        'OpenStreetMap': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors',
-            maxZoom: 19
-        }),
-        'CartoDB Positron': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; CartoDB',
-            maxZoom: 19
-        }),
-        'CartoDB Dark': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; CartoDB',
-            maxZoom: 19
-        })
-    };
-
-    // 默认使用 CartoDB Positron
-    baseLayers['CartoDB Positron'].addTo(map);
-
-    // 添加图层控制
-    L.control.layers(baseLayers, null, {
-        position: 'topright'
-    }).addTo(map);
-
-    // 添加标记点
-    addBookMarkers();
-
-    // 地图点击事件
-    map.on('click', function(e) {
-        closeModal();
-    });
-}
-
-// 添加书籍标记点
-function addBookMarkers() {
-    bookData.forEach(book => {
-        // 为没有坐标的书籍使用国家中心坐标
-        if (!book.lat || !book.lng) {
-            const center = getCountryCenter(book.countryCode);
-            book.lat = center.lat;
-            book.lng = center.lng;
-        }
-
-        // 创建自定义标记图标
-        const markerIcon = createMarkerIcon(book.region, book.rank);
-
-        // 创建标记
-        const marker = L.marker([book.lat, book.lng], {
-            icon: markerIcon,
-            title: book.title
-        });
-
-        // 绑定弹出框
-        const popupContent = createPopupContent(book);
-        marker.bindPopup(popupContent, {
-            maxWidth: 300,
-            className: 'custom-popup'
-        });
-
-        // 标记点击事件
-        marker.on('click', function() {
-            activeMarker = marker;
-            highlightBook(book.rank);
-            showBookDetail(book);
-        });
-
-        marker.addTo(map);
-        markers.push({ marker, book });
-    });
-}
-
-// 创建自定义标记图标
-function createMarkerIcon(region, rank) {
-    const color = regionColors[region] || '#3498db';
-
-    return L.divIcon({
-        className: 'custom-marker-wrapper',
-        html: `
-            <div class="marker-container" style="
-                width: 32px;
-                height: 32px;
-                position: relative;
-            ">
+// 初始化 3D 地球
+function initGlobe() {
+    // 使用 Globe.gl 创建 3D 地球
+    globe = Globe()
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .pointsData(bookData)
+        .pointLat(d => d.lat)
+        .pointLng(d => d.lng)
+        .pointColor(d => regionColors[d.region] || '#3498db')
+        .pointAltitude(0.01)
+        .pointRadius(0.5)
+        .pointsMerge(true)
+        .pointLabel(d => {
+            return `
                 <div style="
-                    width: 32px;
-                    height: 32px;
-                    background: ${color};
-                    border: 3px solid white;
-                    border-radius: 50%;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 11px;
-                    font-weight: 700;
+                    background: linear-gradient(135deg, #1a1a2e, #16213e);
                     color: white;
-                    transform: ${rank % 2 === 0 ? 'rotate(180deg)' : 'rotate(0deg)'};
+                    padding: 10px;
+                    border-radius: 8px;
+                    font-family: 'Noto Sans SC', sans-serif;
+                    min-width: 150px;
                 ">
-                    ${rank}
+                    <div style="font-weight: bold; margin-bottom: 5px;">${d.title}</div>
+                    <div style="font-size: 12px; opacity: 0.8;">${d.author}</div>
+                    <div style="font-size: 11px; margin-top: 5px; color: ${regionColors[d.region]};">
+                        ${d.country} | ${d.year}
+                    </div>
                 </div>
-            </div>
-        `,
-        iconSize: [32, 32],
-        iconAnchor: [16, 16],
-        popupAnchor: [0, -20]
-    });
+            `;
+        })
+        .onPointClick(d => {
+            showBookDetail(d);
+            highlightBook(d.rank);
+        })
+        .enablePointerInteraction(true)
+        .autoRotate(isRotating)
+        .autoRotateSpeed(0.5)
+        ('#globe');
+
+    // 设置初始视角
+    globe.pointOfView({ lat: 20, lng: 0, altitude: 2.5 });
+
+    // 调整画布大小
+    resizeGlobe();
+    window.addEventListener('resize', resizeGlobe);
 }
 
-// 创建弹出框内容
-function createPopupContent(book) {
-    return `
-        <div class="popup-content" style="font-family: 'Noto Sans SC', sans-serif; min-width: 200px;">
-            <div style="
-                background: linear-gradient(135deg, #1a1a2e, #16213e);
-                color: white;
-                padding: 12px;
-                margin: -12px -12px 12px -12px;
-                border-radius: 8px 8px 0 0;
-            ">
-                <span style="
-                    display: inline-block;
-                    background: white;
-                    color: ${regionColors[book.region]};
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    text-align: center;
-                    line-height: 24px;
-                    font-weight: 700;
-                    font-size: 12px;
-                    margin-right: 8px;
-                ">${book.rank}</span>
-                <strong style="font-size: 14px;">${book.title}</strong>
-            </div>
-            <p style="margin: 0 0 8px 0; font-size: 13px; color: #666;">
-                <strong>作者：</strong>${book.author}
-            </p>
-            <p style="margin: 0 0 8px 0; font-size: 13px; color: #666;">
-                <strong>国家：</strong><span style="
-                    display: inline-block;
-                    background: ${regionColors[book.region]};
-                    color: white;
-                    padding: 2px 8px;
-                    border-radius: 4px;
-                    font-size: 12px;
-                ">${book.country}</span>
-            </p>
-            <p style="margin: 0; font-size: 12px; color: #888;">
-                <strong>出版：</strong>${book.year > 0 ? book.year : Math.abs(book.year) + ' BC'}
-            </p>
-        </div>
-    `;
+// 调整地球大小
+function resizeGlobe() {
+    const container = document.querySelector('.map-section');
+    const width = container.clientWidth;
+    const height = container.clientHeight || 700;
+    globe.width(width);
+    globe.height(height);
+}
+
+// 初始化控制按钮
+function initControls() {
+    const rotateBtn = document.getElementById('rotateBtn');
+    rotateBtn.addEventListener('click', () => {
+        isRotating = !isRotating;
+        globe.autoRotate(isRotating);
+        rotateBtn.textContent = isRotating ? '⏸️ 暂停旋转' : '▶️ 开始旋转';
+        rotateBtn.classList.toggle('active', !isRotating);
+    });
+
+    // 鼠标拖拽停止自动旋转
+    globe.controls().addEventListener('start', () => {
+        if (isRotating) {
+            globe.autoRotate(false);
+        }
+    });
+
+    globe.controls().addEventListener('end', () => {
+        if (isRotating) {
+            globe.autoRotate(true);
+        }
+    });
 }
 
 // 渲染书籍列表
@@ -211,7 +126,6 @@ function renderBookList() {
     const bookListEl = document.getElementById('bookList');
     bookListEl.innerHTML = '';
 
-    // 按排名排序
     const sortedBooks = [...bookData].sort((a, b) => a.rank - b.rank);
 
     sortedBooks.forEach(book => {
@@ -227,16 +141,12 @@ function renderBookList() {
         `;
 
         bookItem.addEventListener('click', () => {
-            // 移除其他高亮
             document.querySelectorAll('.book-item').forEach(item => {
                 item.classList.remove('active');
             });
             bookItem.classList.add('active');
 
-            // 定位到地图标记
             focusOnBook(book);
-
-            // 显示详情
             showBookDetail(book);
         });
 
@@ -246,10 +156,7 @@ function renderBookList() {
 
 // 更新统计信息
 function updateStats() {
-    // 书籍总数
     document.getElementById('totalBooks').textContent = bookData.length;
-
-    // 国家/地区数
     const countries = new Set(bookData.map(book => book.country));
     document.getElementById('totalCountries').textContent = countries.size;
 }
@@ -282,28 +189,19 @@ function filterBooks(query) {
 
 // 聚焦到书籍
 function focusOnBook(book) {
-    // 找到对应的标记
-    const markerData = markers.find(m => m.book.rank === book.rank);
-    if (markerData) {
-        // 移动地图到标记位置
-        map.setView([book.lat, book.lng], 5, {
-            animate: true,
-            duration: 1
-        });
-
-        // 打开弹出框
-        markerData.marker.openPopup();
-    }
+    globe.pointOfView({
+        lat: book.lat,
+        lng: book.lng,
+        altitude: 1.5
+    }, 1000);
 }
 
 // 高亮书籍列表项
 function highlightBook(rank) {
-    // 移除其他高亮
     document.querySelectorAll('.book-item').forEach(item => {
         item.classList.remove('active');
     });
 
-    // 添加高亮
     const activeItem = document.querySelector(`.book-item[data-rank="${rank}"]`);
     if (activeItem) {
         activeItem.classList.add('active');
@@ -322,41 +220,16 @@ function showBookDetail(book) {
         <p class="book-detail-author">作者：${book.author}</p>
         <span class="book-detail-country" style="background: ${regionColors[book.region]};">${book.country} | ${book.region}</span>
         <div class="book-detail-description">
-            <p><strong>出版年份：</strong>${book.year > 0 ? book.year : Math.abs(book.year) + ' 年前'}</p>
-            <p><strong>文学类别：</strong>${getCategoryName(book.category)}</p>
+            <p><strong>出版年份：</strong>${book.year}</p>
+            <p><strong>评分：</strong>${book.rating}</p>
+            <p><strong>类别：</strong>${book.category}</p>
+            <p><strong>出版社：</strong>${book.publisher}</p>
             <hr style="margin: 1rem 0; border: none; border-top: 1px solid #eee;">
-            <p>${book.description}</p>
+            <p>点击地图标记可查看更多书籍信息</p>
         </div>
     `;
 
     modal.style.display = 'block';
-}
-
-// 获取类别中文名称
-function getCategoryName(category) {
-    const categoryNames = {
-        'novel': '小说',
-        'dystopia': '反乌托邦',
-        'fantasy': '奇幻',
-        'philosophical': '哲学',
-        'adventure': '冒险',
-        'children': '儿童文学',
-        'satire': '讽刺',
-        'short-stories': '短篇小说',
-        'magical-realism': '魔幻现实主义',
-        'historical': '历史',
-        'epic': '史诗',
-        'science-fiction': '科幻',
-        'psychological': '心理',
-        'drama': '戏剧',
-        'poetry': '诗歌',
-        'gothic': '哥特',
-        'horror': '恐怖',
-        'young-adult': '青少年文学',
-        'mystery': '悬疑',
-        'memoir': '回忆录'
-    };
-    return categoryNames[category] || category;
 }
 
 // 初始化模态框
@@ -364,53 +237,13 @@ function initModal() {
     const modal = document.getElementById('bookModal');
     const closeBtn = document.querySelector('.close');
 
-    closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
     window.addEventListener('click', function(e) {
         if (e.target === modal) {
-            closeModal();
+            modal.style.display = 'none';
         }
     });
 }
-
-// 关闭模态框
-function closeModal() {
-    const modal = document.getElementById('bookModal');
-    modal.style.display = 'none';
-}
-
-// 添加一些CSS样式到页面
-const style = document.createElement('style');
-style.textContent = `
-    .custom-popup .leaflet-popup-content-wrapper {
-        border-radius: 12px;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .custom-popup .leaflet-popup-content {
-        margin: 0;
-    }
-
-    .custom-popup .leaflet-popup-tip {
-        background: white;
-    }
-
-    .marker-container {
-        transition: transform 0.2s;
-    }
-
-    .marker-container:hover {
-        transform: scale(1.2);
-    }
-
-    .book-item {
-        border-left: 4px solid transparent;
-    }
-
-    .book-item.active {
-        border-left-color: #3498db;
-        background: #f5f7fa;
-    }
-`;
-document.head.appendChild(style);

@@ -23,6 +23,27 @@
   },
   {
     "category": "feature",
+    "description": "应用加载1000本图书数据验证",
+    "steps": [
+      "验证HTTP服务器正常",
+      "验证JSON数据格式正确",
+      "验证应用加载数据正常"
+    ],
+    "passes": true
+  },
+  {
+    "category": "feature",
+    "description": "升级为3D地球地图，支持旋转",
+    "steps": [
+      "将Leaflet地图替换为Globe.gl",
+      "实现3D地球仪显示",
+      "添加地球旋转/暂停控制",
+      "优化深色主题样式"
+    ],
+    "passes": true
+  },
+  {
+    "category": "feature",
     "description": "添加按年代筛选功能",
     "steps": [
       "在侧边栏添加年代筛选器",

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球书籍地图 - Top 100 Books World Map</title>
+    <title>全球书籍地图 - Top 1000 Books Globe</title>
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Globe.gl 3D 地球库 -->
+    <script src="//unpkg.com/globe.gl"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -17,14 +17,19 @@
     <header>
         <div class="header-content">
             <h1>🌍 全球书籍地图</h1>
-            <p class="subtitle">探索世界文学瑰宝 - Top 100 经典著作</p>
+            <p class="subtitle">探索世界文学瑰宝 - Top 1000 经典著作</p>
         </div>
     </header>
 
     <main>
         <div class="container">
             <div class="map-section">
-                <div id="map"></div>
+                <div id="globe"></div>
+                <div class="map-controls">
+                    <button id="rotateBtn" class="control-btn" title="停止/开始旋转">
+                        ⏸️ 暂停旋转
+                    </button>
+                </div>
                 <div class="map-legend">
                     <h3>图例</h3>
                     <div class="legend-items">
@@ -84,12 +89,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <!-- Book Data -->
-    <script src="data/douban_books.json" type="application/json" id="bookDataJson"></script>
 
     <!-- Main App -->
     <script src="js/app.js"></script>
