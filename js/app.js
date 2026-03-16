@@ -38,12 +38,23 @@ const countryCoords = {
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
+    // 先渲染列表（不依赖 Globe）
     loadBookData().then(() => {
-        initGlobe();
         renderBookList();
         updateStats();
         initSearch();
         initModal();
+
+        // 再尝试初始化 Globe（可能失败但不阻塞列表）
+        try {
+            initGlobe();
+        } catch (e) {
+            console.warn('3D 地球初始化失败（WebGL 不可用）:', e.message);
+            // 显示提示信息
+            showGlobeError();
+        }
+    }).catch(err => {
+        console.error('数据加载失败:', err);
     });
 });
 
@@ -55,6 +66,34 @@ async function loadBookData() {
         window.bookData = bookData;
     } catch (error) {
         bookData = [];
+        throw error;
+    }
+}
+
+// 显示地球错误提示
+function showGlobeError() {
+    const container = document.getElementById('globe');
+    if (container) {
+        container.innerHTML = `
+            <div style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                color: #a0a0b0;
+                text-align: center;
+                padding: 20px;
+            ">
+                <div style="font-size: 48px; margin-bottom: 20px;">🌍</div>
+                <div style="font-size: 18px; margin-bottom: 10px;">3D 地图加载失败</div>
+                <div style="font-size: 14px;">
+                    您的浏览器不支持 WebGL<br>
+                    请使用现代浏览器（Chrome/Edge/Firefox）<br>
+                    或启用硬件加速
+                </div>
+            </div>
+        `;
     }
 }
 
@@ -78,7 +117,9 @@ function addRandomOffset(books) {
 // 初始化 3D 地球
 function initGlobe() {
     const container = document.getElementById('globe');
-    if (!container || typeof Globe !== 'function') return;
+    if (!container || typeof Globe !== 'function') {
+        throw new Error('Globe.gl 未加载');
+    }
 
     const booksWithOffset = addRandomOffset(bookData);
 
@@ -119,7 +160,6 @@ function initGlobe() {
             </div>
         `)
         .onPointClick(d => {
-            console.log('Point clicked:', d);
             if (d && d.rank) {
                 showBookDetail(d);
                 highlightBook(d.rank);
@@ -128,24 +168,17 @@ function initGlobe() {
 
     // 设置初始视角
     setTimeout(() => {
-        if (globe.pointOfView) {
+        if (globe && globe.pointOfView) {
             globe.pointOfView({ lat: 20, lng: 0, altitude: 2.5 });
         }
     }, 500);
-
-    // 响应式
-    window.addEventListener('resize', () => {
-        if (globe.width && globe.height) {
-            const section = document.querySelector('.map-section');
-            globe.width(section.clientWidth);
-            globe.height(section.clientHeight || 700);
-        }
-    });
 }
 
 // 渲染书籍列表
 function renderBookList() {
     const list = document.getElementById('bookList');
+    if (!list) return;
+
     list.innerHTML = '';
 
     [...bookData].sort((a, b) => a.rank - b.rank).forEach(book => {
@@ -172,13 +205,17 @@ function renderBookList() {
 
 // 更新统计
 function updateStats() {
-    document.getElementById('totalBooks').textContent = bookData.length;
-    document.getElementById('totalCountries').textContent = new Set(bookData.map(b => b.country)).size;
+    const totalEl = document.getElementById('totalBooks');
+    const countryEl = document.getElementById('totalCountries');
+    if (totalEl) totalEl.textContent = bookData.length;
+    if (countryEl) countryEl.textContent = new Set(bookData.map(b => b.country)).size;
 }
 
 // 搜索
 function initSearch() {
-    document.getElementById('searchInput').addEventListener('input', e => {
+    const input = document.getElementById('searchInput');
+    if (!input) return;
+    input.addEventListener('input', e => {
         const q = e.target.value.toLowerCase();
         document.querySelectorAll('.book-item').forEach(item => {
             const t = item.querySelector('.book-title').textContent.toLowerCase();
@@ -218,6 +255,7 @@ function highlightBook(rank) {
 function showBookDetail(book) {
     const modal = document.getElementById('bookModal');
     const body = document.getElementById('modalBody');
+    if (!modal || !body) return;
 
     body.innerHTML = `
         <h2>${book.title}</h2>
@@ -238,6 +276,9 @@ function showBookDetail(book) {
 // 模态框
 function initModal() {
     const modal = document.getElementById('bookModal');
-    document.querySelector('.close').addEventListener('click', () => modal.style.display = 'none');
+    const closeBtn = document.querySelector('.close');
+    if (!modal || !closeBtn) return;
+
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
     window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
 }
