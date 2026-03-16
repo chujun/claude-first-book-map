@@ -33,11 +33,11 @@
   },
   {
     "category": "feature",
-    "description": "升级为3D地球地图，支持旋转",
+    "description": "升级为3D地球地图，支持国家点击",
     "steps": [
       "将Leaflet地图替换为Globe.gl",
       "实现3D地球仪显示",
-      "添加地球旋转/暂停控制",
+      "添加点击国家显示书籍列表",
       "优化深色主题样式"
     ],
     "passes": true
