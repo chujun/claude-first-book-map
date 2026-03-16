@@ -117,18 +117,14 @@ function initGlobe() {
                     ${d.country} | ${d.year} | ⭐ ${d.rating}
                 </div>
             </div>
-        `);
-
-    // 使用 onClick 处理点击
-    if (globe.onClick) {
-        globe.onClick(function(point) {
-            console.log('Clicked:', point);
-            if (point && point.rank) {
-                showBookDetail(point);
-                highlightBook(point.rank);
+        `)
+        .onPointClick(d => {
+            console.log('Point clicked:', d);
+            if (d && d.rank) {
+                showBookDetail(d);
+                highlightBook(d.rank);
             }
         });
-    }
 
     // 设置初始视角
     setTimeout(() => {
