@@ -5,15 +5,41 @@
 let map;
 let markers = [];
 let activeMarker = null;
+let bookData = [];
+
+// 地区颜色映射
+const regionColors = {
+    "Europe": "#e74c3c",
+    "Americas": "#3498db",
+    "Asia": "#2ecc71",
+    "Africa": "#f39c12",
+    "Oceania": "#9b59b6"
+};
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
-    initMap();
-    renderBookList();
-    updateStats();
-    initSearch();
-    initModal();
+    // 加载图书数据
+    loadBookData().then(() => {
+        initMap();
+        renderBookList();
+        updateStats();
+        initSearch();
+        initModal();
+    });
 });
+
+// 加载图书数据
+async function loadBookData() {
+    try {
+        const response = await fetch('data/douban_books.json');
+        bookData = await response.json();
+        console.log(`已加载 ${bookData.length} 本图书数据`);
+    } catch (error) {
+        console.error('加载图书数据失败:', error);
+        // 使用备用数据
+        bookData = [];
+    }
+}
 
 // 初始化地图
 function initMap() {
