@@ -59,7 +59,7 @@ header .subtitle {
     margin: 0 auto;
     padding: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 50% 50%;
     gap: 1.5rem;
     min-height: calc(100vh - 120px);
 }

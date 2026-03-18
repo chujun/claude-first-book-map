@@ -137,7 +137,6 @@ function initGlobe() {
         .pointColor(d => regionColors[d.region] || '#3498db')
         .pointAltitude(0.015)
         .pointRadius(1.2)
-        .pointsMerge(true)
         .pointLabel(d => `
             <div style="
                 background: rgba(26, 26, 46, 0.95);
