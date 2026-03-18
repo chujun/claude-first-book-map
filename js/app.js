@@ -126,6 +126,10 @@ function initGlobe() {
     // 创建 Globe 实例
     globe = Globe()(container);
 
+    // 设置地球尺寸匹配容器
+    const rect = container.getBoundingClientRect();
+    globe.width(rect.width).height(rect.height);
+
     // 配置地球
     globe
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
