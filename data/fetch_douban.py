@@ -332,11 +332,25 @@ class BookDetailParser:
             return None
 
     def _extract_field(self, text: str, field: str) -> str:
-        """从信息文本中提取字段"""
+        """从信息文本中提取字段 - 处理<br>标签分隔的多行格式"""
         if field not in text:
             return ""
         idx = text.index(field) + len(field)
-        end_idx = text.index("\n", idx) if "\n" in text[idx:] else len(text)
+        # 跳过空白字符，查找下一个非空白内容
+        while idx < len(text) and text[idx] in ' \t\n\r':
+            idx += 1
+        if idx >= len(text):
+            return ""
+        # 提取到下一个字段或行尾
+        end_idx = idx
+        while end_idx < len(text):
+            if text[end_idx] == ':' and end_idx + 1 < len(text) and text[end_idx + 1] in ' \t\n\r':
+                # 遇到下一个字段
+                break
+            if text[end_idx] == '\n':
+                # 遇到换行
+                break
+            end_idx += 1
         return text[idx:end_idx].strip()
 
     def _parse_year(self, year_str: str) -> Optional[int]:
@@ -448,6 +462,108 @@ class AuthorParser:
             return text[idx:end_idx].strip()
         except ValueError:
             return ""
+
+
+class AuthorParserWithPlaywright:
+    """使用 Playwright 获取作者信息（处理反爬虫验证）"""
+
+    def __init__(self):
+        self.playwright = None
+        self.browser = None
+        self.context = None
+
+    def _ensure_browser(self):
+        """确保浏览器已启动"""
+        if not self.playwright:
+            from playwright.sync_api import sync_playwright
+            self.playwright = sync_playwright().start()
+            self.browser = self.playwright.chromium.launch(headless=True)
+            self.context = self.browser.new_context(
+                user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            )
+
+    def fetch_author_info(self, url: str) -> Optional[Dict]:
+        """
+        使用 Playwright 获取作者页面信息
+
+        Args:
+            url: 作者页面URL，如 https://book.douban.com/author/xxx
+
+        Returns: {
+            'name': str,
+            'gender': str,
+            'birth_date': str,
+            'country': str,
+            'birthplace': str
+        }
+        """
+        try:
+            self._ensure_browser()
+            page = self.context.new_page()
+
+            page.goto(url, timeout=30000)
+            page.wait_for_timeout(3000)
+
+            result = {
+                'name': '',
+                'gender': '',
+                'birth_date': '',
+                'country': '',
+                'birthplace': ''
+            }
+
+            # 获取作者名（从 h1 或 title）
+            title = page.title()
+            if '作者' in title or 'author' in title.lower():
+                # 从标题提取作者名
+                name_match = title.split('(')[0].strip()
+                result['name'] = name_match
+
+            # 获取 h1 内容
+            h1 = page.locator('h1')
+            if h1.count() > 0:
+                h1_text = h1.inner_text()
+                if not result['name']:
+                    result['name'] = h1_text.split()[0] if h1_text else ''
+
+            # 获取作者描述信息（包含性别、出生日期、国家等）
+            # 尝试多种选择器
+            selectors = [
+                '.article .desc',
+                '.author-desc',
+                '.intro',
+                '.bd',
+            ]
+            for sel in selectors:
+                elem = page.locator(sel)
+                if elem.count() > 0:
+                    text = elem.inner_text()
+                    if text and len(text) > 10:
+                        # 尝试解析性别
+                        if '男' in text:
+                            result['gender'] = '男'
+                        elif '女' in text:
+                            result['gender'] = '女'
+                        # 尝试解析出生日期（匹配各种格式）
+                        import re
+                        year_match = re.search(r'((?:约)?\d{4})(?:年|-)', text)
+                        if year_match:
+                            result['birth_date'] = year_match.group(1) + '年'
+                        break
+
+            page.close()
+            return result if result['name'] else None
+
+        except Exception as e:
+            print(f"Playwright 获取作者信息失败: {e}")
+            return None
+
+    def close(self):
+        """关闭浏览器"""
+        if self.browser:
+            self.browser.close()
+        if self.playwright:
+            self.playwright.stop()
 
 
 class BookListParser:
