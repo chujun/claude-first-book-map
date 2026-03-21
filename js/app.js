@@ -15,6 +15,9 @@ let filteredBookData = []; // 筛选后的数据
 let currentDecade = 'all'; // 当前筛选的年代
 let currentCountry = 'all'; // 当前筛选的国家/地区
 
+// API 配置
+const API_BASE = window.API_BASE || 'http://localhost:8000';
+
 // 地区颜色映射
 const regionColors = {
     "Europe": "#e74c3c",
@@ -55,22 +58,20 @@ const countryCoords = {
 };
 
 // 初始化应用
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // 并行加载数据和非阻塞任务
-    const dataPromise = loadBookData();
-
-    // 先渲染列表（不依赖 Globe）
-    dataPromise.then(() => {
+    try {
+        await loadBookData();
         filteredBookData = [...bookData];
         renderBookList();
-        updateStats();
+        await updateStats();
         initSearch();
         initModal();
         initDecadeFilter();
-        initCountryFilter();
-    }).catch(err => {
+        await initCountryFilter();
+    } catch (err) {
         console.error('数据加载失败:', err);
-    });
+    }
 
     // 地球在后台懒加载（不阻塞UI）
     loadGlobeLazy();
@@ -104,12 +105,46 @@ function loadGlobeLazy() {
 // 加载图书数据
 async function loadBookData() {
     try {
-        const response = await fetch('data/douban_books.json');
+        // 从后端 API 获取书籍列表
+        const response = await fetch(`${API_BASE}/api/books?limit=1000`);
+        if (!response.ok) throw new Error('API 请求失败');
         bookData = await response.json();
         window.bookData = bookData;
     } catch (error) {
-        bookData = [];
-        throw error;
+        console.warn('API 连接失败，使用本地数据:', error.message);
+        // 备用：加载本地 JSON 数据
+        try {
+            const localResponse = await fetch('data/douban_books.json');
+            bookData = await localResponse.json();
+            window.bookData = bookData;
+        } catch (localError) {
+            bookData = [];
+            throw localError;
+        }
+    }
+}
+
+// 加载统计信息
+async function loadStats() {
+    try {
+        const response = await fetch(`${API_BASE}/api/stats`);
+        if (!response.ok) throw new Error('Stats API 请求失败');
+        return await response.json();
+    } catch (error) {
+        console.warn('Stats API 连接失败');
+        return null;
+    }
+}
+
+// 加载国家列表
+async function loadCountries() {
+    try {
+        const response = await fetch(`${API_BASE}/api/countries`);
+        if (!response.ok) throw new Error('Countries API 请求失败');
+        return await response.json();
+    } catch (error) {
+        console.warn('Countries API 连接失败');
+        return null;
     }
 }
 
@@ -251,11 +286,27 @@ function renderBookList() {
 }
 
 // 更新统计
-function updateStats() {
+async function updateStats(useFiltered = false) {
     const totalEl = document.getElementById('totalBooks');
     const countryEl = document.getElementById('totalCountries');
-    if (totalEl) totalEl.textContent = filteredBookData.length;
-    if (countryEl) countryEl.textContent = new Set(filteredBookData.map(b => b.country)).size;
+
+    // 当使用筛选数据或 API 不可用时，使用本地计算
+    if (useFiltered) {
+        if (totalEl) totalEl.textContent = filteredBookData.length;
+        if (countryEl) countryEl.textContent = new Set(filteredBookData.map(b => b.country)).size;
+        return;
+    }
+
+    // 尝试从 API 获取统计信息
+    const stats = await loadStats();
+    if (stats) {
+        if (totalEl) totalEl.textContent = stats.total_books;
+        if (countryEl) countryEl.textContent = stats.total_countries;
+    } else {
+        // 备用：使用本地数据计算
+        if (totalEl) totalEl.textContent = filteredBookData.length;
+        if (countryEl) countryEl.textContent = new Set(filteredBookData.map(b => b.country)).size;
+    }
 }
 
 // 搜索
@@ -278,18 +329,30 @@ function initDecadeFilter() {
 }
 
 // 国家/地区筛选
-function initCountryFilter() {
+async function initCountryFilter() {
     const select = document.getElementById('countryFilter');
     if (!select) return;
 
-    // 从数据中获取唯一的国家列表
-    const countries = [...new Set(bookData.map(b => b.country))].sort();
-    countries.forEach(country => {
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        select.appendChild(option);
-    });
+    // 尝试从 API 获取国家列表
+    const countries = await loadCountries();
+    if (countries && countries.length > 0) {
+        // 使用 API 返回的国家列表
+        countries.forEach(c => {
+            const option = document.createElement('option');
+            option.value = c.country;
+            option.textContent = c.country;
+            select.appendChild(option);
+        });
+    } else {
+        // 备用：从数据中获取唯一的国家列表
+        const uniqueCountries = [...new Set(bookData.map(b => b.country))].sort();
+        uniqueCountries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            select.appendChild(option);
+        });
+    }
 
     select.addEventListener('change', e => {
         currentCountry = e.target.value;
@@ -327,7 +390,7 @@ function applyFilters() {
     });
 
     renderBookList();
-    updateStats();
+    updateStats(true);
     updateGlobe();
 }
 
