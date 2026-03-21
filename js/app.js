@@ -48,8 +48,11 @@ const countryCoords = {
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
+    // 并行加载数据和非阻塞任务
+    const dataPromise = loadBookData();
+
     // 先渲染列表（不依赖 Globe）
-    loadBookData().then(() => {
+    dataPromise.then(() => {
         filteredBookData = [...bookData];
         renderBookList();
         updateStats();
@@ -57,19 +60,38 @@ document.addEventListener('DOMContentLoaded', function() {
         initModal();
         initDecadeFilter();
         initCountryFilter();
-
-        // 再尝试初始化 Globe（可能失败但不阻塞列表）
-        try {
-            initGlobe();
-        } catch (e) {
-            console.warn('3D 地球初始化失败（WebGL 不可用）:', e.message);
-            // 显示提示信息
-            showGlobeError();
-        }
     }).catch(err => {
         console.error('数据加载失败:', err);
     });
+
+    // 地球在后台懒加载（不阻塞UI）
+    loadGlobeLazy();
 });
+
+// 懒加载 Globe.gl - 后台异步加载
+function loadGlobeLazy() {
+    // 显示加载提示
+    const container = document.getElementById('globe');
+    if (container) {
+        container.innerHTML = '<div class="globe-loading">🌍 地球加载中...</div>';
+    }
+
+    // 动态加载 Globe.gl (本地版本)
+    const script = document.createElement('script');
+    script.src = 'vendor/globe.gl.js';
+    script.onload = () => {
+        try {
+            initGlobe();
+        } catch (e) {
+            console.warn('3D 地球初始化失败:', e.message);
+            showGlobeError();
+        }
+    };
+    script.onerror = () => {
+        showGlobeError();
+    };
+    document.head.appendChild(script);
+}
 
 // 加载图书数据
 async function loadBookData() {
@@ -143,11 +165,11 @@ function initGlobe() {
     const rect = container.getBoundingClientRect();
     globe.width(rect.width).height(rect.height);
 
-    // 配置地球
+    // 配置地球 (使用本地图片资源)
     globe
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .globeImageUrl('images/earth-blue-marble.jpg')
+        .bumpImageUrl('images/earth-topology.png')
+        .backgroundImageUrl('images/night-sky.png')
         .pointsData(booksWithOffset)
         .pointLat(d => d.lat)
         .pointLng(d => d.lng)
