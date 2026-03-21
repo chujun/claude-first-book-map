@@ -1,6 +1,13 @@
 // 全球书籍地图应用
 // 使用 Globe.gl 实现 3D 地球仪
 
+// 抑制 Globe.gl 的 THREE.Clock 弃用警告
+const originalWarn = console.warn;
+console.warn = function(...args) {
+    if (args[0] && args[0].toString().includes('THREE.Clock')) return;
+    originalWarn.apply(console, args);
+};
+
 // 全局变量
 let globe;
 let bookData = [];
