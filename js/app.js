@@ -197,7 +197,7 @@ function renderBookList() {
 
     list.innerHTML = '';
 
-    [...filteredBookData].sort((a, b) => a.rank - b.rank).forEach(book => {
+    [...filteredBookData].sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0)).forEach(book => {
         const item = document.createElement('div');
         item.className = 'book-item';
         item.dataset.rank = book.rank;

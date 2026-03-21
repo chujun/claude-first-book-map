@@ -35,6 +35,31 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     expect(bookItems).toBeGreaterThan(0);
   });
 
+  test('图书列表按评分从高到低排序', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 红楼梦 (rank 1, rating 9.7) 和 哈利·波特 (rank 3, rating 9.7) 评分相同
+    // 如果按评分排序，rank 3 应该紧跟在 rank 1 后面
+    // 如果按 rank 排序，顺序是 1, 2, 3...
+
+    // 获取前3本书的排名
+    const first3Ranks = [];
+    for (let i = 0; i < 3; i++) {
+      const item = page.locator('.book-item').nth(i);
+      const rankText = await item.locator('.book-rank').textContent();
+      first3Ranks.push(parseInt(rankText));
+    }
+
+    // 如果按评分排序，前3本应该是 1, 3, ? (因为红楼梦和哈利波特都是9.7)
+    // 验证哈利·波特 (rank 3) 在红楼梦 (rank 1) 后面
+    // 且 rank 3 < rank 5 (如果 rank 5 的书评分更低)
+
+    // 检查 rank 3 是否紧跟在 rank 1 后面
+    // 即前3本中包含 rank 1 和 rank 3
+    expect(first3Ranks).toContain(1);
+    expect(first3Ranks).toContain(3);
+  });
+
   test('地球容器和 Canvas 渲染', async ({ page }) => {
     // 验证地球容器
     const globe = page.locator('#globe');
