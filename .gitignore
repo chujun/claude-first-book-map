@@ -1,3 +1,37 @@
+# Node
 node_modules/
 package-lock.json
-package.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.db
+.coverage
+.pytest_cache/
+
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Fonts (large binary files)
+fonts/*.woff2
+
+# Data files (generated)
+*.db
+data/douban_more.json
+data/douban_real.json
