@@ -253,7 +253,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
   test('国家筛选器存在', async ({ page }) => {
     const countryFilter = page.locator('#countryFilter');
     await expect(countryFilter).toBeVisible();
-    await expect(countryFilter.locator('option').first()).toContainText('全部地区');
+    await expect(countryFilter.locator('option').first()).toContainText('全部国家');
   });
 
   test('国家筛选功能 - 筛选特定国家', async ({ page }) => {

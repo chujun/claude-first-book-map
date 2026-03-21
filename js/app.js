@@ -13,6 +13,7 @@ let globe;
 let bookData = [];
 let filteredBookData = []; // 筛选后的数据
 let currentDecade = 'all'; // 当前筛选的年代
+let currentRegion = 'all'; // 当前筛选的地区
 let currentCountry = 'all'; // 当前筛选的国家/地区
 
 // API 配置 - 优先使用环境变量，否则自动检测当前主机
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         initSearch();
         initModal();
         initDecadeFilter();
+        initRegionFilter();
         await initCountryFilter();
     } catch (err) {
         console.error('数据加载失败:', err);
@@ -328,6 +330,16 @@ function initDecadeFilter() {
     });
 }
 
+// 地区筛选
+function initRegionFilter() {
+    const select = document.getElementById('regionFilter');
+    if (!select) return;
+    select.addEventListener('change', e => {
+        currentRegion = e.target.value;
+        applyFilters();
+    });
+}
+
 // 国家/地区筛选
 async function initCountryFilter() {
     const select = document.getElementById('countryFilter');
@@ -366,16 +378,27 @@ function applyFilters() {
     const q = searchInput ? searchInput.value.toLowerCase() : '';
 
     filteredBookData = bookData.filter(book => {
-        // 年代筛选
+        // 年代筛选 - 支持模糊匹配 (如 "90" 匹配 1990年代, "1990" 也匹配 1990年代)
         if (currentDecade !== 'all') {
-            const decadeStart = parseInt(currentDecade);
-            const decadeEnd = decadeStart + 9;
+            let decadeStart, decadeEnd;
+            if (currentDecade.length === 2) {
+                // "90" -> 1990-1999
+                decadeStart = 1900 + parseInt(currentDecade);
+            } else {
+                // "1990" -> 1990-1999
+                decadeStart = parseInt(currentDecade);
+            }
+            decadeEnd = decadeStart + 9;
             if (book.year < decadeStart || book.year > decadeEnd) {
                 return false;
             }
         }
-        // 国家/地区筛选
-        if (currentCountry !== 'all' && book.country !== currentCountry) {
+        // 地区筛选 - 模糊匹配 (如 "Asia" 匹配 "Asia")
+        if (currentRegion !== 'all' && !book.region.includes(currentRegion)) {
+            return false;
+        }
+        // 国家筛选 - 模糊匹配 (如 "中国" 匹配 "中国")
+        if (currentCountry !== 'all' && !book.country.includes(currentCountry)) {
             return false;
         }
         // 搜索筛选
