@@ -440,6 +440,12 @@ header .subtitle {
     color: var(--text-primary);
 }
 
+.detail-divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 15px 0;
+}
+
 /* 响应式设计 */
 @media (max-width: 1024px) {
     .container {

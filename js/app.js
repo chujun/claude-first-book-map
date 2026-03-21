@@ -506,6 +506,14 @@ function highlightBook(rank) {
 }
 
 // 显示详情
+// HTML转义防止XSS
+function escapeHtml(str) {
+    if (str == null) return '';
+    const div = document.createElement('div');
+    div.textContent = String(str);
+    return div.innerHTML;
+}
+
 function showBookDetail(book) {
     const modal = document.getElementById('bookModal');
     const body = document.getElementById('modalBody');
@@ -517,15 +525,22 @@ function showBookDetail(book) {
         : '#';
 
     body.innerHTML = `
-        <h2>${book.title}</h2>
+        <h2>${escapeHtml(book.title)}</h2>
         <span class="book-detail-rank">#${book.rank}</span>
-        <p class="book-detail-author">作者：${book.author}</p>
-        <span class="book-detail-country" style="background: ${regionColors[book.region] || '#3498db'};">${book.country} | ${book.region}</span>
+        <p class="book-detail-author">作者：${escapeHtml(book.author)}</p>
+        <span class="book-detail-country" style="background: ${regionColors[book.region] || '#3498db'};">${escapeHtml(book.country)} | ${escapeHtml(book.region)}</span>
         <div class="book-detail-description">
-            <p><strong>📅 出版年份：</strong>${book.year}</p>
+            <p><strong>📅 出版年份：</strong>${escapeHtml(book.year) || '未知'}</p>
             <p><strong>⭐ 评分：</strong>${book.rating}</p>
-            <p><strong>📚 类别：</strong>${book.category}</p>
-            <p><strong>🏢 出版社：</strong>${book.publisher}</p>
+            <p><strong>📚 类别：</strong>${escapeHtml(book.category) || '未知'}</p>
+            <p><strong>🏢 出版社：</strong>${escapeHtml(book.publisher) || '未知'}</p>
+            <p><strong>📖 页数：</strong>${escapeHtml(book.pages) || '未知'}</p>
+            <p><strong>🔢 ISBN：</strong>${escapeHtml(book.isbn) || '未知'}</p>
+            <p><strong>🌐 译者：</strong>${escapeHtml(book.translator) || '无'}</p>
+            <hr class="detail-divider">
+            <p><strong>👤 作者性别：</strong>${escapeHtml(book.author_gender) || '未知'}</p>
+            <p><strong>📆 作者出生日期：</strong>${escapeHtml(book.author_birth_date) || '未知'}</p>
+            <p><strong>📍 作者出生地：</strong>${escapeHtml(book.author_birthplace) || '未知'}</p>
             <p><strong>🔗 豆瓣链接：</strong><a href="${safeUrl}" target="_blank" rel="noopener noreferrer">在豆瓣查看</a></p>
         </div>
     `;

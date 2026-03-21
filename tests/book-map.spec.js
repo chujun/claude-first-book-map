@@ -363,6 +363,76 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     expect(content).toContain('作者');
   });
 
+  test('书籍详情包含ISBN信息', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(200);
+
+    const modalBody = page.locator('#modalBody');
+
+    // 验证包含ISBN信息
+    const content = await modalBody.textContent();
+    expect(content).toContain('ISBN');
+  });
+
+  test('书籍详情包含页数信息', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(200);
+
+    const modalBody = page.locator('#modalBody');
+
+    // 验证包含页数信息
+    const content = await modalBody.textContent();
+    expect(content).toContain('页数');
+  });
+
+  test('书籍详情包含译者信息', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(200);
+
+    const modalBody = page.locator('#modalBody');
+
+    // 验证包含译者信息
+    const content = await modalBody.textContent();
+    expect(content).toContain('译者');
+  });
+
+  test('书籍详情包含作者出生日期', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(200);
+
+    const modalBody = page.locator('#modalBody');
+
+    // 验证包含作者出生日期
+    const content = await modalBody.textContent();
+    expect(content).toContain('出生日期');
+  });
+
+  test('书籍详情包含作者出生地', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(200);
+
+    const modalBody = page.locator('#modalBody');
+
+    // 验证包含作者出生地
+    const content = await modalBody.textContent();
+    expect(content).toContain('出生地');
+  });
+
   test('搜索功能 - 按作者搜索', async ({ page }) => {
     await page.waitForSelector('.book-item', { timeout: 10000 });
 
