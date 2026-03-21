@@ -2,21 +2,21 @@
 
 一个展示全球经典书籍及其对应国家/地区的 3D 交互式地图应用。
 
-![全球书籍地图](https://img.shields.io/badge/version-1.0.0-blue)
+![全球书籍地图](https://img.shields.io/badge/version-2.0.0-blue)
 ![License](https://img.shields.io/badge/license-ISC-green)
 
 ## 功能特性
 
 ### 核心功能
 - **3D 地球仪展示** - 使用 Globe.gl 渲染交互式 3D 地球
-- **全球 Top 1000 书籍** - 展示来自全球 11 个国家/地区的经典著作
-- **智能筛选** - 支持按年代、国家/地区筛选
+- **全球 Top 414 书籍** - 展示来自全球 23 个国家/地区的经典著作
+- **智能筛选** - 支持年代模糊匹配、国家/地区模糊匹配
 - **实时搜索** - 按书名或作者搜索
 - **详情弹窗** - 点击书籍查看详细信息
 
 ### 筛选功能
-- **年代筛选** - 支持 1900-2020 年代筛选
-- **国家/地区筛选** - 从数据动态生成的国家列表
+- **年代筛选** - 支持 1900-2020 年代筛选（支持模糊匹配，如"90"匹配1990年代）
+- **国家/地区筛选** - 支持模糊匹配（如"中国"匹配所有包含"中国"的国家）
 - **组合筛选** - 年代 + 国家 + 搜索可同时生效
 
 ### 数据统计
@@ -31,54 +31,132 @@
 | HTML5 + CSS3 | 前端结构与样式 |
 | JavaScript (ES6+) | 应用逻辑 |
 | Globe.gl | 3D 地球渲染 |
-| Python | 数据爬虫与生成 |
+| Python | 后端 API、数据爬虫 |
+| FastAPI | REST API |
+| SQLite | 数据存储 |
 | Playwright | E2E 测试 |
+| pytest | Python 单元测试 |
 
 ## 项目结构
 
 ```
 book-map/
-├── index.html          # 主页面
+├── index.html              # 主页面
 ├── css/
-│   └── style.css      # 样式文件
+│   └── style.css          # 样式文件
 ├── js/
-│   └── app.js         # 应用逻辑
+│   └── app.js             # 应用逻辑
+├── api/
+│   └── main.py            # FastAPI 后端
 ├── data/
-│   ├── douban_books.json  # 书籍数据 (1000本)
-│   ├── scraper.py        # 数据爬虫
-│   ├── test_scraper.py   # 单元测试
-│   └── generate_books.py # 数据生成脚本
+│   ├── schema.sql        # 数据库 schema
+│   ├── bookmap.db        # SQLite 数据库
+│   ├── douban_books.json # 书籍数据
+│   ├── fetch_douban.py   # 豆瓣爬虫
+│   ├── fetch_geonames.py # GeoNames 坐标获取
+│   └── import_to_db.py   # 数据导入脚本
 ├── tests/
-│   └── book-map.spec.js  # E2E 测试
+│   ├── test_api.py       # API 单元测试 (pytest)
+│   └── book-map.spec.js  # E2E 测试 (Playwright)
+├── run_api.py            # API 启动脚本
+├── requirements.txt      # Python 依赖
 ├── playwright.config.js  # Playwright 配置
 └── CLAUDE.md            # 项目说明
 ```
 
 ## 快速开始
 
-### 安装依赖
+### 1. 安装依赖
 
 ```bash
 npm install
+pip install -r requirements.txt
 ```
 
-### 启动开发服务器
+### 2. 导入数据
 
 ```bash
-python3 -m http.server 8080 --bind 0.0.0.0
+cd data
+python import_to_db.py
 ```
 
-访问 http://localhost:8080
-
-### 运行测试
+### 3. 启动服务
 
 ```bash
+# 启动后端 API (端口 8000)
+python run_api.py
+
+# 启动前端 (端口 3000)
+python -m http.server 3000
+```
+
+访问 http://localhost:3000
+
+### 4. 运行测试
+
+```bash
+# Python API 测试
+python -m pytest tests/test_api.py -v
+
 # E2E 测试
-npx playwright test
+npx playwright test --project=chromium
 
-# 单元测试
-cd data && python3 -m pytest test_scraper.py -v
+# 测试覆盖率
+python -m pytest tests/test_api.py --cov=api --cov-report=term
 ```
+
+## API 文档
+
+后端 API 提供以下端点：
+
+### 书籍接口
+
+| 方法 | 端点 | 说明 |
+|------|------|------|
+| GET | `/api/books` | 获取书籍列表 |
+| GET | `/api/books/{id}` | 获取书籍详情 |
+
+#### GET /api/books 参数
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| `country` | string | 按国家筛选（模糊匹配） |
+| `region` | string | 按地区筛选（模糊匹配） |
+| `category` | string | 按类别筛选 |
+| `decade` | string | 按年代筛选（如"90"匹配1990年代） |
+| `min_rating` | float | 最低评分（0-10） |
+| `limit` | int | 返回数量（默认100，最大1000） |
+| `offset` | int | 偏移量（默认0） |
+| `sort_by` | string | 排序字段：`rank`, `rating`, `year`, `title` |
+| `order` | string | 排序方向：`asc`, `desc` |
+
+#### 示例
+
+```bash
+# 获取所有书籍
+curl http://localhost:8000/api/books
+
+# 筛选中国书籍
+curl http://localhost:8000/api/books?country=中国
+
+# 筛选1990年代书籍
+curl http://localhost:8000/api/books?decade=90
+
+# 筛选亚洲书籍（模糊匹配）
+curl http://localhost:8000/api/books?region=Asia
+
+# 按评分排序
+curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
+```
+
+### 统计接口
+
+| 方法 | 端点 | 说明 |
+|------|------|------|
+| GET | `/api/stats` | 获取统计信息 |
+| GET | `/api/countries` | 获取国家列表 |
+| GET | `/api/categories` | 获取类别列表 |
+| GET | `/api/regions` | 获取地区列表 |
 
 ## 数据说明
 
@@ -86,121 +164,59 @@ cd data && python3 -m pytest test_scraper.py -v
 数据来源于**豆瓣读书**网站的真实用户数据，通过爬取以下页面获取：
 
 1. **豆瓣 Top 250** - https://book.douban.com/top250
-   - 豆瓣用户评分最高的 250 本书籍
-   - 包含中外经典文学
-
 2. **豆瓣标签页** - https://book.douban.com/tag/小说、文学
-   - 按标签分类的书籍列表
-   - 反映中国读者的阅读趋势
-
-### 数据获取逻辑
-
-```python
-# 伪代码展示数据获取流程
-def fetch_douban_books():
-    books = []
-    # 1. 爬取豆瓣 Top250 (10页，每页25本)
-    for page in range(10):
-        url = f"https://book.douban.com/top250?start={page*25}"
-        html = requests.get(url)
-        books.extend(parse_books(html))
-
-    # 2. 爬取标签页
-    for tag in ['小说', '文学']:
-        for page in range(10):
-            url = f"https://book.douban.com/tag/{tag}?start={page*18}"
-            html = requests.get(url)
-            books.extend(parse_books(html))
-
-    # 3. 解析作者国家前缀 [美][英][法][日]等
-    for book in books:
-        book['country'] = parse_country_from_author(book['author'])
-
-    # 4. 清理数据，去重
-    books = deduplicate(books)
-    return books
-```
-
-### 国家检测规则
-
-作者名中的国家前缀格式：
-| 前缀格式 | 国家 |
-|---------|------|
-| `[清]` `[明]` `[宋]` | 中国 |
-| `[美]` `【美】` | 美国 |
-| `[英]` | 英国 |
-| `[法]` | 法国 |
-| `[德]` | 德国 |
-| `[日]` | 日本 |
-| `[俄]` | 俄罗斯 |
-| `[意]` | 意大利 |
-| `[丹]` `（丹麦）` | 丹麦 |
-| `[哥伦]` | 哥伦比亚 |
-
-**注意**：豆瓣上的书籍主要是中国读者阅读和评分的外文翻译作品，因此美国、英国、法国等西方国家书籍占比较高，这真实反映了豆瓣读书的用户阅读偏好。
 
 ### 数据格式
 
 ```json
 {
+  "id": 1,
   "rank": 1,
   "title": "红楼梦",
-  "author": "曹雪芹",
+  "author": "曹雪芹 著",
   "country": "中国",
   "countryCode": "CN",
   "region": "Asia",
-  "year": 1791,
-  "rating": 9.6,
+  "year": 2010,
+  "rating": 9.7,
   "category": "小说",
-  "publisher": "人民文学出版社",
-  "lat": 37.42,
-  "lng": 113.92
+  "publisher": "豆瓣",
+  "url": "https://book.douban.com/subject/1007305/",
+  "lat": 35.8617,
+  "lng": 104.1954
 }
 ```
 
 ### 国家分布
 
-> 以下数据反映豆瓣用户的阅读偏好，包含大量被翻译引进的外国文学作品。
-
-| 国家/地区 | 数量 | 说明 |
-|----------|------|------|
-| 美国 | 319 | 科幻、推理、经典文学翻译作品 |
-| 中国 | 40 | 本土华语文学 |
-| 英国 | 21 | 经典英美文学 |
-| 日本 | 10 | 日本文学翻译作品 |
-| 法国 | 6 | 法国文学翻译作品 |
-| 意大利 | 5 | 意大利文学翻译作品 |
-| 俄罗斯 | 4 | 俄国文学翻译作品 |
-| 德国 | 4 | 德国文学翻译作品 |
-| 哥伦比亚 | 3 | 拉美文学代表 |
-| 丹麦 | 1 | 安徒生童话 |
-| 韩国 | 1 | 韩国文学 |
-
-## 开发指南
-
-### 添加新功能
-
-1. 在 `features.json` 中添加功能描述
-2. 使用 TDD 流程开发
-3. 运行测试确保通过
-4. 更新 `features.json` 中的 `passes` 字段
-
-### 添加新书籍
-
-编辑 `data/scraper.py` 中的作者/国家映射，运行爬虫生成新数据。
+| 国家 | 数量 | 地区 |
+|------|------|------|
+| 中国 | 260 | 亚洲 |
+| 英国 | 40 | 欧洲 |
+| 日本 | 36 | 亚洲 |
+| 法国 | 13 | 欧洲 |
+| 德国 | 9 | 欧洲 |
+| 意大利 | 8 | 欧洲 |
+| 俄罗斯 | 7 | 欧洲 |
+| 韩国 | 7 | 亚洲 |
+| 哥伦比亚 | 5 | 美洲 |
+| 奥地利 | 5 | 欧洲 |
 
 ## 测试覆盖
 
-| 测试类型 | 覆盖内容 |
-|---------|---------|
-| 页面加载 | 标题、元素存在 |
-| 数据加载 | 图书数据、统计 |
-| 3D 地球 | Globe 容器、Canvas |
-| 详情弹窗 | 打开/关闭 |
-| 搜索功能 | 书名搜索、清空 |
-| 年代筛选 | 筛选/清空/组合 |
-| 国家筛选 | 筛选/清空/组合 |
-| 控制台 | 无 JS 错误 |
+| 测试类型 | 覆盖率 |
+|---------|--------|
+| API 单元测试 | **98%** |
+| E2E 测试 | 35 passed |
+
+### API 测试覆盖
+
+- 根端点响应
+- 书籍列表（分页、筛选、排序）
+- 书籍详情（200/404）
+- 统计信息
+- 国家/类别/地区列表
+- 边界情况（无效参数、空结果）
 
 ## 浏览器支持
 
