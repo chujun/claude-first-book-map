@@ -11,6 +11,7 @@ import time
 import random
 import re
 from typing import List, Dict, Optional, Tuple
+from bs4 import BeautifulSoup
 
 
 class DoubanScraper:
@@ -56,42 +57,59 @@ class DoubanScraper:
         """解析图书列表页面"""
         books = []
 
-        # 匹配图书项
-        pattern = r'<tr class="item">.*?<a href="([^"]+)"[^>]*title="([^"]+)"[^>]*>.*?<p class="pl">([^<]+)</p>.*?<span class="rating_nums">([^<]+)</span>'
+        soup = BeautifulSoup(html, 'html.parser')
+        items = soup.find_all('tr', class_='item')
 
-        matches = re.findall(pattern, html, re.DOTALL)
+        for item in items:
+            try:
+                # 获取 URL 和标题
+                title_link = item.find('a', href=True, title=True)
+                if not title_link:
+                    continue
+                url = title_link['href']
+                title = title_link['title']
 
-        for i, match in enumerate(matches):
-            url, title, info, rating = match
+                # 获取评分
+                rating_span = item.find('span', class_='rating_nums')
+                rating = rating_span.get_text() if rating_span else '0'
 
-            # 解析作者/出版社/年份
-            info_parts = info.split('/')
-            author = info_parts[0].strip() if info_parts else "未知"
+                # 获取 info (格式: 作者/出版社/年份)
+                pl_p = item.find('p', class_='pl')
+                if not pl_p:
+                    continue
+                info = pl_p.get_text()
 
-            # 提取年份
-            year_match = re.search(r'\b(19|20)\d{2}\b', info)
-            year = int(year_match.group()) if year_match else 2000
+                # 解析作者/出版社/年份
+                info_parts = [p.strip() for p in info.split('/') if p.strip()]
+                author = info_parts[0] if info_parts else "未知"
 
-            # 出版社
-            publisher = info_parts[-1].strip() if len(info_parts) > 1 else "未知出版社"
+                # 提取年份
+                year_match = re.search(r'\b(19|20)\d{2}\b', info)
+                year = int(year_match.group()) if year_match else 2000
 
-            # 检测国家
-            country, country_code, region = detect_country(author, title)
+                # 出版社 (通常是最后一个部分)
+                publisher = info_parts[-1] if len(info_parts) > 1 else "未知出版社"
 
-            book = {
-                "title": title.strip(),
-                "author": author,
-                "country": country,
-                "countryCode": country_code,
-                "region": region,
-                "year": year,
-                "rating": float(rating),
-                "publisher": publisher,
-                "url": url,
-                "source": "douban"
-            }
+                # 检测国家
+                country, country_code, region = detect_country(author, title)
 
-            books.append(book)
+                book = {
+                    "title": title.strip(),
+                    "author": author,
+                    "country": country,
+                    "countryCode": country_code,
+                    "region": region,
+                    "year": year,
+                    "rating": float(rating),
+                    "publisher": publisher,
+                    "url": url,
+                    "source": "douban"
+                }
+
+                books.append(book)
+            except Exception as e:
+                print(f"解析书籍时出错: {e}")
+                continue
 
         return books
 
