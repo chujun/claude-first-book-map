@@ -162,10 +162,11 @@ curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
 ## 数据说明
 
 ### 数据来源
-数据来源于**豆瓣读书**网站的真实用户数据，通过爬取以下页面获取：
+数据来源于**豆瓣读书**网站的真实用户数据，通过爬取获取：
 
-1. **豆瓣 Top 250** - https://book.douban.com/top250
-2. **豆瓣标签页** - https://book.douban.com/tag/小说、文学
+1. **书籍详情页面** - 获取书名、出版社、出版时间、评分、排名、类别、译者、ISBN、页数
+2. **作者页面** - 获取作者姓名、性别、出生日期、国家、出生地
+3. **坐标信息** - 根据作者国家和出生地确定经纬度
 
 ### 数据格式
 
@@ -174,17 +175,23 @@ curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
   "id": 1,
   "rank": 1,
   "title": "红楼梦",
-  "author": "曹雪芹 著",
+  "author": "曹雪芹",
+  "author_gender": "男",
+  "author_birth_date": "约1715年",
+  "author_country": "中国",
+  "author_birthplace": "北京",
   "country": "中国",
-  "countryCode": "CN",
   "region": "Asia",
-  "year": 2010,
+  "year": 2008,
   "rating": 9.7,
   "category": "小说",
-  "publisher": "豆瓣",
+  "publisher": "人民文学出版社",
+  "pages": 320,
+  "isbn": "9787020002207",
+  "translator": "无名氏",
   "url": "https://book.douban.com/subject/1007305/",
-  "lat": 35.8617,
-  "lng": 104.1954
+  "lat": 39.9042,
+  "lng": 116.4074
 }
 ```
 
@@ -208,7 +215,8 @@ curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
 | 测试类型 | 覆盖率 |
 |---------|--------|
 | API 单元测试 | **98%** |
-| E2E 测试 | 35 passed |
+| 爬虫单元测试 | **83%** |
+| E2E 测试 | 30 passed |
 
 ### API 测试覆盖
 
@@ -218,6 +226,14 @@ curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
 - 统计信息
 - 国家/类别/地区列表
 - 边界情况（无效参数、空结果）
+
+### 爬虫测试覆盖
+
+- 书籍详情解析
+- 作者信息解析
+- 坐标解析（城市/国家）
+- 地区映射
+- 错误处理
 
 ## 浏览器支持
 
