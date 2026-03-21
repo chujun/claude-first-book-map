@@ -132,6 +132,37 @@ class TestBooksEndpoint:
                 if books_with_year[i].get("year") and books_with_year[i + 1].get("year"):
                     assert books_with_year[i]["year"] <= books_with_year[i + 1]["year"]
 
+    def test_get_books_decade_fuzzy_matching(self):
+        """Books endpoint should support fuzzy decade matching"""
+        # "90" should match books from 1990-1999
+        response = client.get("/api/books?decade=90")
+        books = response.json()
+        if len(books) > 0:
+            for book in books:
+                year = book.get("year")
+                if year:
+                    assert 1990 <= year <= 1999, f"Book year {year} not in 1990s for decade=90"
+
+    def test_get_books_region_fuzzy_matching(self):
+        """Books endpoint should support fuzzy region matching"""
+        # "Asia" should match books with region containing "Asia"
+        response = client.get("/api/books?region=Asia")
+        books = response.json()
+        if len(books) > 0:
+            for book in books:
+                region = book.get("region", "")
+                assert "Asia" in region, f"Book region {region} does not contain 'Asia'"
+
+    def test_get_books_country_fuzzy_matching(self):
+        """Books endpoint should support fuzzy country matching"""
+        # "中国" should match books with country containing "中国"
+        response = client.get("/api/books?country=中国")
+        books = response.json()
+        if len(books) > 0:
+            for book in books:
+                country = book.get("country", "")
+                assert "中国" in country, f"Book country {country} does not contain '中国'"
+
 
 class TestBookDetailEndpoint:
     """Test GET /api/books/{id} endpoint"""

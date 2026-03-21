@@ -97,9 +97,10 @@ def root():
 
 @app.get("/api/books", response_model=List[Book])
 def get_books(
-    country: Optional[str] = Query(None, description="按国家筛选"),
-    region: Optional[str] = Query(None, description="按地区筛选"),
+    country: Optional[str] = Query(None, description="按国家筛选(模糊匹配)"),
+    region: Optional[str] = Query(None, description="按地区筛选(模糊匹配)"),
     category: Optional[str] = Query(None, description="按类别筛选"),
+    decade: Optional[str] = Query(None, description="按年代筛选(如: 90 匹配 1990年代)"),
     min_rating: Optional[float] = Query(None, ge=0, le=10, description="最低评分"),
     limit: int = Query(100, ge=1, le=1000, description="返回数量"),
     offset: int = Query(0, ge=0, description="偏移量"),
@@ -115,16 +116,27 @@ def get_books(
     params = []
 
     if country:
-        conditions.append("country = ?")
-        params.append(country)
+        conditions.append("country LIKE ?")
+        params.append(f"%{country}%")
 
     if region:
-        conditions.append("region = ?")
-        params.append(region)
+        conditions.append("region LIKE ?")
+        params.append(f"%{region}%")
 
     if category:
         conditions.append("category = ?")
         params.append(category)
+
+    if decade:
+        # decade: "90" -> 1990-1999, "2000" -> 2000-2009
+        if len(decade) == 2:
+            year_start = 1900 + int(decade)
+        else:
+            year_start = int(decade)
+        year_end = year_start + 9
+        conditions.append("year >= ? AND year <= ?")
+        params.append(year_start)
+        params.append(year_end)
 
     if min_rating is not None:
         conditions.append("rating >= ?")

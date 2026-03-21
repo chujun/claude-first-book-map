@@ -15,8 +15,8 @@ let filteredBookData = []; // 筛选后的数据
 let currentDecade = 'all'; // 当前筛选的年代
 let currentCountry = 'all'; // 当前筛选的国家/地区
 
-// API 配置
-const API_BASE = window.API_BASE || 'http://localhost:8000';
+// API 配置 - 优先使用环境变量，否则自动检测当前主机
+const API_BASE = window.API_BASE || (window.location.protocol + '//' + window.location.hostname + ':8000');
 
 // 地区颜色映射
 const regionColors = {
