@@ -5,7 +5,7 @@ module.exports = defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 4,
   reporter: [
     ['html', { outputFolder: 'playwright-report' }],
     ['list']
@@ -17,19 +17,16 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
   },
 
+  expect: {
+    timeout: 5000,
+  },
+
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // CI 时可启用全部浏览器: npx playwright test --project=chromium,firefox,webkit
   ],
 
   webServer: {

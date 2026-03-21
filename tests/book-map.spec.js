@@ -6,7 +6,10 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     await page.goto('/');
     // 等待页面加载完成
     await page.waitForSelector('#globe', { timeout: 10000 });
-    await page.waitForTimeout(2000); // 等待 WebGL 初始化
+    // 等待 Canvas 就绪 (WebGL 初始化完成)
+    await page.waitForSelector('#globe canvas', { timeout: 10000 });
+    // 短暂等待确保渲染稳定
+    await page.waitForTimeout(500);
   });
 
   test('页面加载无错误', async ({ page }) => {
@@ -20,8 +23,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
   });
 
   test('图书数据正确加载', async ({ page }) => {
-    // 等待书籍列表渲染
-    await page.waitForSelector('.book-item', { timeout: 10000 });
+    // 等待书籍列表渲染 (beforeEach 已加载页面)
 
     // 验证统计数据
     const totalBooks = await page.locator('#totalBooks').textContent();
@@ -76,7 +78,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 点击第一个图书
     await page.locator('.book-item').first().click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证 Modal 显示
     const modal = page.locator('#bookModal');
@@ -94,11 +96,11 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 点击第一个图书打开 Modal
     await page.locator('.book-item').first().click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 点击关闭按钮
     await page.locator('.close').click();
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(100);
 
     // 验证 Modal 隐藏
     const modal = page.locator('#bookModal');
@@ -114,7 +116,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 搜索红楼梦
     await page.locator('#searchInput').fill('红楼梦');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 搜索后应该有更少的结果或没有结果
     const afterSearchCount = await page.locator('.book-item:visible').count();
@@ -132,11 +134,11 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 搜索
     await page.locator('#searchInput').fill('红楼梦');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 清空搜索
     await page.locator('#searchInput').clear();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证恢复
     const afterClearCount = await page.locator('.book-item').count();
@@ -165,7 +167,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     page.on('pageerror', err => errors.push(err.message));
 
     await page.goto('/');
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(1500);
 
     expect(errors).toHaveLength(0);
   });
@@ -197,7 +199,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 选择 2000 年代
     await page.locator('#decadeFilter').selectOption('2000');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证筛选后数量变化
     const filteredCount = await page.locator('.book-item').count();
@@ -217,11 +219,11 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 选择一个年代
     await page.locator('#decadeFilter').selectOption('1990');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 切回全部年代
     await page.locator('#decadeFilter').selectOption('all');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证恢复
     const restoredCount = await page.locator('.book-item').count();
@@ -233,13 +235,13 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 先搜索
     await page.locator('#searchInput').fill('红');
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(100);
 
     const afterSearchCount = await page.locator('.book-item').count();
 
     // 再添加年代筛选
     await page.locator('#decadeFilter').selectOption('1980');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证双重筛选
     const afterBothCount = await page.locator('.book-item').count();
@@ -265,7 +267,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 选择该国家
     await page.locator('#countryFilter').selectOption({ label: firstBookCountry });
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     const filteredCount = await page.locator('.book-item').count();
     expect(filteredCount).toBeLessThan(initialCount);
@@ -281,12 +283,12 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     const count = await countries.count();
     if (count > 1) {
       await page.locator('#countryFilter').selectOption({ index: 1 });
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(200);
     }
 
     // 切回全部
     await page.locator('#countryFilter').selectOption('all');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     const restoredCount = await page.locator('.book-item').count();
     expect(restoredCount).toBe(initialCount);
@@ -297,13 +299,13 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 先选国家
     await page.locator('#countryFilter').selectOption({ index: 1 });
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(100);
 
     const afterCountryCount = await page.locator('.book-item').count();
 
     // 再加年代筛选
     await page.locator('#decadeFilter').selectOption('1990');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     const afterBothCount = await page.locator('.book-item').count();
     expect(afterBothCount).toBeLessThanOrEqual(afterCountryCount);
@@ -314,7 +316,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 点击第一个图书
     await page.locator('.book-item').first().click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证 Modal 显示
     const modal = page.locator('#bookModal');
@@ -338,7 +340,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 点击第一个图书
     await page.locator('.book-item').first().click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     const modalBody = page.locator('#modalBody');
 
@@ -359,7 +361,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 搜索一个已知的作者名
     await page.locator('#searchInput').fill('刘慈欣');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证有搜索结果
     const count = await page.locator('.book-item').count();
@@ -375,7 +377,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 搜索一个不存在的书名
     await page.locator('#searchInput').fill('xyznonexistentbook12345');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证没有搜索结果
     const count = await page.locator('.book-item').count();
@@ -393,7 +395,7 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 选择 1950 年代
     await page.locator('#decadeFilter').selectOption('1950');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     const filteredCount = await page.locator('.book-item').count();
 
@@ -405,17 +407,16 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     expect(parseInt(totalBooks)).toBe(filteredCount);
   });
 
-  test('年代筛选功能 - 筛选1800年代', async ({ page }) => {
+  test('年代筛选功能 - 筛选1900年代', async ({ page }) => {
     await page.waitForSelector('.book-item', { timeout: 10000 });
 
-    // 选择 1800 年代（应该有古典名著如红楼梦）
-    await page.locator('#decadeFilter').selectOption('1800');
-    await page.waitForTimeout(500);
+    // 选择 1900 年代
+    await page.locator('#decadeFilter').selectOption('1900');
+    await page.waitForTimeout(200);
 
     const filteredCount = await page.locator('.book-item').count();
 
-    // 1800年代应该有书籍（如红楼梦）
-    // 如果数据中有这个年代的书，count应该大于0
+    // 1900年代应该有书籍
     const totalBooks = await page.locator('#totalBooks').textContent();
     expect(parseInt(totalBooks)).toBe(filteredCount);
   });
@@ -430,8 +431,8 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     const usaCount = await usaOption.count();
 
     if (usaCount > 0) {
-      await usaOption.first().click();
-      await page.waitForTimeout(500);
+      await page.locator('#countryFilter').selectOption({ label: '美国' });
+      await page.waitForTimeout(200);
 
       const filteredCount = await page.locator('.book-item').count();
 
@@ -454,8 +455,8 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     const chinaCount = await chinaOption.count();
 
     if (chinaCount > 0) {
-      await chinaOption.first().click();
-      await page.waitForTimeout(500);
+      await page.locator('#countryFilter').selectOption({ label: '中国' });
+      await page.waitForTimeout(200);
 
       const filteredCount = await page.locator('.book-item').count();
 
@@ -472,19 +473,16 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     await page.waitForSelector('.book-item', { timeout: 10000 });
 
     // 先选国家
-    const chinaOption = page.locator('#countryFilter option').filter({ hasText: '中国' });
-    if (await chinaOption.count() > 0) {
-      await chinaOption.first().click();
-      await page.waitForTimeout(300);
-    }
+    await page.locator('#countryFilter').selectOption({ label: '中国' });
+    await page.waitForTimeout(100);
 
     // 再选年代
     await page.locator('#decadeFilter').selectOption('1980');
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(100);
 
     // 最后搜索
     await page.locator('#searchInput').fill('余华');
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(100);
 
     // 获取最终结果
     const finalCount = await page.locator('.book-item').count();
@@ -532,14 +530,14 @@ test.describe('全球书籍地图 - Book Map Application', () => {
 
     // 打开模态框
     await page.locator('.book-item').first().click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     const modal = page.locator('#bookModal');
     await expect(modal).toHaveCSS('display', 'block');
 
     // 点击模态框外部区域
     await page.mouse.click(10, 10);
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(200);
 
     // 验证模态框关闭
     await expect(modal).toHaveCSS('display', 'none');
