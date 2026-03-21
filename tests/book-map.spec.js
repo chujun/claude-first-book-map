@@ -284,4 +284,28 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     expect(afterBothCount).toBeLessThanOrEqual(afterCountryCount);
   });
 
+  test('书籍详情包含豆瓣链接', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(500);
+
+    // 验证 Modal 显示
+    const modal = page.locator('#bookModal');
+    await expect(modal).toBeVisible();
+
+    // 验证豆瓣链接存在
+    const doubanLink = page.locator('#modalBody a[href*="douban"]');
+    await expect(doubanLink).toBeVisible();
+
+    // 验证链接格式正确
+    const href = await doubanLink.getAttribute('href');
+    expect(href).toContain('douban.com');
+
+    // 验证链接 target 属性为 _blank
+    const target = await doubanLink.getAttribute('target');
+    expect(target).toBe('_blank');
+  });
+
 });

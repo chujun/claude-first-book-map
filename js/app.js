@@ -332,6 +332,11 @@ function showBookDetail(book) {
     const body = document.getElementById('modalBody');
     if (!modal || !body) return;
 
+    // 安全验证 URL 只允许 http/https
+    const safeUrl = book.url && (book.url.startsWith('http://') || book.url.startsWith('https://'))
+        ? book.url
+        : '#';
+
     body.innerHTML = `
         <h2>${book.title}</h2>
         <span class="book-detail-rank">#${book.rank}</span>
@@ -342,6 +347,7 @@ function showBookDetail(book) {
             <p><strong>⭐ 评分：</strong>${book.rating}</p>
             <p><strong>📚 类别：</strong>${book.category}</p>
             <p><strong>🏢 出版社：</strong>${book.publisher}</p>
+            <p><strong>🔗 豆瓣链接：</strong><a href="${safeUrl}" target="_blank" rel="noopener noreferrer">在豆瓣查看</a></p>
         </div>
     `;
 
