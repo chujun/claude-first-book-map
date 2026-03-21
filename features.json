@@ -49,7 +49,7 @@
       "实现按出版年代过滤书籍",
       "更新地图标记显示"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "feature",

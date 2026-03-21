@@ -4,6 +4,8 @@
 // 全局变量
 let globe;
 let bookData = [];
+let filteredBookData = []; // 筛选后的数据
+let currentDecade = 'all'; // 当前筛选的年代
 
 // 地区颜色映射
 const regionColors = {
@@ -40,10 +42,12 @@ const countryCoords = {
 document.addEventListener('DOMContentLoaded', function() {
     // 先渲染列表（不依赖 Globe）
     loadBookData().then(() => {
+        filteredBookData = [...bookData];
         renderBookList();
         updateStats();
         initSearch();
         initModal();
+        initDecadeFilter();
 
         // 再尝试初始化 Globe（可能失败但不阻塞列表）
         try {
@@ -121,7 +125,7 @@ function initGlobe() {
         throw new Error('Globe.gl 未加载');
     }
 
-    const booksWithOffset = addRandomOffset(bookData);
+    const booksWithOffset = addRandomOffset(filteredBookData);
 
     // 创建 Globe 实例
     globe = Globe()(container);
@@ -184,7 +188,7 @@ function renderBookList() {
 
     list.innerHTML = '';
 
-    [...bookData].sort((a, b) => a.rank - b.rank).forEach(book => {
+    [...filteredBookData].sort((a, b) => a.rank - b.rank).forEach(book => {
         const item = document.createElement('div');
         item.className = 'book-item';
         item.dataset.rank = book.rank;
@@ -210,22 +214,64 @@ function renderBookList() {
 function updateStats() {
     const totalEl = document.getElementById('totalBooks');
     const countryEl = document.getElementById('totalCountries');
-    if (totalEl) totalEl.textContent = bookData.length;
-    if (countryEl) countryEl.textContent = new Set(bookData.map(b => b.country)).size;
+    if (totalEl) totalEl.textContent = filteredBookData.length;
+    if (countryEl) countryEl.textContent = new Set(filteredBookData.map(b => b.country)).size;
 }
 
 // 搜索
 function initSearch() {
     const input = document.getElementById('searchInput');
     if (!input) return;
-    input.addEventListener('input', e => {
-        const q = e.target.value.toLowerCase();
-        document.querySelectorAll('.book-item').forEach(item => {
-            const t = item.querySelector('.book-title').textContent.toLowerCase();
-            const a = item.querySelector('.book-author').textContent.toLowerCase();
-            item.style.display = (t.includes(q) || a.includes(q)) ? 'block' : 'none';
-        });
+    input.addEventListener('input', () => {
+        applyFilters();
     });
+}
+
+// 年代筛选
+function initDecadeFilter() {
+    const select = document.getElementById('decadeFilter');
+    if (!select) return;
+    select.addEventListener('change', e => {
+        currentDecade = e.target.value;
+        applyFilters();
+    });
+}
+
+// 应用所有筛选
+function applyFilters() {
+    const searchInput = document.getElementById('searchInput');
+    const q = searchInput ? searchInput.value.toLowerCase() : '';
+
+    filteredBookData = bookData.filter(book => {
+        // 年代筛选
+        if (currentDecade !== 'all') {
+            const decadeStart = parseInt(currentDecade);
+            const decadeEnd = decadeStart + 9;
+            if (book.year < decadeStart || book.year > decadeEnd) {
+                return false;
+            }
+        }
+        // 搜索筛选
+        if (q) {
+            const titleMatch = book.title.toLowerCase().includes(q);
+            const authorMatch = book.author.toLowerCase().includes(q);
+            if (!titleMatch && !authorMatch) {
+                return false;
+            }
+        }
+        return true;
+    });
+
+    renderBookList();
+    updateStats();
+    updateGlobe();
+}
+
+// 更新地球标记
+function updateGlobe() {
+    if (!globe) return;
+    const booksWithOffset = addRandomOffset(filteredBookData);
+    globe.pointsData(booksWithOffset);
 }
 
 // 聚焦书籍

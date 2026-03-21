@@ -178,6 +178,43 @@ header .subtitle {
     color: var(--text-secondary);
 }
 
+/* 筛选器 */
+.filter-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.filter-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.filter-section select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    background: var(--bg-color);
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.filter-section select:focus {
+    border-color: var(--secondary-color);
+}
+
+.filter-section select option {
+    background: var(--card-bg);
+    color: white;
+}
+
 /* 统计面板 */
 .stats-panel {
     display: grid;
