@@ -333,4 +333,216 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     expect(target).toBe('_blank');
   });
 
+  test('书籍详情包含必填字段', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 点击第一个图书
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(500);
+
+    const modalBody = page.locator('#modalBody');
+
+    // 验证书名存在
+    const title = await modalBody.locator('h2').textContent();
+    expect(title.length).toBeGreaterThan(0);
+
+    // 验证包含评分信息
+    const content = await modalBody.textContent();
+    expect(content).toContain('评分');
+
+    // 验证包含作者信息
+    expect(content).toContain('作者');
+  });
+
+  test('搜索功能 - 按作者搜索', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 搜索一个已知的作者名
+    await page.locator('#searchInput').fill('刘慈欣');
+    await page.waitForTimeout(500);
+
+    // 验证有搜索结果
+    const count = await page.locator('.book-item').count();
+    expect(count).toBeGreaterThan(0);
+
+    // 验证结果显示的是刘慈欣的书
+    const firstResult = await page.locator('.book-item').first().textContent();
+    expect(firstResult).toContain('刘慈欣');
+  });
+
+  test('搜索功能 - 无结果搜索', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 搜索一个不存在的书名
+    await page.locator('#searchInput').fill('xyznonexistentbook12345');
+    await page.waitForTimeout(500);
+
+    // 验证没有搜索结果
+    const count = await page.locator('.book-item').count();
+    expect(count).toBe(0);
+
+    // 验证统计数字为0
+    const totalBooks = await page.locator('#totalBooks').textContent();
+    expect(parseInt(totalBooks)).toBe(0);
+  });
+
+  test('年代筛选功能 - 筛选1950年代', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    const initialCount = await page.locator('.book-item').count();
+
+    // 选择 1950 年代
+    await page.locator('#decadeFilter').selectOption('1950');
+    await page.waitForTimeout(500);
+
+    const filteredCount = await page.locator('.book-item').count();
+
+    // 验证数量变化
+    expect(filteredCount).toBeLessThan(initialCount);
+
+    // 验证统计更新
+    const totalBooks = await page.locator('#totalBooks').textContent();
+    expect(parseInt(totalBooks)).toBe(filteredCount);
+  });
+
+  test('年代筛选功能 - 筛选1800年代', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 选择 1800 年代（应该有古典名著如红楼梦）
+    await page.locator('#decadeFilter').selectOption('1800');
+    await page.waitForTimeout(500);
+
+    const filteredCount = await page.locator('.book-item').count();
+
+    // 1800年代应该有书籍（如红楼梦）
+    // 如果数据中有这个年代的书，count应该大于0
+    const totalBooks = await page.locator('#totalBooks').textContent();
+    expect(parseInt(totalBooks)).toBe(filteredCount);
+  });
+
+  test('国家筛选功能 - 筛选美国书籍', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    const initialCount = await page.locator('.book-item').count();
+
+    // 尝试选择美国
+    const usaOption = page.locator('#countryFilter option').filter({ hasText: '美国' });
+    const usaCount = await usaOption.count();
+
+    if (usaCount > 0) {
+      await usaOption.first().click();
+      await page.waitForTimeout(500);
+
+      const filteredCount = await page.locator('.book-item').count();
+
+      // 验证筛选后数量减少
+      expect(filteredCount).toBeLessThan(initialCount);
+
+      // 验证显示的都是美国书籍
+      const firstBookCountry = await page.locator('.book-item').first().locator('.book-country').textContent();
+      expect(firstBookCountry).toBe('美国');
+    }
+  });
+
+  test('国家筛选功能 - 筛选中国书籍', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    const initialCount = await page.locator('.book-item').count();
+
+    // 选择中国
+    const chinaOption = page.locator('#countryFilter option').filter({ hasText: '中国' });
+    const chinaCount = await chinaOption.count();
+
+    if (chinaCount > 0) {
+      await chinaOption.first().click();
+      await page.waitForTimeout(500);
+
+      const filteredCount = await page.locator('.book-item').count();
+
+      // 验证筛选后数量减少
+      expect(filteredCount).toBeLessThan(initialCount);
+
+      // 验证显示的都是中国书籍
+      const firstBookCountry = await page.locator('.book-item').first().locator('.book-country').textContent();
+      expect(firstBookCountry).toBe('中国');
+    }
+  });
+
+  test('筛选组合 - 国家+年代+搜索', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 先选国家
+    const chinaOption = page.locator('#countryFilter option').filter({ hasText: '中国' });
+    if (await chinaOption.count() > 0) {
+      await chinaOption.first().click();
+      await page.waitForTimeout(300);
+    }
+
+    // 再选年代
+    await page.locator('#decadeFilter').selectOption('1980');
+    await page.waitForTimeout(300);
+
+    // 最后搜索
+    await page.locator('#searchInput').fill('余华');
+    await page.waitForTimeout(300);
+
+    // 获取最终结果
+    const finalCount = await page.locator('.book-item').count();
+
+    // 验证统计同步
+    const totalBooks = await page.locator('#totalBooks').textContent();
+    expect(parseInt(totalBooks)).toBe(finalCount);
+  });
+
+  test('页面标题正确显示', async ({ page }) => {
+    const title = await page.title();
+    expect(title).toContain('全球书籍地图');
+  });
+
+  test(' Globe 容器尺寸正确', async ({ page }) => {
+    const globe = page.locator('#globe');
+    const box = await globe.boundingBox();
+
+    // Globe 容器应该有尺寸
+    expect(box.width).toBeGreaterThan(0);
+    expect(box.height).toBeGreaterThan(0);
+  });
+
+  test('统计信息 - 国家数量准确', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 获取显示的国家数量
+    const totalCountries = await page.locator('#totalCountries').textContent();
+    const countryCount = parseInt(totalCountries);
+
+    // 获取实际数据中的国家数量
+    const uniqueCountries = new Set();
+    const bookItems = await page.locator('.book-item').all();
+    for (const item of bookItems) {
+      const country = await item.locator('.book-country').textContent();
+      uniqueCountries.add(country);
+    }
+
+    // 验证显示的国家数量与实际匹配
+    expect(countryCount).toBe(uniqueCountries.size);
+  });
+
+  test('模态框点击外部关闭', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 打开模态框
+    await page.locator('.book-item').first().click();
+    await page.waitForTimeout(500);
+
+    const modal = page.locator('#bookModal');
+    await expect(modal).toHaveCSS('display', 'block');
+
+    // 点击模态框外部区域
+    await page.mouse.click(10, 10);
+    await page.waitForTimeout(500);
+
+    // 验证模态框关闭
+    await expect(modal).toHaveCSS('display', 'none');
+  });
+
 });
