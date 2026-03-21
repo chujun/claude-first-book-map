@@ -221,4 +221,67 @@ test.describe('全球书籍地图 - Book Map Application', () => {
     expect(afterBothCount).toBeLessThanOrEqual(afterSearchCount);
   });
 
+  // ===== 国家筛选测试 (TDD RED 阶段) =====
+
+  test('国家筛选器存在', async ({ page }) => {
+    const countryFilter = page.locator('#countryFilter');
+    await expect(countryFilter).toBeVisible();
+    await expect(countryFilter.locator('option').first()).toContainText('全部地区');
+  });
+
+  test('国家筛选功能 - 筛选特定国家', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    const initialCount = await page.locator('.book-item').count();
+    expect(initialCount).toBeGreaterThan(0);
+
+    // 获取一个存在于数据中的国家
+    const firstBookCountry = await page.locator('.book-item').first().locator('.book-country').textContent();
+
+    // 选择该国家
+    await page.locator('#countryFilter').selectOption({ label: firstBookCountry });
+    await page.waitForTimeout(500);
+
+    const filteredCount = await page.locator('.book-item').count();
+    expect(filteredCount).toBeLessThan(initialCount);
+  });
+
+  test('国家筛选功能 - 清空筛选恢复全部', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    const initialCount = await page.locator('.book-item').count();
+
+    // 选择一个国家
+    const countries = page.locator('#countryFilter option');
+    const count = await countries.count();
+    if (count > 1) {
+      await page.locator('#countryFilter').selectOption({ index: 1 });
+      await page.waitForTimeout(500);
+    }
+
+    // 切回全部
+    await page.locator('#countryFilter').selectOption('all');
+    await page.waitForTimeout(500);
+
+    const restoredCount = await page.locator('.book-item').count();
+    expect(restoredCount).toBe(initialCount);
+  });
+
+  test('国家筛选和年代筛选组合', async ({ page }) => {
+    await page.waitForSelector('.book-item', { timeout: 10000 });
+
+    // 先选国家
+    await page.locator('#countryFilter').selectOption({ index: 1 });
+    await page.waitForTimeout(300);
+
+    const afterCountryCount = await page.locator('.book-item').count();
+
+    // 再加年代筛选
+    await page.locator('#decadeFilter').selectOption('1990');
+    await page.waitForTimeout(500);
+
+    const afterBothCount = await page.locator('.book-item').count();
+    expect(afterBothCount).toBeLessThanOrEqual(afterCountryCount);
+  });
+
 });

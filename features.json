@@ -59,7 +59,7 @@
       "实现按地区过滤书籍",
       "更新统计信息"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "feature",

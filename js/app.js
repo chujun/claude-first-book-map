@@ -6,6 +6,7 @@ let globe;
 let bookData = [];
 let filteredBookData = []; // 筛选后的数据
 let currentDecade = 'all'; // 当前筛选的年代
+let currentCountry = 'all'; // 当前筛选的国家/地区
 
 // 地区颜色映射
 const regionColors = {
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initSearch();
         initModal();
         initDecadeFilter();
+        initCountryFilter();
 
         // 再尝试初始化 Globe（可能失败但不阻塞列表）
         try {
@@ -237,6 +239,26 @@ function initDecadeFilter() {
     });
 }
 
+// 国家/地区筛选
+function initCountryFilter() {
+    const select = document.getElementById('countryFilter');
+    if (!select) return;
+
+    // 从数据中获取唯一的国家列表
+    const countries = [...new Set(bookData.map(b => b.country))].sort();
+    countries.forEach(country => {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        select.appendChild(option);
+    });
+
+    select.addEventListener('change', e => {
+        currentCountry = e.target.value;
+        applyFilters();
+    });
+}
+
 // 应用所有筛选
 function applyFilters() {
     const searchInput = document.getElementById('searchInput');
@@ -250,6 +272,10 @@ function applyFilters() {
             if (book.year < decadeStart || book.year > decadeEnd) {
                 return false;
             }
+        }
+        // 国家/地区筛选
+        if (currentCountry !== 'all' && book.country !== currentCountry) {
+            return false;
         }
         // 搜索筛选
         if (q) {
