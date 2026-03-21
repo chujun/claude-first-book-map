@@ -12,9 +12,12 @@ console.warn = function(...args) {
 let globe;
 let bookData = [];
 let filteredBookData = []; // 筛选后的数据
-let currentDecade = 'all'; // 当前筛选的年代
-let currentRegion = 'all'; // 当前筛选的地区
-let currentCountry = 'all'; // 当前筛选的国家/地区
+let currentDecade = ''; // 当前筛选的年代（下拉框）
+let currentDecadeInput = ''; // 当前筛选的年代（输入框）
+let currentRegion = ''; // 当前筛选的地区（下拉框）
+let currentRegionInput = ''; // 当前筛选的地区（输入框）
+let currentCountry = ''; // 当前筛选的国家/地区（下拉框）
+let currentCountryInput = ''; // 当前筛选的国家/地区（输入框）
 
 // API 配置 - 优先使用环境变量，否则自动检测当前主机
 const API_BASE = window.API_BASE || (window.location.protocol + '//' + window.location.hostname + ':8000');
@@ -322,27 +325,44 @@ function initSearch() {
 
 // 年代筛选
 function initDecadeFilter() {
-    const select = document.getElementById('decadeFilter');
-    if (!select) return;
-    select.addEventListener('change', e => {
-        currentDecade = e.target.value;
-        applyFilters();
-    });
+    const select = document.getElementById('decadeSelect');
+    const input = document.getElementById('decadeFilter');
+    if (select) {
+        select.addEventListener('change', e => {
+            currentDecade = e.target.value;
+            applyFilters();
+        });
+    }
+    if (input) {
+        input.addEventListener('input', e => {
+            currentDecadeInput = e.target.value;
+            applyFilters();
+        });
+    }
 }
 
 // 地区筛选
 function initRegionFilter() {
-    const select = document.getElementById('regionFilter');
-    if (!select) return;
-    select.addEventListener('change', e => {
-        currentRegion = e.target.value;
-        applyFilters();
-    });
+    const select = document.getElementById('regionSelect');
+    const input = document.getElementById('regionFilter');
+    if (select) {
+        select.addEventListener('change', e => {
+            currentRegion = e.target.value;
+            applyFilters();
+        });
+    }
+    if (input) {
+        input.addEventListener('input', e => {
+            currentRegionInput = e.target.value;
+            applyFilters();
+        });
+    }
 }
 
 // 国家/地区筛选
 async function initCountryFilter() {
-    const select = document.getElementById('countryFilter');
+    const select = document.getElementById('countrySelect');
+    const input = document.getElementById('countryFilter');
     if (!select) return;
 
     // 尝试从 API 获取国家列表
@@ -366,10 +386,18 @@ async function initCountryFilter() {
         });
     }
 
-    select.addEventListener('change', e => {
-        currentCountry = e.target.value;
-        applyFilters();
-    });
+    if (select) {
+        select.addEventListener('change', e => {
+            currentCountry = e.target.value;
+            applyFilters();
+        });
+    }
+    if (input) {
+        input.addEventListener('input', e => {
+            currentCountryInput = e.target.value;
+            applyFilters();
+        });
+    }
 }
 
 // 应用所有筛选
@@ -378,27 +406,30 @@ function applyFilters() {
     const q = searchInput ? searchInput.value.toLowerCase() : '';
 
     filteredBookData = bookData.filter(book => {
-        // 年代筛选 - 支持模糊匹配 (如 "90" 匹配 1990年代, "1990" 也匹配 1990年代)
-        if (currentDecade !== 'all') {
+        // 年代筛选 - 下拉框优先，其次输入框模糊匹配
+        const decadeValue = currentDecade || currentDecadeInput;
+        if (decadeValue) {
             let decadeStart, decadeEnd;
-            if (currentDecade.length === 2) {
+            if (decadeValue.length === 2) {
                 // "90" -> 1990-1999
-                decadeStart = 1900 + parseInt(currentDecade);
+                decadeStart = 1900 + parseInt(decadeValue);
             } else {
                 // "1990" -> 1990-1999
-                decadeStart = parseInt(currentDecade);
+                decadeStart = parseInt(decadeValue);
             }
             decadeEnd = decadeStart + 9;
             if (book.year < decadeStart || book.year > decadeEnd) {
                 return false;
             }
         }
-        // 地区筛选 - 模糊匹配 (如 "Asia" 匹配 "Asia")
-        if (currentRegion !== 'all' && !book.region.includes(currentRegion)) {
+        // 地区筛选 - 下拉框优先，其次输入框模糊匹配
+        const regionValue = currentRegion || currentRegionInput;
+        if (regionValue && !book.region.includes(regionValue)) {
             return false;
         }
-        // 国家筛选 - 模糊匹配 (如 "中国" 匹配 "中国")
-        if (currentCountry !== 'all' && !book.country.includes(currentCountry)) {
+        // 国家筛选 - 下拉框优先，其次输入框模糊匹配
+        const countryValue = currentCountry || currentCountryInput;
+        if (countryValue && !book.country.includes(countryValue)) {
             return false;
         }
         // 搜索筛选

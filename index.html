@@ -24,41 +24,50 @@
 
                 <div class="filter-section">
                     <h3>年代筛选</h3>
-                    <select id="decadeFilter">
-                        <option value="all">全部年代</option>
-                        <option value="1900">1900年代</option>
-                        <option value="1910">1910年代</option>
-                        <option value="1920">1920年代</option>
-                        <option value="1930">1930年代</option>
-                        <option value="1940">1940年代</option>
-                        <option value="1950">1950年代</option>
-                        <option value="1960">1960年代</option>
-                        <option value="1970">1970年代</option>
-                        <option value="1980">1980年代</option>
-                        <option value="1990">1990年代</option>
-                        <option value="2000">2000年代</option>
-                        <option value="2010">2010年代</option>
-                        <option value="2020">2020年代</option>
-                    </select>
+                    <div class="filter-row">
+                        <select id="decadeSelect">
+                            <option value="">全部年代</option>
+                            <option value="1900">1900年代</option>
+                            <option value="1910">1910年代</option>
+                            <option value="1920">1920年代</option>
+                            <option value="1930">1930年代</option>
+                            <option value="1940">1940年代</option>
+                            <option value="1950">1950年代</option>
+                            <option value="1960">1960年代</option>
+                            <option value="1970">1970年代</option>
+                            <option value="1980">1980年代</option>
+                            <option value="1990">1990年代</option>
+                            <option value="2000">2000年代</option>
+                            <option value="2010">2010年代</option>
+                            <option value="2020">2020年代</option>
+                        </select>
+                        <input type="text" id="decadeFilter" placeholder="模糊匹配如: 90">
+                    </div>
                 </div>
 
                 <div class="filter-section">
                     <h3>地区筛选</h3>
-                    <select id="regionFilter">
-                        <option value="all">全部地区</option>
-                        <option value="Asia">亚洲</option>
-                        <option value="Europe">欧洲</option>
-                        <option value="Americas">美洲</option>
-                        <option value="Africa">非洲</option>
-                        <option value="Oceania">大洋洲</option>
-                    </select>
+                    <div class="filter-row">
+                        <select id="regionSelect">
+                            <option value="">全部地区</option>
+                            <option value="Asia">亚洲</option>
+                            <option value="Europe">欧洲</option>
+                            <option value="Americas">美洲</option>
+                            <option value="Africa">非洲</option>
+                            <option value="Oceania">大洋洲</option>
+                        </select>
+                        <input type="text" id="regionFilter" placeholder="模糊匹配">
+                    </div>
                 </div>
 
                 <div class="filter-section">
                     <h3>国家筛选</h3>
-                    <select id="countryFilter">
-                        <option value="all">全部国家</option>
-                    </select>
+                    <div class="filter-row">
+                        <select id="countrySelect">
+                            <option value="">全部国家</option>
+                        </select>
+                        <input type="text" id="countryFilter" placeholder="模糊匹配">
+                    </div>
                 </div>
 
                 <div class="stats-panel">
