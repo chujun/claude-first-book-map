@@ -68,7 +68,15 @@ def update_all_books():
             pages = detail.get('pages')
             isbn = detail.get('isbn', '')
             translator = detail.get('translator', '')
-            rating = detail.get('rating', 0)
+            # 获取新评分，但保留原评分（如果新评分为0或None）
+            new_rating = detail.get('rating', 0)
+            if new_rating and new_rating > 0:
+                rating = new_rating
+            else:
+                # 保留原评分
+                cur.execute('SELECT rating FROM books WHERE id = ?', (book_id,))
+                row = cur.fetchone()
+                rating = row[0] if row and row[0] else 0
 
             author_gender = author_info.get('gender', '') if author_info else ''
             author_birth_date = author_info.get('birth_date', '') if author_info else ''
