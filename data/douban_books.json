@@ -2,7 +2,7 @@
   {
     "rank": 1,
     "title": "红楼梦",
-    "author": "[清] 曹雪芹 著",
+    "author": "曹雪芹 著",
     "country": "中国",
     "countryCode": "CN",
     "region": "Asia",
@@ -10,9 +10,7 @@
     "rating": 9.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1007305/",
-    "lat": 39.19897011719786,
-    "lng": 101.92739357036666
+    "url": "https://book.douban.com/subject/1007305/"
   },
   {
     "rank": 2,
@@ -25,29 +23,25 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4913064/",
-    "lat": 31.147733216546566,
-    "lng": 102.32900851788868
+    "url": "https://book.douban.com/subject/4913064/"
   },
   {
     "rank": 3,
     "title": "哈利·波特",
-    "author": "J.K.罗琳 (J.K.Rowling)",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "J.K.罗琳",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/24531956/",
-    "lat": 37.767534764536265,
-    "lng": -92.68267845418019
+    "url": "https://book.douban.com/subject/24531956/"
   },
   {
     "rank": 4,
     "title": "1984",
-    "author": "[英] 乔治·奥威尔",
+    "author": "乔治·奥威尔",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -55,9 +49,7 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4820710/",
-    "lat": 58.212125018544775,
-    "lng": -6.453930117524643
+    "url": "https://book.douban.com/subject/4820710/"
   },
   {
     "rank": 5,
@@ -70,14 +62,12 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6518605/",
-    "lat": 30.75041283742016,
-    "lng": 103.38585164341681
+    "url": "https://book.douban.com/subject/6518605/"
   },
   {
     "rank": 6,
     "title": "百年孤独",
-    "author": "[哥伦比亚] 加西亚·马尔克斯",
+    "author": "加西亚·马尔克斯",
     "country": "哥伦比亚",
     "countryCode": "CO",
     "region": "Americas",
@@ -85,14 +75,12 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6082808/",
-    "lat": 5.937651525923883,
-    "lng": -71.39280516158408
+    "url": "https://book.douban.com/subject/6082808/"
   },
   {
     "rank": 7,
     "title": "飘",
-    "author": "[美国] 玛格丽特·米切尔",
+    "author": "玛格丽特·米切尔",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -100,14 +88,12 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1068920/",
-    "lat": 39.251080809860326,
-    "lng": -99.36674990463175
+    "url": "https://book.douban.com/subject/1068920/"
   },
   {
     "rank": 8,
     "title": "动物农场",
-    "author": "[英] 乔治·奥威尔",
+    "author": "乔治·奥威尔",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -115,9 +101,7 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2035179/",
-    "lat": 50.10851887389873,
-    "lng": -3.104466056885228
+    "url": "https://book.douban.com/subject/2035179/"
   },
   {
     "rank": 9,
@@ -130,14 +114,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/27614904/",
-    "lat": 37.89348688285962,
-    "lng": 106.81476386602542
+    "url": "https://book.douban.com/subject/27614904/"
   },
   {
     "rank": 10,
     "title": "三国演义（全二册）",
-    "author": "[明] 罗贯中",
+    "author": "罗贯中",
     "country": "中国",
     "countryCode": "CN",
     "region": "Asia",
@@ -145,29 +127,25 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1019568/",
-    "lat": 37.20592392553102,
-    "lng": 100.05830415411609
+    "url": "https://book.douban.com/subject/1019568/"
   },
   {
     "rank": 11,
     "title": "福尔摩斯探案全集（上中下）",
-    "author": "[英] 阿·柯南道尔",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "阿·柯南道尔",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1040211/",
-    "lat": 31.919018502629665,
-    "lng": -94.21053289397875
+    "url": "https://book.douban.com/subject/1040211/"
   },
   {
     "rank": 12,
     "title": "白夜行",
-    "author": "[日] 东野圭吾",
+    "author": "东野圭吾",
     "country": "日本",
     "countryCode": "JP",
     "region": "Asia",
@@ -175,14 +153,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10554308/",
-    "lat": 38.8399552902932,
-    "lng": 140.43289004494054
+    "url": "https://book.douban.com/subject/10554308/"
   },
   {
     "rank": 13,
     "title": "小王子",
-    "author": "[法国] 安东尼·德·圣-埃克苏佩里",
+    "author": "安东尼·德·圣-埃克苏佩里",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -190,9 +166,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1084336/",
-    "lat": 37.50945253583399,
-    "lng": -100.14812855230673
+    "url": "https://book.douban.com/subject/1084336/"
   },
   {
     "rank": 14,
@@ -205,14 +179,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1449351/",
-    "lat": 31.050776326559188,
-    "lng": 106.84022767081842
+    "url": "https://book.douban.com/subject/1449351/"
   },
   {
     "rank": 15,
     "title": "邓小平时代",
-    "author": "【美】傅高义 (Ezra.F.Vogel)",
+    "author": "【美】傅高义",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -220,24 +192,20 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/20424526/",
-    "lat": 40.230997997764,
-    "lng": -94.1125834884181
+    "url": "https://book.douban.com/subject/20424526/"
   },
   {
     "rank": 16,
     "title": "安徒生童话故事集",
-    "author": "（丹麦）安徒生",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "安徒生",
+    "country": "丹麦",
+    "countryCode": "DK",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1046209/",
-    "lat": 36.518680454946775,
-    "lng": -100.23694303799402
+    "url": "https://book.douban.com/subject/1046209/"
   },
   {
     "rank": 17,
@@ -250,9 +218,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1060068/",
-    "lat": 31.66482856541758,
-    "lng": 107.89543988648583
+    "url": "https://book.douban.com/subject/1060068/"
   },
   {
     "rank": 18,
@@ -265,29 +231,25 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1255625/",
-    "lat": 39.37765687489693,
-    "lng": 105.09814429040843
+    "url": "https://book.douban.com/subject/1255625/"
   },
   {
     "rank": 19,
     "title": "失踪的孩子",
-    "author": "[意] 埃莱娜·费兰特",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "埃莱娜·费兰特",
+    "country": "意大利",
+    "countryCode": "IT",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30172069/",
-    "lat": 35.509987602055716,
-    "lng": -100.10210878717146
+    "url": "https://book.douban.com/subject/30172069/"
   },
   {
     "rank": 20,
     "title": "卡拉马佐夫兄弟",
-    "author": "陀思妥耶夫斯基 (Ф.М.Достоевский)",
+    "author": "陀思妥耶夫斯基",
     "country": "俄罗斯",
     "countryCode": "RU",
     "region": "Europe",
@@ -295,29 +257,25 @@
     "rating": 9.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25887924/",
-    "lat": 58.173624061932905,
-    "lng": 109.9301968679372
+    "url": "https://book.douban.com/subject/25887924/"
   },
   {
     "rank": 21,
     "title": "新名字的故事",
-    "author": "[意] 埃莱娜·费兰特",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "埃莱娜·费兰特",
+    "country": "意大利",
+    "countryCode": "IT",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26986954/",
-    "lat": 40.82335700296601,
-    "lng": -95.59558081484319
+    "url": "https://book.douban.com/subject/26986954/"
   },
   {
     "rank": 22,
     "title": "杀死一只知更鸟",
-    "author": "[美] 哈珀·李",
+    "author": "哈珀·李",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -325,24 +283,20 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6781808/",
-    "lat": 34.53430618795019,
-    "lng": -99.74034420464461
+    "url": "https://book.douban.com/subject/6781808/"
   },
   {
     "rank": 23,
     "title": "明朝那些事儿（1-9）",
     "author": "当年明月",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "country": "中国",
+    "countryCode": "CN",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3674537/",
-    "lat": 34.78475649486511,
-    "lng": -90.3853343979045
+    "url": "https://book.douban.com/subject/3674537/"
   },
   {
     "rank": 24,
@@ -355,9 +309,7 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1915958/",
-    "lat": 39.63368304279816,
-    "lng": 103.47585575199082
+    "url": "https://book.douban.com/subject/1915958/"
   },
   {
     "rank": 25,
@@ -370,29 +322,25 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1054685/",
-    "lat": 32.41455444171558,
-    "lng": 100.74825444171559
+    "url": "https://book.douban.com/subject/1054685/"
   },
   {
     "rank": 26,
     "title": "中国历代政治得失",
     "author": "钱穆",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "country": "中国",
+    "countryCode": "CN",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1003479/",
-    "lat": 35.98277643079837,
-    "lng": -89.90758234819346
+    "url": "https://book.douban.com/subject/1003479/"
   },
   {
     "rank": 27,
     "title": "悉达多",
-    "author": "[德] 赫尔曼·黑塞",
+    "author": "赫尔曼·黑塞",
     "country": "德国",
     "countryCode": "DE",
     "region": "Europe",
@@ -400,24 +348,20 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26980487/",
-    "lat": 54.786241998323305,
-    "lng": 8.88475157144579
+    "url": "https://book.douban.com/subject/26980487/"
   },
   {
     "rank": 28,
     "title": "罗杰疑案",
-    "author": "[英] 阿加莎·克里斯蒂",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "阿加莎·克里斯蒂",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/21371175/",
-    "lat": 32.88544693099997,
-    "lng": -98.38131743899541
+    "url": "https://book.douban.com/subject/21371175/"
   },
   {
     "rank": 29,
@@ -430,14 +374,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1209899/",
-    "lat": 35.956403438620555,
-    "lng": 107.20891227950268
+    "url": "https://book.douban.com/subject/1209899/"
   },
   {
     "rank": 30,
     "title": "局外人",
-    "author": "[法] 阿尔贝·加缪",
+    "author": "阿尔贝·加缪",
     "country": "法国",
     "countryCode": "FR",
     "region": "Europe",
@@ -445,9 +387,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4908885/",
-    "lat": 49.50411882721854,
-    "lng": -0.16683027178451582
+    "url": "https://book.douban.com/subject/4908885/"
   },
   {
     "rank": 31,
@@ -460,9 +400,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4760224/",
-    "lat": 31.077321289867765,
-    "lng": 102.4729176755527
+    "url": "https://book.douban.com/subject/4760224/"
   },
   {
     "rank": 32,
@@ -475,9 +413,7 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1449348/",
-    "lat": 36.637612447954346,
-    "lng": 107.21737946272134
+    "url": "https://book.douban.com/subject/1449348/"
   },
   {
     "rank": 33,
@@ -490,14 +426,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10564071/",
-    "lat": 38.60945080041977,
-    "lng": 101.07868850568545
+    "url": "https://book.douban.com/subject/10564071/"
   },
   {
     "rank": 34,
     "title": "人类简史",
-    "author": "[以色列] 尤瓦尔·赫拉利",
+    "author": "尤瓦尔·赫拉利",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -505,9 +439,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25985021/",
-    "lat": 31.941124700177863,
-    "lng": -96.36337948219875
+    "url": "https://book.douban.com/subject/25985021/"
   },
   {
     "rank": 35,
@@ -520,9 +452,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1200840/",
-    "lat": 37.32581936166004,
-    "lng": 107.0688960405075
+    "url": "https://book.douban.com/subject/1200840/"
   },
   {
     "rank": 36,
@@ -535,9 +465,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1795079/",
-    "lat": 39.142470651673314,
-    "lng": -99.44596645698687
+    "url": "https://book.douban.com/subject/1795079/"
   },
   {
     "rank": 37,
@@ -550,14 +478,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1008145/",
-    "lat": 31.818699397426695,
-    "lng": -95.21459648097847
+    "url": "https://book.douban.com/subject/1008145/"
   },
   {
     "rank": 38,
     "title": "献给阿尔吉侬的花束",
-    "author": "[美] 丹尼尔·凯斯",
+    "author": "丹尼尔·凯斯",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -565,9 +491,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26362836/",
-    "lat": 39.21282188586314,
-    "lng": -93.14709090155662
+    "url": "https://book.douban.com/subject/26362836/"
   },
   {
     "rank": 39,
@@ -580,24 +504,20 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1002299/",
-    "lat": 37.07949617786124,
-    "lng": 100.00371806202016
+    "url": "https://book.douban.com/subject/1002299/"
   },
   {
     "rank": 40,
     "title": "东方快车谋杀案",
-    "author": "[英] 阿加莎·克里斯蒂",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "阿加莎·克里斯蒂",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1827374/",
-    "lat": 31.954494812006175,
-    "lng": -94.04420823037529
+    "url": "https://book.douban.com/subject/1827374/"
   },
   {
     "rank": 41,
@@ -610,9 +530,7 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2046909/",
-    "lat": 38.575882467510496,
-    "lng": 106.30073572929798
+    "url": "https://book.douban.com/subject/2046909/"
   },
   {
     "rank": 42,
@@ -625,14 +543,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1254588/",
-    "lat": 37.37087362229603,
-    "lng": -100.17407947607438
+    "url": "https://book.douban.com/subject/1254588/"
   },
   {
     "rank": 43,
     "title": "肖申克的救赎",
-    "author": "[美] 斯蒂芬·金",
+    "author": "斯蒂芬·金",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -640,14 +556,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1829226/",
-    "lat": 32.351815141343295,
-    "lng": -92.91062700629422
+    "url": "https://book.douban.com/subject/1829226/"
   },
   {
     "rank": 44,
     "title": "江城",
-    "author": "[美] 彼得·海斯勒",
+    "author": "彼得·海斯勒",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -655,9 +569,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/7060185/",
-    "lat": 40.293287765729715,
-    "lng": -94.20564130785965
+    "url": "https://book.douban.com/subject/7060185/"
   },
   {
     "rank": 45,
@@ -670,14 +582,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1449352/",
-    "lat": 35.146012322440946,
-    "lng": 99.67672584177726
+    "url": "https://book.douban.com/subject/1449352/"
   },
   {
     "rank": 46,
     "title": "基督山伯爵",
-    "author": "[法国] 大仲马",
+    "author": "大仲马",
     "country": "法国",
     "countryCode": "FR",
     "region": "Europe",
@@ -685,14 +595,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1085860/",
-    "lat": 42.138086000165885,
-    "lng": 6.054009264259943
+    "url": "https://book.douban.com/subject/1085860/"
   },
   {
     "rank": 47,
     "title": "万历十五年",
-    "author": "[美] 黄仁宇",
+    "author": "黄仁宇",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -700,14 +608,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1041482/",
-    "lat": 40.64741659726674,
-    "lng": -94.91776788510961
+    "url": "https://book.douban.com/subject/1041482/"
   },
   {
     "rank": 48,
     "title": "霍乱时期的爱情",
-    "author": "[哥伦比亚] 加西亚·马尔克斯",
+    "author": "加西亚·马尔克斯",
     "country": "哥伦比亚",
     "countryCode": "CO",
     "region": "Americas",
@@ -715,9 +621,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10594787/",
-    "lat": 2.8480770934357054,
-    "lng": -78.64865395395702
+    "url": "https://book.douban.com/subject/10594787/"
   },
   {
     "rank": 49,
@@ -730,24 +634,20 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25836270/",
-    "lat": 33.87789349557507,
-    "lng": -90.98613451802089
+    "url": "https://book.douban.com/subject/25836270/"
   },
   {
     "rank": 50,
     "title": "艺术的故事",
-    "author": "[英] 贡布里希 (Sir E.H.Gombrich)",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "贡布里希",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3162991/",
-    "lat": 40.8402,
-    "lng": -95.7129
+    "url": "https://book.douban.com/subject/3162991/"
   },
   {
     "rank": 51,
@@ -760,14 +660,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35546622/",
-    "lat": 34.40063103697756,
-    "lng": -99.67048054790378
+    "url": "https://book.douban.com/subject/35546622/"
   },
   {
     "rank": 52,
     "title": "月亮和六便士",
-    "author": "[英] 毛姆",
+    "author": "毛姆",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -775,9 +673,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1858513/",
-    "lat": 53.235615103375174,
-    "lng": 1.975299147869622
+    "url": "https://book.douban.com/subject/1858513/"
   },
   {
     "rank": 53,
@@ -790,9 +686,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1044547/",
-    "lat": 39.623859117273874,
-    "lng": 103.35445780441634
+    "url": "https://book.douban.com/subject/1044547/"
   },
   {
     "rank": 54,
@@ -805,9 +699,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1029553/",
-    "lat": 32.2970434119093,
-    "lng": 100.84796465200871
+    "url": "https://book.douban.com/subject/1029553/"
   },
   {
     "rank": 55,
@@ -820,29 +712,25 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34998019/",
-    "lat": 36.163325794636634,
-    "lng": -89.86084658197382
+    "url": "https://book.douban.com/subject/34998019/"
   },
   {
     "rank": 56,
     "title": "无人生还",
-    "author": "[英] 阿加莎・克里斯蒂",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "阿加莎・克里斯蒂",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3006581/",
-    "lat": 40.67331512776544,
-    "lng": -97.3989859945977
+    "url": "https://book.douban.com/subject/3006581/"
   },
   {
     "rank": 57,
     "title": "追风筝的人",
-    "author": "[美] 卡勒德·胡赛尼",
+    "author": "卡勒德·胡赛尼",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -850,14 +738,12 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1770782/",
-    "lat": 32.7907935751153,
-    "lng": -98.25556187167311
+    "url": "https://book.douban.com/subject/1770782/"
   },
   {
     "rank": 58,
     "title": "树上的男爵",
-    "author": "[意大利]伊塔洛·卡尔维诺",
+    "author": "伊塔洛·卡尔维诺",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -865,14 +751,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6789605/",
-    "lat": 37.280455274173825,
-    "lng": -92.68887901286234
+    "url": "https://book.douban.com/subject/6789605/"
   },
   {
     "rank": 59,
     "title": "刀锋",
-    "author": "[英]毛姆",
+    "author": "毛姆",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -880,14 +764,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2035162/",
-    "lat": 58.59008012530718,
-    "lng": -5.927467173099348
+    "url": "https://book.douban.com/subject/2035162/"
   },
   {
     "rank": 60,
     "title": "寻路中国",
-    "author": "[美] 彼得·海斯勒",
+    "author": "彼得·海斯勒",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -895,24 +777,20 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/5414391/",
-    "lat": 32.23981176689472,
-    "lng": -97.28888667131224
+    "url": "https://book.douban.com/subject/5414391/"
   },
   {
     "rank": 61,
     "title": "格林童话全集",
-    "author": "[德]格林兄弟",
-    "country": "英国",
-    "countryCode": "GB",
+    "author": "格林兄弟",
+    "country": "德国",
+    "countryCode": "DE",
     "region": "Europe",
     "year": 2010,
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1043008/",
-    "lat": 56.252737117432986,
-    "lng": -0.42547929540278373
+    "url": "https://book.douban.com/subject/1043008/"
   },
   {
     "rank": 62,
@@ -925,14 +803,12 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1028409/",
-    "lat": 39.74825803725204,
-    "lng": -98.92594022237505
+    "url": "https://book.douban.com/subject/1028409/"
   },
   {
     "rank": 63,
     "title": "鼠疫",
-    "author": "[法] 阿尔贝·加缪",
+    "author": "阿尔贝·加缪",
     "country": "法国",
     "countryCode": "FR",
     "region": "Europe",
@@ -940,9 +816,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/24257229/",
-    "lat": 41.045699974240975,
-    "lng": 1.7238662291771298
+    "url": "https://book.douban.com/subject/24257229/"
   },
   {
     "rank": 64,
@@ -955,9 +829,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35819419/",
-    "lat": 38.65108190408956,
-    "lng": -92.87366635665789
+    "url": "https://book.douban.com/subject/35819419/"
   },
   {
     "rank": 65,
@@ -970,14 +842,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36328704/",
-    "lat": 39.031009386386565,
-    "lng": -99.52195289090528
+    "url": "https://book.douban.com/subject/36328704/"
   },
   {
     "rank": 66,
     "title": "嫌疑人X的献身",
-    "author": "[日] 东野圭吾",
+    "author": "东野圭吾",
     "country": "日本",
     "countryCode": "JP",
     "region": "Asia",
@@ -985,9 +855,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3211779/",
-    "lat": 30.93667093602012,
-    "lng": 138.91841947022647
+    "url": "https://book.douban.com/subject/3211779/"
   },
   {
     "rank": 67,
@@ -1000,9 +868,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35313227/",
-    "lat": 39.30228818950762,
-    "lng": -93.20377847208611
+    "url": "https://book.douban.com/subject/35313227/"
   },
   {
     "rank": 68,
@@ -1015,39 +881,33 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/5337254/",
-    "lat": 38.17946170578207,
-    "lng": -99.9552942457434
+    "url": "https://book.douban.com/subject/5337254/"
   },
   {
     "rank": 69,
     "title": "一间只属于自己的房间",
-    "author": "[英] 弗吉尼亚·伍尔夫",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "弗吉尼亚·伍尔夫",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34835082/",
-    "lat": 31.99533063611287,
-    "lng": -93.87863416187174
+    "url": "https://book.douban.com/subject/34835082/"
   },
   {
     "rank": 70,
     "title": "傲慢与偏见",
-    "author": "[英] 奥斯丁",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "奥斯丁",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1083428/",
-    "lat": 39.88130863059357,
-    "lng": -93.68504087959097
+    "url": "https://book.douban.com/subject/1083428/"
   },
   {
     "rank": 71,
@@ -1060,14 +920,12 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1089243/",
-    "lat": 36.00257725446541,
-    "lng": 99.7126130767597
+    "url": "https://book.douban.com/subject/1089243/"
   },
   {
     "rank": 72,
     "title": "悲惨世界（上中下）",
-    "author": "[法] 雨果",
+    "author": "雨果",
     "country": "法国",
     "countryCode": "FR",
     "region": "Europe",
@@ -1075,9 +933,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1205054/",
-    "lat": 41.56690985122888,
-    "lng": 5.171463908284057
+    "url": "https://book.douban.com/subject/1205054/"
   },
   {
     "rank": 73,
@@ -1090,14 +946,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/5337248/",
-    "lat": 40.35281769430656,
-    "lng": -94.30103924879336
+    "url": "https://book.douban.com/subject/5337248/"
   },
   {
     "rank": 74,
     "title": "史记（全十册）",
-    "author": "（汉）司马迁",
+    "author": "司马迁",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1105,9 +959,7 @@
     "rating": 9.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1077847/",
-    "lat": 36.23011976605152,
-    "lng": -100.22159848084469
+    "url": "https://book.douban.com/subject/1077847/"
   },
   {
     "rank": 75,
@@ -1120,9 +972,7 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3183775/",
-    "lat": 31.88422435582567,
-    "lng": 108.17287564417434
+    "url": "https://book.douban.com/subject/3183775/"
   },
   {
     "rank": 76,
@@ -1135,9 +985,7 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1883245/",
-    "lat": 40.685371337667,
-    "lng": -95.02708438861625
+    "url": "https://book.douban.com/subject/1883245/"
   },
   {
     "rank": 77,
@@ -1150,14 +998,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/27002046/",
-    "lat": 35.22559065346971,
-    "lng": -100.0217579675863
+    "url": "https://book.douban.com/subject/27002046/"
   },
   {
     "rank": 78,
     "title": "南京大屠杀",
-    "author": "[美]张纯如（Iris Chang）",
+    "author": "张纯如",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1165,14 +1011,12 @@
     "rating": 9.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26545308/",
-    "lat": 34.01991246477036,
-    "lng": -90.87490098687346
+    "url": "https://book.douban.com/subject/26545308/"
   },
   {
     "rank": 79,
     "title": "一个叫欧维的男人决定去死",
-    "author": "[瑞典] 弗雷德里克·巴克曼",
+    "author": "弗雷德里克·巴克曼",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1180,14 +1024,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26672693/",
-    "lat": 40.85334219977698,
-    "lng": -95.83116150792915
+    "url": "https://book.douban.com/subject/26672693/"
   },
   {
     "rank": 80,
     "title": "永恒的终结",
-    "author": "[美] 艾萨克·阿西莫夫",
+    "author": "艾萨克·阿西莫夫",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1195,9 +1037,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25829693/",
-    "lat": 34.268830788996134,
-    "lng": -99.59618157299975
+    "url": "https://book.douban.com/subject/25829693/"
   },
   {
     "rank": 81,
@@ -1210,24 +1050,20 @@
     "rating": 9.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1139360/",
-    "lat": 35.113664235368724,
-    "lng": -90.2228607131521
+    "url": "https://book.douban.com/subject/1139360/"
   },
   {
     "rank": 82,
     "title": "绝叫",
-    "author": "[日] 叶真中显",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "叶真中显",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35031587/",
-    "lat": 40.838616833567805,
-    "lng": -96.67532986332799
+    "url": "https://book.douban.com/subject/35031587/"
   },
   {
     "rank": 83,
@@ -1240,24 +1076,20 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1255624/",
-    "lat": 32.182405203462594,
-    "lng": 100.95166530058749
+    "url": "https://book.douban.com/subject/1255624/"
   },
   {
     "rank": 84,
     "title": "始于极限",
-    "author": "[日] 上野千鹤子",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "上野千鹤子",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35966120/",
-    "lat": 36.345720592628034,
-    "lng": -89.81973867419201
+    "url": "https://book.douban.com/subject/35966120/"
   },
   {
     "rank": 85,
@@ -1270,14 +1102,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35430425/",
-    "lat": 40.63195093364877,
-    "lng": -97.5175122364647
+    "url": "https://book.douban.com/subject/35430425/"
   },
   {
     "rank": 86,
     "title": "灿烂千阳",
-    "author": "[美] 卡勒德·胡赛尼",
+    "author": "卡勒德·胡赛尼",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1285,9 +1115,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2143732/",
-    "lat": 32.699903532980244,
-    "lng": -98.1264859072496
+    "url": "https://book.douban.com/subject/2143732/"
   },
   {
     "rank": 87,
@@ -1300,39 +1128,33 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1027191/",
-    "lat": 37.37675981405488,
-    "lng": -92.68141381778362
+    "url": "https://book.douban.com/subject/1027191/"
   },
   {
     "rank": 88,
     "title": "窗边的小豆豆",
-    "author": "[日] 黑柳彻子 著",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "黑柳彻子 著",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1007914/",
-    "lat": 40.23389403052522,
-    "lng": -98.31358987817465
+    "url": "https://book.douban.com/subject/1007914/"
   },
   {
     "rank": 89,
     "title": "明亮的夜晚",
-    "author": "[韩]崔恩荣",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "崔恩荣",
+    "country": "韩国",
+    "countryCode": "KR",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36457094/",
-    "lat": 32.17829779776244,
-    "lng": -97.13993950739066
+    "url": "https://book.douban.com/subject/36457094/"
   },
   {
     "rank": 90,
@@ -1345,9 +1167,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3410718/",
-    "lat": 38.063603532281086,
-    "lng": -92.71707197367027
+    "url": "https://book.douban.com/subject/3410718/"
   },
   {
     "rank": 91,
@@ -1360,9 +1180,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1467022/",
-    "lat": 39.65521601953771,
-    "lng": -99.01969872679227
+    "url": "https://book.douban.com/subject/1467022/"
   },
   {
     "rank": 92,
@@ -1375,9 +1193,7 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1013267/",
-    "lat": 31.880500477604425,
-    "lng": -96.04066651194302
+    "url": "https://book.douban.com/subject/1013267/"
   },
   {
     "rank": 93,
@@ -1390,9 +1206,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1060852/",
-    "lat": 38.74712980826746,
-    "lng": -92.91118470210216
+    "url": "https://book.douban.com/subject/1060852/"
   },
   {
     "rank": 94,
@@ -1405,14 +1219,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1029111/",
-    "lat": 37.68829316081416,
-    "lng": 100.31369194492078
+    "url": "https://book.douban.com/subject/1029111/"
   },
   {
     "rank": 95,
     "title": "最好的告别",
-    "author": "[美] 阿图·葛文德（Atul Gawande）",
+    "author": "阿图·葛文德",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1420,9 +1232,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26576861/",
-    "lat": 31.830759586330895,
-    "lng": -94.87988647366078
+    "url": "https://book.douban.com/subject/26576861/"
   },
   {
     "rank": 96,
@@ -1435,29 +1245,25 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10522856/",
-    "lat": 39.390278275920394,
-    "lng": -93.26356541186406
+    "url": "https://book.douban.com/subject/10522856/"
   },
   {
     "rank": 97,
     "title": "离开的，留下的",
-    "author": "[意] 埃莱娜·费兰特",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "埃莱娜·费兰特",
+    "country": "意大利",
+    "countryCode": "IT",
+    "region": "Europe",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/27104959/",
-    "lat": 38.048939545937806,
-    "lng": -100.0020541687208
+    "url": "https://book.douban.com/subject/27104959/"
   },
   {
     "rank": 98,
     "title": "罪与罚",
-    "author": "[俄] 陀思妥耶夫斯基",
+    "author": "陀思妥耶夫斯基",
     "country": "俄罗斯",
     "countryCode": "RU",
     "region": "Europe",
@@ -1465,9 +1271,7 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1858568/",
-    "lat": 56.475313681626794,
-    "lng": 107.3177163210778
+    "url": "https://book.douban.com/subject/1858568/"
   },
   {
     "rank": 99,
@@ -1480,9 +1284,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26734559/",
-    "lat": 39.956034189861356,
-    "lng": -93.76528109574237
+    "url": "https://book.douban.com/subject/26734559/"
   },
   {
     "rank": 100,
@@ -1495,9 +1297,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1203426/",
-    "lat": 37.0902,
-    "lng": -100.2129
+    "url": "https://book.douban.com/subject/1203426/"
   },
   {
     "rank": 101,
@@ -1510,14 +1310,12 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1059258/",
-    "lat": 32.5123090213903,
-    "lng": -92.60176850358846
+    "url": "https://book.douban.com/subject/1059258/"
   },
   {
     "rank": 102,
     "title": "西线无战事",
-    "author": "[德] 埃里希·玛丽亚·雷马克",
+    "author": "埃里希·玛丽亚·雷马克",
     "country": "德国",
     "countryCode": "DE",
     "region": "Europe",
@@ -1525,9 +1323,7 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35272817/",
-    "lat": 54.485002054621056,
-    "lng": 11.7657046530843
+    "url": "https://book.douban.com/subject/35272817/"
   },
   {
     "rank": 103,
@@ -1540,14 +1336,12 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26171466/",
-    "lat": 36.08565037336893,
-    "lng": -100.20699668872794
+    "url": "https://book.douban.com/subject/26171466/"
   },
   {
     "rank": 104,
     "title": "叫魂",
-    "author": "[美] 孔飞力",
+    "author": "孔飞力",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1555,14 +1349,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25912076/",
-    "lat": 33.229354322562195,
-    "lng": -91.60151694134325
+    "url": "https://book.douban.com/subject/25912076/"
   },
   {
     "rank": 105,
     "title": "也许你该找个人聊聊",
-    "author": "[美]洛莉·戈特利布",
+    "author": "洛莉·戈特利布",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1570,9 +1362,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35481512/",
-    "lat": 40.71995465168713,
-    "lng": -95.13800334097715
+    "url": "https://book.douban.com/subject/35481512/"
   },
   {
     "rank": 106,
@@ -1585,9 +1375,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/20440644/",
-    "lat": 35.08477953672851,
-    "lng": -99.97463541711495
+    "url": "https://book.douban.com/subject/20440644/"
   },
   {
     "rank": 107,
@@ -1600,39 +1388,33 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/27184303/",
-    "lat": 34.16575706651412,
-    "lng": -90.76793705486234
+    "url": "https://book.douban.com/subject/27184303/"
   },
   {
     "rank": 108,
     "title": "平面国",
-    "author": "[英] 埃德温·A·艾勃特",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "埃德温·A·艾勃特",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35170896/",
-    "lat": 40.86274103345887,
-    "lng": -95.9502481638208
+    "url": "https://book.douban.com/subject/35170896/"
   },
   {
     "rank": 109,
     "title": "桶川跟踪狂杀人事件",
-    "author": "[日] 清水洁",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "清水洁",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35094680/",
-    "lat": 34.13905253666092,
-    "lng": -99.51749638458895
+    "url": "https://book.douban.com/subject/35094680/"
   },
   {
     "rank": 110,
@@ -1645,9 +1427,7 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1091203/",
-    "lat": 35.28245058290656,
-    "lng": -90.14921937967335
+    "url": "https://book.douban.com/subject/1091203/"
   },
   {
     "rank": 111,
@@ -1660,24 +1440,20 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6709783/",
-    "lat": 40.82094096885493,
-    "lng": -96.79678044696242
+    "url": "https://book.douban.com/subject/6709783/"
   },
   {
     "rank": 112,
     "title": "我们仨",
     "author": "杨绛",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "country": "中国",
+    "countryCode": "CN",
+    "region": "Asia",
     "year": 2010,
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1023045/",
-    "lat": 33.29927484554312,
-    "lng": -98.84902602956356
+    "url": "https://book.douban.com/subject/1023045/"
   },
   {
     "rank": 113,
@@ -1690,14 +1466,12 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3071717/",
-    "lat": 35.301284994188244,
-    "lng": 110.12397149921135
+    "url": "https://book.douban.com/subject/3071717/"
   },
   {
     "rank": 114,
     "title": "人生的枷锁",
-    "author": "[英] 毛姆",
+    "author": "毛姆",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -1705,9 +1479,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2035171/",
-    "lat": 58.87456365337502,
-    "lng": -5.358197159665845
+    "url": "https://book.douban.com/subject/2035171/"
   },
   {
     "rank": 115,
@@ -1720,14 +1492,12 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1760432/",
-    "lat": 32.61289221595345,
-    "lng": -97.99420226119123
+    "url": "https://book.douban.com/subject/1760432/"
   },
   {
     "rank": 116,
     "title": "昨日的世界",
-    "author": "[奥] 斯特凡·茨威格",
+    "author": "斯特凡·茨威格",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1735,9 +1505,7 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/27615361/",
-    "lat": 37.47371969470677,
-    "lng": -92.6770290139777
+    "url": "https://book.douban.com/subject/27615361/"
   },
   {
     "rank": 117,
@@ -1750,44 +1518,38 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1036613/",
-    "lat": 38.93340483013673,
-    "lng": 101.48732791149965
+    "url": "https://book.douban.com/subject/1036613/"
   },
   {
     "rank": 118,
     "title": "看不见的城市",
-    "author": "[意] 伊塔洛·卡尔维诺",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "伊塔洛·卡尔维诺",
+    "country": "意大利",
+    "countryCode": "IT",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10555509/",
-    "lat": 32.12136838341013,
-    "lng": -96.98867912115571
+    "url": "https://book.douban.com/subject/10555509/"
   },
   {
     "rank": 119,
     "title": "巨人的陨落",
-    "author": "[英] 肯·福莱特",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "肯·福莱特",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26698660/",
-    "lat": 38.16230551757635,
-    "lng": -92.73501236625988
+    "url": "https://book.douban.com/subject/26698660/"
   },
   {
     "rank": 120,
     "title": "失明症漫记",
-    "author": "[葡] 若泽·萨拉马戈",
+    "author": "若泽·萨拉马戈",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1795,9 +1557,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/20428302/",
-    "lat": 39.55889805962839,
-    "lng": -99.11077137637479
+    "url": "https://book.douban.com/subject/20428302/"
   },
   {
     "rank": 121,
@@ -1810,14 +1570,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1011754/",
-    "lat": 31.857783156485397,
-    "lng": -95.877335323774
+    "url": "https://book.douban.com/subject/1011754/"
   },
   {
     "rank": 122,
     "title": "飞鸟集",
-    "author": "[印] 罗宾德拉纳德·泰戈尔",
+    "author": "罗宾德拉纳德·泰戈尔",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1825,14 +1583,12 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1058661/",
-    "lat": 38.842353619581324,
-    "lng": -92.95194768360841
+    "url": "https://book.douban.com/subject/1058661/"
   },
   {
     "rank": 123,
     "title": "教父",
-    "author": "[美]马里奥·普佐",
+    "author": "马里奥·普佐",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1840,29 +1596,25 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1092335/",
-    "lat": 38.79992166918273,
-    "lng": -99.66383366356955
+    "url": "https://book.douban.com/subject/1092335/"
   },
   {
     "rank": 124,
     "title": "我的天才女友",
-    "author": "[意] 埃莱娜·费兰特",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "埃莱娜·费兰特",
+    "country": "意大利",
+    "countryCode": "IT",
+    "region": "Europe",
     "year": 2010,
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26878124/",
-    "lat": 31.844786081108804,
-    "lng": -94.71228378011224
+    "url": "https://book.douban.com/subject/26878124/"
   },
   {
     "rank": 125,
     "title": "人生的智慧",
-    "author": "(德)叔本华",
+    "author": "叔本华",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1870,9 +1622,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3261600/",
-    "lat": 39.4766853865046,
-    "lng": -93.3264146134954
+    "url": "https://book.douban.com/subject/3261600/"
   },
   {
     "rank": 126,
@@ -1885,14 +1635,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1253310/",
-    "lat": 37.91655159732305,
-    "lng": -100.04478677571352
+    "url": "https://book.douban.com/subject/1253310/"
   },
   {
     "rank": 127,
     "title": "面纱",
-    "author": "[英] 威廉·萨默塞特·毛姆",
+    "author": "威廉·萨默塞特·毛姆",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -1900,9 +1648,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26757680/",
-    "lat": 50.380926063150724,
-    "lng": -1.2735297354936228
+    "url": "https://book.douban.com/subject/26757680/"
   },
   {
     "rank": 128,
@@ -1915,9 +1661,7 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26905337/",
-    "lat": 38.79996118074701,
-    "lng": 106.06007724652692
+    "url": "https://book.douban.com/subject/26905337/"
   },
   {
     "rank": 129,
@@ -1930,9 +1674,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25897884/",
-    "lat": 36.948380422762256,
-    "lng": -100.22567212005129
+    "url": "https://book.douban.com/subject/25897884/"
   },
   {
     "rank": 130,
@@ -1945,9 +1687,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1212893/",
-    "lat": 31.37165568121904,
-    "lng": 107.45760815022324
+    "url": "https://book.douban.com/subject/1212893/"
   },
   {
     "rank": 131,
@@ -1960,14 +1700,12 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6880158/",
-    "lat": 40.4632575567009,
-    "lng": -94.49852455592064
+    "url": "https://book.douban.com/subject/6880158/"
   },
   {
     "rank": 132,
     "title": "地下室手记",
-    "author": "[俄] 陀思妥耶夫斯基",
+    "author": "陀思妥耶夫斯基",
     "country": "俄罗斯",
     "countryCode": "RU",
     "region": "Europe",
@@ -1975,14 +1713,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34990839/",
-    "lat": 60.375052721298374,
-    "lng": 100.84394579558573
+    "url": "https://book.douban.com/subject/34990839/"
   },
   {
     "rank": 133,
     "title": "斯通纳",
-    "author": "[美] 约翰·威廉斯",
+    "author": "约翰·威廉斯",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -1990,9 +1726,7 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26425831/",
-    "lat": 33.35048140159475,
-    "lng": -91.47102190123975
+    "url": "https://book.douban.com/subject/26425831/"
   },
   {
     "rank": 134,
@@ -2005,9 +1739,7 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1057244/",
-    "lat": 39.52260324785042,
-    "lng": 104.6578796318523
+    "url": "https://book.douban.com/subject/1057244/"
   },
   {
     "rank": 135,
@@ -2020,9 +1752,7 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26925171/",
-    "lat": 34.945094888730644,
-    "lng": -99.92290582679004
+    "url": "https://book.douban.com/subject/26925171/"
   },
   {
     "rank": 136,
@@ -2035,24 +1765,20 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2070844/",
-    "lat": 33.08679883717412,
-    "lng": 109.24292647705266
+    "url": "https://book.douban.com/subject/2070844/"
   },
   {
     "rank": 137,
     "title": "克莱因壶",
-    "author": "[日] 冈岛二人",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "冈岛二人",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/33658616/",
-    "lat": 40.86835765566869,
-    "lng": -96.07004104904377
+    "url": "https://book.douban.com/subject/33658616/"
   },
   {
     "rank": 138,
@@ -2065,9 +1791,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34432750/",
-    "lat": 34.01144212951383,
-    "lng": -99.43447896260707
+    "url": "https://book.douban.com/subject/34432750/"
   },
   {
     "rank": 139,
@@ -2080,24 +1804,20 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2160556/",
-    "lat": 35.45391716307992,
-    "lng": -90.08077753350473
+    "url": "https://book.douban.com/subject/2160556/"
   },
   {
     "rank": 140,
     "title": "时间简史",
-    "author": "[英] 史蒂芬·霍金",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "史蒂芬·霍金",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1034282/",
-    "lat": 40.7993204135511,
-    "lng": -96.9180662780623
+    "url": "https://book.douban.com/subject/1034282/"
   },
   {
     "rank": 141,
@@ -2110,14 +1830,12 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3633461/",
-    "lat": 33.19078501392597,
-    "lng": -98.73759630977744
+    "url": "https://book.douban.com/subject/3633461/"
   },
   {
     "rank": 142,
     "title": "小径分岔的花园",
-    "author": "[阿根廷] 豪·路·博尔赫斯",
+    "author": "豪·路·博尔赫斯",
     "country": "哥伦比亚",
     "countryCode": "CO",
     "region": "Americas",
@@ -2125,14 +1843,12 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25796120/",
-    "lat": 4.19604059841,
-    "lng": -68.33908043128322
+    "url": "https://book.douban.com/subject/25796120/"
   },
   {
     "rank": 143,
     "title": "安娜·卡列尼娜",
-    "author": "[俄] 列夫·托尔斯泰",
+    "author": "列夫·托尔斯泰",
     "country": "俄罗斯",
     "countryCode": "RU",
     "region": "Europe",
@@ -2140,14 +1856,12 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2253380/",
-    "lat": 64.9712718181508,
-    "lng": 103.28008912991976
+    "url": "https://book.douban.com/subject/2253380/"
   },
   {
     "rank": 144,
     "title": "王尔德童话",
-    "author": "[英] 王尔德",
+    "author": "王尔德",
     "country": "英国",
     "countryCode": "GB",
     "region": "Europe",
@@ -2155,24 +1869,20 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1119839/",
-    "lat": 50.81777165557126,
-    "lng": -5.581927629487964
+    "url": "https://book.douban.com/subject/1119839/"
   },
   {
     "rank": 145,
     "title": "2001：太空漫游",
-    "author": "[英] 阿瑟·克拉克",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "阿瑟·克拉克",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30471298/",
-    "lat": 37.57123597999871,
-    "lng": -92.67575835266996
+    "url": "https://book.douban.com/subject/30471298/"
   },
   {
     "rank": 146,
@@ -2185,39 +1895,33 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6388661/",
-    "lat": 40.08626105870201,
-    "lng": -98.52638860536692
+    "url": "https://book.douban.com/subject/6388661/"
   },
   {
     "rank": 147,
     "title": "长日将尽",
-    "author": "[英] 石黑一雄",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "石黑一雄",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30142261/",
-    "lat": 32.06910825982515,
-    "lng": -96.83524697698522
+    "url": "https://book.douban.com/subject/30142261/"
   },
   {
     "rank": 148,
     "title": "金色梦乡",
-    "author": "[日] 伊坂幸太郎",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "伊坂幸太郎",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/5038409/",
-    "lat": 38.26083607753728,
-    "lng": -92.75621077487537
+    "url": "https://book.douban.com/subject/5038409/"
   },
   {
     "rank": 149,
@@ -2230,9 +1934,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3518332/",
-    "lat": 38.23088143764673,
-    "lng": 100.70925537943273
+    "url": "https://book.douban.com/subject/3518332/"
   },
   {
     "rank": 150,
@@ -2245,14 +1947,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1765512/",
-    "lat": 31.840200000000003,
-    "lng": -95.7129
+    "url": "https://book.douban.com/subject/1765512/"
   },
   {
     "rank": 151,
     "title": "故事",
-    "author": "[美] 罗伯特·麦基",
+    "author": "罗伯特·麦基",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2260,9 +1960,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25976544/",
-    "lat": 38.93664389624425,
-    "lng": -92.99594031350807
+    "url": "https://book.douban.com/subject/25976544/"
   },
   {
     "rank": 152,
@@ -2275,9 +1973,7 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/33440205/",
-    "lat": 38.68049806759781,
-    "lng": -99.72953441903725
+    "url": "https://book.douban.com/subject/33440205/"
   },
   {
     "rank": 153,
@@ -2290,9 +1986,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26210487/",
-    "lat": 31.86416573981801,
-    "lng": -94.54474294232152
+    "url": "https://book.douban.com/subject/26210487/"
   },
   {
     "rank": 154,
@@ -2305,9 +1999,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10757938/",
-    "lat": 38.332903646958584,
-    "lng": 106.51601468909826
+    "url": "https://book.douban.com/subject/10757938/"
   },
   {
     "rank": 155,
@@ -2320,14 +2012,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4881850/",
-    "lat": 37.78242250780303,
-    "lng": -100.08342090713349
+    "url": "https://book.douban.com/subject/4881850/"
   },
   {
     "rank": 156,
     "title": "经济学原理（上下）",
-    "author": "[美] 曼昆",
+    "author": "曼昆",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2335,9 +2025,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1028842/",
-    "lat": 32.14984429353554,
-    "lng": -93.38814506805471
+    "url": "https://book.douban.com/subject/1028842/"
   },
   {
     "rank": 157,
@@ -2350,9 +2038,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35517022/",
-    "lat": 40.098493384378784,
-    "lng": -93.93380025195246
+    "url": "https://book.douban.com/subject/35517022/"
   },
   {
     "rank": 158,
@@ -2365,9 +2051,7 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1046492/",
-    "lat": 36.805758946532215,
-    "lng": -100.23396107978007
+    "url": "https://book.douban.com/subject/1046492/"
   },
   {
     "rank": 159,
@@ -2380,9 +2064,7 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25935941/",
-    "lat": 32.69298735612929,
-    "lng": -92.30207224642119
+    "url": "https://book.douban.com/subject/25935941/"
   },
   {
     "rank": 160,
@@ -2395,14 +2077,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1052990/",
-    "lat": 40.51400345866256,
-    "lng": -94.60043882025019
+    "url": "https://book.douban.com/subject/1052990/"
   },
   {
     "rank": 161,
     "title": "苏菲的世界",
-    "author": "[挪] 乔斯坦·贾德",
+    "author": "乔斯坦·贾德",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2410,9 +2090,7 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2284311/",
-    "lat": 35.79707622350818,
-    "lng": -100.16386123311264
+    "url": "https://book.douban.com/subject/2284311/"
   },
   {
     "rank": 162,
@@ -2425,9 +2103,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1036490/",
-    "lat": 32.24750597812493,
-    "lng": 108.56421008653874
+    "url": "https://book.douban.com/subject/1036490/"
   },
   {
     "rank": 163,
@@ -2440,14 +2116,12 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10758290/",
-    "lat": 40.77875707885441,
-    "lng": -95.3642286991549
+    "url": "https://book.douban.com/subject/10758290/"
   },
   {
     "rank": 164,
     "title": "爱的艺术",
-    "author": "[美] 艾·弗洛姆",
+    "author": "艾·弗洛姆",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2455,14 +2129,12 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3026879/",
-    "lat": 34.806687584757874,
-    "lng": -99.86659366340791
+    "url": "https://book.douban.com/subject/3026879/"
   },
   {
     "rank": 165,
     "title": "一个陌生女人的来信",
-    "author": "[奥] 斯蒂芬·茨威格",
+    "author": "斯蒂芬·茨威格",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2470,14 +2142,12 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2154960/",
-    "lat": 34.46840486400412,
-    "lng": -90.56733732281218
+    "url": "https://book.douban.com/subject/2154960/"
   },
   {
     "rank": 166,
     "title": "史蒂夫·乔布斯传",
-    "author": "[美] 沃尔特·艾萨克森",
+    "author": "沃尔特·艾萨克森",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2485,14 +2155,12 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6798611/",
-    "lat": 40.870157012008164,
-    "lng": -96.19041961988
+    "url": "https://book.douban.com/subject/6798611/"
   },
   {
     "rank": 167,
     "title": "德米安",
-    "author": "[德] 赫尔曼·黑塞",
+    "author": "赫尔曼·黑塞",
     "country": "德国",
     "countryCode": "DE",
     "region": "Europe",
@@ -2500,9 +2168,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3578470/",
-    "lat": 47.96164401250691,
-    "lng": 6.817211867640422
+    "url": "https://book.douban.com/subject/3578470/"
   },
   {
     "rank": 168,
@@ -2515,14 +2181,12 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2068249/",
-    "lat": 34.39940346347065,
-    "lng": 109.89066898743636
+    "url": "https://book.douban.com/subject/2068249/"
   },
   {
     "rank": 169,
     "title": "我不知道该说什么，关于死亡还是爱情",
-    "author": "[白俄] S·A·阿列克谢耶维奇",
+    "author": "S·A·阿列克谢耶维奇",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2530,9 +2194,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25884880/",
-    "lat": 40.77374821045579,
-    "lng": -97.03905895776032
+    "url": "https://book.douban.com/subject/25884880/"
   },
   {
     "rank": 170,
@@ -2545,14 +2207,12 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10583099/",
-    "lat": 33.08556587784401,
-    "lng": -98.62243699884775
+    "url": "https://book.douban.com/subject/10583099/"
   },
   {
     "rank": 171,
     "title": "冰与火之歌",
-    "author": "[美]乔治·R.R.马丁",
+    "author": "乔治·R.R.马丁",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2560,14 +2220,12 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25826936/",
-    "lat": 36.9022066069174,
-    "lng": -89.7308532362111
+    "url": "https://book.douban.com/subject/25826936/"
   },
   {
     "rank": 172,
     "title": "天生有罪",
-    "author": "[南非] 特雷弗·诺亚",
+    "author": "特雷弗·诺亚",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2575,9 +2233,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30125030/",
-    "lat": 40.484398260518105,
-    "lng": -97.86692371581557
+    "url": "https://book.douban.com/subject/30125030/"
   },
   {
     "rank": 173,
@@ -2590,9 +2246,7 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4920007/",
-    "lat": 32.45095036716748,
-    "lng": -97.72048258715881
+    "url": "https://book.douban.com/subject/4920007/"
   },
   {
     "rank": 174,
@@ -2605,14 +2259,12 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1192090/",
-    "lat": 36.44070826206989,
-    "lng": 107.23066760475166
+    "url": "https://book.douban.com/subject/1192090/"
   },
   {
     "rank": 175,
     "title": "恶意",
-    "author": "[日] 东野圭吾",
+    "author": "东野圭吾",
     "country": "日本",
     "countryCode": "JP",
     "region": "Asia",
@@ -2620,9 +2272,7 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26877752/",
-    "lat": 39.12161547239451,
-    "lng": 135.3360845276055
+    "url": "https://book.douban.com/subject/26877752/"
   },
   {
     "rank": 176,
@@ -2635,9 +2285,7 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35587028/",
-    "lat": 30.793097786239965,
-    "lng": 103.22851241673767
+    "url": "https://book.douban.com/subject/35587028/"
   },
   {
     "rank": 177,
@@ -2650,9 +2298,7 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1088022/",
-    "lat": 38.35908751057813,
-    "lng": -92.78067397093969
+    "url": "https://book.douban.com/subject/1088022/"
   },
   {
     "rank": 178,
@@ -2665,9 +2311,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26413154/",
-    "lat": 39.35674734276116,
-    "lng": -99.28440712487352
+    "url": "https://book.douban.com/subject/26413154/"
   },
   {
     "rank": 179,
@@ -2680,14 +2324,12 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10757940/",
-    "lat": 30.599297959674423,
-    "lng": 104.36077764654635
+    "url": "https://book.douban.com/subject/10757940/"
   },
   {
     "rank": 180,
     "title": "亲密关系（第6版）",
-    "author": "[美] 罗兰·米勒",
+    "author": "罗兰·米勒",
     "country": "美国",
     "countryCode": "US",
     "region": "Americas",
@@ -2695,9 +2337,7 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26585065/",
-    "lat": 39.029891332565164,
-    "lng": -93.04314391856268
+    "url": "https://book.douban.com/subject/26585065/"
   },
   {
     "rank": 181,
@@ -2710,24 +2350,20 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1014561/",
-    "lat": 38.55862888426334,
-    "lng": -99.79161813341658
+    "url": "https://book.douban.com/subject/1014561/"
   },
   {
     "rank": 182,
     "title": "帷幕",
-    "author": "[英]阿加莎·克里斯蒂",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "阿加莎·克里斯蒂",
+    "country": "英国",
+    "countryCode": "GB",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26292535/",
-    "lat": 31.888908424739256,
-    "lng": -94.37743530592473
+    "url": "https://book.douban.com/subject/26292535/"
   },
   {
     "rank": 183,
@@ -2740,24 +2376,20 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4884218/",
-    "lat": 39.64432819209172,
-    "lng": -93.46113309857297
+    "url": "https://book.douban.com/subject/4884218/"
   },
   {
     "rank": 184,
     "title": "一个女人的故事",
-    "author": "[法]安妮·埃尔诺",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "安妮·埃尔诺",
+    "country": "法国",
+    "countryCode": "FR",
+    "region": "Europe",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36078195/",
-    "lat": 37.646679557025514,
-    "lng": -100.11788927383628
+    "url": "https://book.douban.com/subject/36078195/"
   },
   {
     "rank": 185,
@@ -2770,9 +2402,7 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25897678/",
-    "lat": 41.34933928006869,
-    "lng": 4.699297986074018
+    "url": "https://book.douban.com/subject/25897678/"
   },
   {
     "rank": 186,
@@ -2785,24 +2415,20 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35942057/",
-    "lat": 40.16603644695397,
-    "lng": -94.02194460390298
+    "url": "https://book.douban.com/subject/35942057/"
   },
   {
     "rank": 187,
     "title": "足利女童连续失踪事件",
-    "author": "[日] 清水洁",
-    "country": "美国",
-    "countryCode": "US",
-    "region": "Americas",
+    "author": "清水洁",
+    "country": "日本",
+    "countryCode": "JP",
+    "region": "Asia",
     "year": 2010,
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35776315/",
-    "lat": 36.662477715967356,
-    "lng": -100.237729129121
+    "url": "https://book.douban.com/subject/35776315/"
   },
   {
     "rank": 188,
@@ -2815,12 +2441,23 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37833272/",
-    "lat": 32.7907361053111,
-    "lng": -92.15607413720232
+    "url": "https://book.douban.com/subject/37833272/"
   },
   {
     "rank": 189,
+    "title": "一句顶一万句",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.0,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/36062390/"
+  },
+  {
+    "rank": 190,
     "title": "父亲的解放日志",
     "author": "未知",
     "country": "美国",
@@ -2830,12 +2467,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37200304/",
-    "lat": 35.6532709761565,
-    "lng": -100.13531280077247
+    "url": "https://book.douban.com/subject/37200304/"
   },
   {
-    "rank": 190,
+    "rank": 191,
     "title": "卢克明的偷偷一笑",
     "author": "未知",
     "country": "美国",
@@ -2845,12 +2480,10 @@
     "rating": 5.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37816598/",
-    "lat": 33.60582339998283,
-    "lng": -91.2208687546442
+    "url": "https://book.douban.com/subject/37816598/"
   },
   {
-    "rank": 191,
+    "rank": 192,
     "title": "长安的荔枝",
     "author": "未知",
     "country": "美国",
@@ -2860,12 +2493,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36104107/",
-    "lat": 40.80285942975317,
-    "lng": -95.47931926735096
+    "url": "https://book.douban.com/subject/36104107/"
   },
   {
-    "rank": 192,
+    "rank": 193,
     "title": "桃花源没事儿",
     "author": "未知",
     "country": "美国",
@@ -2875,12 +2506,10 @@
     "rating": 7.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37339619/",
-    "lat": 34.66970806810699,
-    "lng": -99.80572833840375
+    "url": "https://book.douban.com/subject/37339619/"
   },
   {
-    "rank": 193,
+    "rank": 194,
     "title": "恶女的告白",
     "author": "未知",
     "country": "美国",
@@ -2890,12 +2519,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36743030/",
-    "lat": 34.62493790183824,
-    "lng": -90.47395136622175
+    "url": "https://book.douban.com/subject/36743030/"
   },
   {
-    "rank": 194,
+    "rank": 195,
     "title": "素食者",
     "author": "未知",
     "country": "美国",
@@ -2905,12 +2532,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35534519/",
-    "lat": 40.8681079027764,
-    "lng": -96.31126182877888
+    "url": "https://book.douban.com/subject/35534519/"
   },
   {
-    "rank": 195,
+    "rank": 196,
     "title": "食南之徒",
     "author": "未知",
     "country": "美国",
@@ -2920,12 +2545,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36710597/",
-    "lat": 33.763301065186575,
-    "lng": -99.25568752926806
+    "url": "https://book.douban.com/subject/36710597/"
   },
   {
-    "rank": 196,
+    "rank": 197,
     "title": "燕子呢喃，白鹤鸣叫",
     "author": "未知",
     "country": "美国",
@@ -2935,12 +2558,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37290908/",
-    "lat": 35.80424559196738,
-    "lng": -89.9598706883711
+    "url": "https://book.douban.com/subject/37290908/"
   },
   {
-    "rank": 197,
+    "rank": 198,
     "title": "方舟",
     "author": "未知",
     "country": "美国",
@@ -2950,12 +2571,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36832093/",
-    "lat": 40.74422158954083,
-    "lng": -97.15962949205078
+    "url": "https://book.douban.com/subject/36832093/"
   },
   {
-    "rank": 198,
+    "rank": 199,
     "title": "油炸绿番茄",
     "author": "未知",
     "country": "美国",
@@ -2965,12 +2584,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36473837/",
-    "lat": 32.9837449487268,
-    "lng": -98.50364397103583
+    "url": "https://book.douban.com/subject/36473837/"
   },
   {
-    "rank": 199,
+    "rank": 200,
     "title": "黄油",
     "author": "未知",
     "country": "美国",
@@ -2980,12 +2597,10 @@
     "rating": 7.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37496215/",
-    "lat": 37.0902,
-    "lng": -92.7129
+    "url": "https://book.douban.com/subject/37496215/"
   },
   {
-    "rank": 200,
+    "rank": 201,
     "title": "鹅之书",
     "author": "未知",
     "country": "美国",
@@ -2995,12 +2610,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37374594/",
-    "lat": 40.42747011719786,
-    "lng": -97.98090642963335
+    "url": "https://book.douban.com/subject/37374594/"
   },
   {
-    "rank": 201,
+    "rank": 202,
     "title": "即使以最微弱的光",
     "author": "未知",
     "country": "美国",
@@ -3010,12 +2623,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37286972/",
-    "lat": 32.37623321654657,
-    "lng": -97.57929148211133
+    "url": "https://book.douban.com/subject/37286972/"
   },
   {
-    "rank": 202,
+    "rank": 203,
     "title": "沧城",
     "author": "未知",
     "country": "美国",
@@ -3025,12 +2636,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37212430/",
-    "lat": 37.767534764536265,
-    "lng": -92.68267845418019
+    "url": "https://book.douban.com/subject/37212430/"
   },
   {
-    "rank": 203,
+    "rank": 204,
     "title": "777",
     "author": "未知",
     "country": "美国",
@@ -3040,12 +2649,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37271274/",
-    "lat": 39.924225018544774,
-    "lng": -98.73083011752465
+    "url": "https://book.douban.com/subject/37271274/"
   },
   {
-    "rank": 204,
+    "rank": 205,
     "title": "白象",
     "author": "未知",
     "country": "美国",
@@ -3055,12 +2662,10 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37445894/",
-    "lat": 31.978912837420165,
-    "lng": -96.5224483565832
+    "url": "https://book.douban.com/subject/37445894/"
   },
   {
-    "rank": 205,
+    "rank": 206,
     "title": "凯罗斯",
     "author": "未知",
     "country": "美国",
@@ -3070,12 +2675,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37825000/",
-    "lat": 38.456951525923884,
-    "lng": -92.80840516158408
+    "url": "https://book.douban.com/subject/37825000/"
   },
   {
-    "rank": 206,
+    "rank": 207,
     "title": "一个女人一生中的二十四小时",
     "author": "未知",
     "country": "美国",
@@ -3085,12 +2688,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37482433/",
-    "lat": 39.251080809860326,
-    "lng": -99.36674990463175
+    "url": "https://book.douban.com/subject/37482433/"
   },
   {
-    "rank": 207,
+    "rank": 208,
     "title": "挽救计划",
     "author": "未知",
     "country": "美国",
@@ -3100,12 +2701,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35494160/",
-    "lat": 31.82061887389873,
-    "lng": -95.38136605688523
+    "url": "https://book.douban.com/subject/35494160/"
   },
   {
-    "rank": 208,
+    "rank": 209,
     "title": "夜晚的潜水艇",
     "author": "未知",
     "country": "美国",
@@ -3115,12 +2714,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35005045/",
-    "lat": 39.121986882859616,
-    "lng": -93.0935361339746
+    "url": "https://book.douban.com/subject/35005045/"
   },
   {
-    "rank": 209,
+    "rank": 210,
     "title": "只剩你一个",
     "author": "未知",
     "country": "美国",
@@ -3130,12 +2727,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37648911/",
-    "lat": 38.43442392553102,
-    "lng": -99.84999584588392
+    "url": "https://book.douban.com/subject/37648911/"
   },
   {
-    "rank": 210,
+    "rank": 211,
     "title": "我的天才朋友",
     "author": "未知",
     "country": "美国",
@@ -3145,12 +2740,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37818738/",
-    "lat": 31.919018502629665,
-    "lng": -94.21053289397875
+    "url": "https://book.douban.com/subject/37818738/"
   },
   {
-    "rank": 211,
+    "rank": 212,
     "title": "大限将至",
     "author": "未知",
     "country": "美国",
@@ -3160,12 +2753,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37447244/",
-    "lat": 39.7253552902932,
-    "lng": -93.53290995505948
+    "url": "https://book.douban.com/subject/37447244/"
   },
   {
-    "rank": 212,
+    "rank": 213,
     "title": "火车梦",
     "author": "未知",
     "country": "美国",
@@ -3175,12 +2766,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35427853/",
-    "lat": 37.50945253583399,
-    "lng": -100.14812855230673
+    "url": "https://book.douban.com/subject/35427853/"
   },
   {
-    "rank": 213,
+    "rank": 214,
     "title": "圣母",
     "author": "未知",
     "country": "美国",
@@ -3190,12 +2779,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30475757/",
-    "lat": 32.27927632655919,
-    "lng": -93.06807232918159
+    "url": "https://book.douban.com/subject/30475757/"
   },
   {
-    "rank": 214,
+    "rank": 215,
     "title": "窄门",
     "author": "未知",
     "country": "美国",
@@ -3205,12 +2792,10 @@
     "rating": 7.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30331835/",
-    "lat": 40.230997997764,
-    "lng": -94.1125834884181
+    "url": "https://book.douban.com/subject/30331835/"
   },
   {
-    "rank": 215,
+    "rank": 216,
     "title": "表姐妹",
     "author": "未知",
     "country": "美国",
@@ -3220,12 +2805,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37822565/",
-    "lat": 36.518680454946775,
-    "lng": -100.23694303799402
+    "url": "https://book.douban.com/subject/37822565/"
   },
   {
-    "rank": 216,
+    "rank": 217,
     "title": "愤怒的葡萄",
     "author": "未知",
     "country": "美国",
@@ -3235,12 +2818,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/33395266/",
-    "lat": 32.89332856541758,
-    "lng": -92.01286011351417
+    "url": "https://book.douban.com/subject/33395266/"
   },
   {
-    "rank": 217,
+    "rank": 218,
     "title": "小说家与夜的分界线",
     "author": "未知",
     "country": "美国",
@@ -3250,12 +2831,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37296177/",
-    "lat": 40.60615687489693,
-    "lng": -94.81015570959158
+    "url": "https://book.douban.com/subject/37296177/"
   },
   {
-    "rank": 218,
+    "rank": 219,
     "title": "消失的13级台阶",
     "author": "未知",
     "country": "美国",
@@ -3265,12 +2844,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34996429/",
-    "lat": 35.509987602055716,
-    "lng": -100.10210878717146
+    "url": "https://book.douban.com/subject/34996429/"
   },
   {
-    "rank": 219,
+    "rank": 220,
     "title": "遥远的救世主",
     "author": "未知",
     "country": "美国",
@@ -3280,12 +2857,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1322455/",
-    "lat": 33.73982406193291,
-    "lng": -91.1015031320628
+    "url": "https://book.douban.com/subject/1322455/"
   },
   {
-    "rank": 220,
+    "rank": 221,
     "title": "怪屋谜案 2",
     "author": "未知",
     "country": "美国",
@@ -3295,12 +2870,10 @@
     "rating": 7.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37228445/",
-    "lat": 40.82335700296601,
-    "lng": -95.59558081484319
+    "url": "https://book.douban.com/subject/37228445/"
   },
   {
-    "rank": 221,
+    "rank": 222,
     "title": "蛇结",
     "author": "未知",
     "country": "美国",
@@ -3310,12 +2883,23 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37279279/",
-    "lat": 34.53430618795019,
-    "lng": -99.74034420464461
+    "url": "https://book.douban.com/subject/37279279/"
   },
   {
-    "rank": 222,
+    "rank": 223,
+    "title": "局外人",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.2,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/24257486/"
+  },
+  {
+    "rank": 224,
     "title": "烧纸",
     "author": "未知",
     "country": "美国",
@@ -3325,12 +2909,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37281710/",
-    "lat": 40.862183042798165,
-    "lng": -96.43244424800919
+    "url": "https://book.douban.com/subject/37281710/"
   },
   {
-    "rank": 223,
+    "rank": 225,
     "title": "我才不想做家务",
     "author": "未知",
     "country": "美国",
@@ -3340,12 +2922,10 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37436726/",
-    "lat": 33.643054441715584,
-    "lng": -99.16004555828442
+    "url": "https://book.douban.com/subject/37436726/"
   },
   {
-    "rank": 224,
+    "rank": 226,
     "title": "三体",
     "author": "未知",
     "country": "美国",
@@ -3355,12 +2935,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/2567698/",
-    "lat": 35.98277643079837,
-    "lng": -89.90758234819346
+    "url": "https://book.douban.com/subject/2567698/"
   },
   {
-    "rank": 225,
+    "rank": 227,
     "title": "血孩子",
     "author": "未知",
     "country": "美国",
@@ -3370,12 +2948,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36985532/",
-    "lat": 40.71074199832331,
-    "lng": -97.27964842855421
+    "url": "https://book.douban.com/subject/36985532/"
   },
   {
-    "rank": 226,
+    "rank": 228,
     "title": "沧浪之水",
     "author": "未知",
     "country": "美国",
@@ -3385,12 +2961,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1054917/",
-    "lat": 32.88544693099997,
-    "lng": -98.38131743899541
+    "url": "https://book.douban.com/subject/1054917/"
   },
   {
-    "rank": 227,
+    "rank": 229,
     "title": "好天气",
     "author": "未知",
     "country": "美国",
@@ -3400,12 +2974,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37290866/",
-    "lat": 37.18490343862056,
-    "lng": -92.69938772049733
+    "url": "https://book.douban.com/subject/37290866/"
   },
   {
-    "rank": 228,
+    "rank": 230,
     "title": "骄阳似我（下）",
     "author": "未知",
     "country": "美国",
@@ -3415,12 +2987,10 @@
     "rating": 6.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36639635/",
-    "lat": 40.36671882721854,
-    "lng": -98.09343027178453
+    "url": "https://book.douban.com/subject/36639635/"
   },
   {
-    "rank": 229,
+    "rank": 231,
     "title": "菜肉馄饨",
     "author": "未知",
     "country": "美国",
@@ -3430,12 +3000,10 @@
     "rating": 7.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37742796/",
-    "lat": 32.305821289867765,
-    "lng": -97.43538232444732
+    "url": "https://book.douban.com/subject/37742796/"
   },
   {
-    "rank": 230,
+    "rank": 232,
     "title": "如果在冬夜，一个旅人",
     "author": "未知",
     "country": "美国",
@@ -3445,12 +3013,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10555535/",
-    "lat": 37.86611244795435,
-    "lng": -92.69092053727867
+    "url": "https://book.douban.com/subject/10555535/"
   },
   {
-    "rank": 231,
+    "rank": 233,
     "title": "紫云村",
     "author": "未知",
     "country": "美国",
@@ -3460,12 +3026,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37078048/",
-    "lat": 39.837950800419776,
-    "lng": -98.82961149431456
+    "url": "https://book.douban.com/subject/37078048/"
   },
   {
-    "rank": 232,
+    "rank": 234,
     "title": "白鹤亮翅",
     "author": "未知",
     "country": "美国",
@@ -3475,12 +3039,36 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37332610/",
-    "lat": 31.941124700177863,
-    "lng": -96.36337948219875
+    "url": "https://book.douban.com/subject/37332610/"
   },
   {
-    "rank": 233,
+    "rank": 235,
+    "title": "献给阿尔吉侬的花束",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.0,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/35989392/"
+  },
+  {
+    "rank": 236,
+    "title": "杀死一只知更鸟",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.3,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/26879778/"
+  },
+  {
+    "rank": 237,
     "title": "我给了你眼睛，你却望向迷雾",
     "author": "未知",
     "country": "美国",
@@ -3490,12 +3078,23 @@
     "rating": 7.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37494446/",
-    "lat": 31.818699397426695,
-    "lng": -95.21459648097847
+    "url": "https://book.douban.com/subject/37494446/"
   },
   {
-    "rank": 234,
+    "rank": 238,
+    "title": "失明症漫记",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.0,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/35984787/"
+  },
+  {
+    "rank": 239,
     "title": "年轻医生手记",
     "author": "未知",
     "country": "美国",
@@ -3505,12 +3104,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37900003/",
-    "lat": 38.30799617786124,
-    "lng": -99.90458193797986
+    "url": "https://book.douban.com/subject/37900003/"
   },
   {
-    "rank": 235,
+    "rank": 240,
     "title": "我们的箱根驿传",
     "author": "未知",
     "country": "美国",
@@ -3520,12 +3117,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37431535/",
-    "lat": 31.954494812006175,
-    "lng": -94.04420823037529
+    "url": "https://book.douban.com/subject/37431535/"
   },
   {
-    "rank": 236,
+    "rank": 241,
     "title": "呼啸山庄",
     "author": "未知",
     "country": "美国",
@@ -3535,12 +3130,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/4898521/",
-    "lat": 39.8043824675105,
-    "lng": -93.60756427070203
+    "url": "https://book.douban.com/subject/4898521/"
   },
   {
-    "rank": 237,
+    "rank": 242,
     "title": "酒吧长谈",
     "author": "未知",
     "country": "美国",
@@ -3550,12 +3143,10 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34933180/",
-    "lat": 37.37087362229603,
-    "lng": -100.17407947607438
+    "url": "https://book.douban.com/subject/34933180/"
   },
   {
-    "rank": 238,
+    "rank": 243,
     "title": "她来劈开这山",
     "author": "未知",
     "country": "美国",
@@ -3565,12 +3156,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36899918/",
-    "lat": 32.351815141343295,
-    "lng": -92.91062700629422
+    "url": "https://book.douban.com/subject/36899918/"
   },
   {
-    "rank": 239,
+    "rank": 244,
     "title": "凤凰籽",
     "author": "未知",
     "country": "美国",
@@ -3580,12 +3169,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37349398/",
-    "lat": 40.293287765729715,
-    "lng": -94.20564130785965
+    "url": "https://book.douban.com/subject/37349398/"
   },
   {
-    "rank": 240,
+    "rank": 245,
     "title": "伊甸之东",
     "author": "未知",
     "country": "美国",
@@ -3595,12 +3182,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36710568/",
-    "lat": 36.37451232244095,
-    "lng": -100.23157415822276
+    "url": "https://book.douban.com/subject/36710568/"
   },
   {
-    "rank": 241,
+    "rank": 246,
     "title": "一桩事先张扬的凶杀案",
     "author": "未知",
     "country": "美国",
@@ -3610,12 +3195,23 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/24382569/",
-    "lat": 33.000686000165885,
-    "lng": -91.87259073574006
+    "url": "https://book.douban.com/subject/24382569/"
   },
   {
-    "rank": 242,
+    "rank": 247,
+    "title": "围城",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.3,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/11524204/"
+  },
+  {
+    "rank": 248,
     "title": "变形记",
     "author": "未知",
     "country": "美国",
@@ -3625,12 +3221,10 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35218475/",
-    "lat": 35.36737709343571,
-    "lng": -100.06425395395702
+    "url": "https://book.douban.com/subject/35218475/"
   },
   {
-    "rank": 243,
+    "rank": 249,
     "title": "進烤箱的好日子",
     "author": "未知",
     "country": "美国",
@@ -3640,12 +3234,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37050614/",
-    "lat": 33.87789349557507,
-    "lng": -90.98613451802089
+    "url": "https://book.douban.com/subject/37050614/"
   },
   {
-    "rank": 244,
+    "rank": 250,
     "title": "永劫馆超连续杀人事件",
     "author": "未知",
     "country": "美国",
@@ -3655,12 +3247,10 @@
     "rating": 7.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37436578/",
-    "lat": 40.8402,
-    "lng": -95.7129
+    "url": "https://book.douban.com/subject/37436578/"
   },
   {
-    "rank": 245,
+    "rank": 251,
     "title": "鬼笑石",
     "author": "未知",
     "country": "美国",
@@ -3670,12 +3260,10 @@
     "rating": 7.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37268610/",
-    "lat": 34.40063103697756,
-    "lng": -99.67048054790378
+    "url": "https://book.douban.com/subject/37268610/"
   },
   {
-    "rank": 246,
+    "rank": 252,
     "title": "法比安",
     "author": "未知",
     "country": "美国",
@@ -3685,12 +3273,23 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37136205/",
-    "lat": 34.947715103375174,
-    "lng": -90.30160085213038
+    "url": "https://book.douban.com/subject/37136205/"
   },
   {
-    "rank": 247,
+    "rank": 253,
+    "title": "黄金时代",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 8.7,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/27013741/"
+  },
+  {
+    "rank": 254,
     "title": "世界尽头最后的谋杀案",
     "author": "未知",
     "country": "美国",
@@ -3700,12 +3299,10 @@
     "rating": 6.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37286502/",
-    "lat": 33.525543411909304,
-    "lng": -99.0603353479913
+    "url": "https://book.douban.com/subject/37286502/"
   },
   {
-    "rank": 248,
+    "rank": 255,
     "title": "献灯使",
     "author": "未知",
     "country": "美国",
@@ -3715,12 +3312,10 @@
     "rating": 7.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36831351/",
-    "lat": 36.163325794636634,
-    "lng": -89.86084658197382
+    "url": "https://book.douban.com/subject/36831351/"
   },
   {
-    "rank": 249,
+    "rank": 256,
     "title": "两京十五日",
     "author": "未知",
     "country": "美国",
@@ -3730,12 +3325,23 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35080870/",
-    "lat": 40.67331512776544,
-    "lng": -97.3989859945977
+    "url": "https://book.douban.com/subject/35080870/"
   },
   {
-    "rank": 250,
+    "rank": 257,
+    "title": "基督山伯爵",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.2,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/30286914/"
+  },
+  {
+    "rank": 258,
     "title": "雪的练习生",
     "author": "未知",
     "country": "美国",
@@ -3745,12 +3351,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37081406/",
-    "lat": 37.280455274173825,
-    "lng": -92.68887901286234
+    "url": "https://book.douban.com/subject/37081406/"
   },
   {
-    "rank": 251,
+    "rank": 259,
     "title": "怪画谜案",
     "author": "未知",
     "country": "美国",
@@ -3760,12 +3364,10 @@
     "rating": 7.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36858240/",
-    "lat": 40.30218012530718,
-    "lng": -98.20436717309936
+    "url": "https://book.douban.com/subject/36858240/"
   },
   {
-    "rank": 252,
+    "rank": 260,
     "title": "寻找王者",
     "author": "未知",
     "country": "美国",
@@ -3775,12 +3377,10 @@
     "rating": 7.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37364917/",
-    "lat": 32.23981176689472,
-    "lng": -97.28888667131224
+    "url": "https://book.douban.com/subject/37364917/"
   },
   {
-    "rank": 253,
+    "rank": 261,
     "title": "米德尔马契",
     "author": "未知",
     "country": "美国",
@@ -3790,12 +3390,10 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37491358/",
-    "lat": 37.964837117432985,
-    "lng": -92.70237929540279
+    "url": "https://book.douban.com/subject/37491358/"
   },
   {
-    "rank": 254,
+    "rank": 262,
     "title": "三体Ⅱ",
     "author": "未知",
     "country": "美国",
@@ -3805,12 +3403,10 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3066477/",
-    "lat": 39.74825803725204,
-    "lng": -98.92594022237505
+    "url": "https://book.douban.com/subject/3066477/"
   },
   {
-    "rank": 255,
+    "rank": 263,
     "title": "三体Ⅲ",
     "author": "未知",
     "country": "美国",
@@ -3820,12 +3416,10 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/5363767/",
-    "lat": 31.908299974240972,
-    "lng": -96.20273377082287
+    "url": "https://book.douban.com/subject/5363767/"
   },
   {
-    "rank": 256,
+    "rank": 264,
     "title": "周四推理俱乐部：“魔鬼”的最后一眼",
     "author": "未知",
     "country": "美国",
@@ -3835,12 +3429,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37031012/",
-    "lat": 38.65108190408956,
-    "lng": -92.87366635665789
+    "url": "https://book.douban.com/subject/37031012/"
   },
   {
-    "rank": 257,
+    "rank": 265,
     "title": "暗处的女儿",
     "author": "未知",
     "country": "美国",
@@ -3850,12 +3442,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36721763/",
-    "lat": 39.031009386386565,
-    "lng": -99.52195289090528
+    "url": "https://book.douban.com/subject/36721763/"
   },
   {
-    "rank": 258,
+    "rank": 266,
     "title": "佩德罗·巴拉莫",
     "author": "未知",
     "country": "美国",
@@ -3865,12 +3455,10 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35221700/",
-    "lat": 31.822070936020125,
-    "lng": -95.04738052977355
+    "url": "https://book.douban.com/subject/35221700/"
   },
   {
-    "rank": 259,
+    "rank": 267,
     "title": "不存在的骑士",
     "author": "未知",
     "country": "美国",
@@ -3880,12 +3468,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6789551/",
-    "lat": 39.30228818950762,
-    "lng": -93.20377847208611
+    "url": "https://book.douban.com/subject/6789551/"
   },
   {
-    "rank": 260,
+    "rank": 268,
     "title": "第七天",
     "author": "未知",
     "country": "美国",
@@ -3895,12 +3481,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30259153/",
-    "lat": 38.17946170578207,
-    "lng": -99.9552942457434
+    "url": "https://book.douban.com/subject/30259153/"
   },
   {
-    "rank": 261,
+    "rank": 269,
     "title": "命运",
     "author": "未知",
     "country": "美国",
@@ -3910,12 +3494,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36084340/",
-    "lat": 31.99533063611287,
-    "lng": -93.87863416187174
+    "url": "https://book.douban.com/subject/36084340/"
   },
   {
-    "rank": 262,
+    "rank": 270,
     "title": "奇风岁月",
     "author": "未知",
     "country": "美国",
@@ -3925,12 +3507,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/6016234/",
-    "lat": 39.88130863059357,
-    "lng": -93.68504087959097
+    "url": "https://book.douban.com/subject/6016234/"
   },
   {
-    "rank": 263,
+    "rank": 271,
     "title": "枭起青壤",
     "author": "未知",
     "country": "美国",
@@ -3940,12 +3520,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36584894/",
-    "lat": 37.23107725446541,
-    "lng": -100.19568692324032
+    "url": "https://book.douban.com/subject/36584894/"
   },
   {
-    "rank": 264,
+    "rank": 272,
     "title": "一日三秋",
     "author": "未知",
     "country": "美国",
@@ -3955,12 +3533,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35496106/",
-    "lat": 32.42950985122888,
-    "lng": -92.75513609171594
+    "url": "https://book.douban.com/subject/35496106/"
   },
   {
-    "rank": 265,
+    "rank": 273,
     "title": "変な地図",
     "author": "未知",
     "country": "美国",
@@ -3970,12 +3546,10 @@
     "rating": 7.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37513508/",
-    "lat": 40.35281769430656,
-    "lng": -94.30103924879336
+    "url": "https://book.douban.com/subject/37513508/"
   },
   {
-    "rank": 266,
+    "rank": 274,
     "title": "19年间谋杀小叙",
     "author": "未知",
     "country": "美国",
@@ -3985,12 +3559,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30237176/",
-    "lat": 36.23011976605152,
-    "lng": -100.22159848084469
+    "url": "https://book.douban.com/subject/30237176/"
   },
   {
-    "rank": 267,
+    "rank": 275,
     "title": "吊诡",
     "author": "未知",
     "country": "美国",
@@ -4000,12 +3572,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37518766/",
-    "lat": 33.11272435582567,
-    "lng": -91.73542435582567
+    "url": "https://book.douban.com/subject/37518766/"
   },
   {
-    "rank": 268,
+    "rank": 276,
     "title": "你的夏天还好吗？",
     "author": "未知",
     "country": "美国",
@@ -4015,12 +3585,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36109174/",
-    "lat": 40.685371337667,
-    "lng": -95.02708438861625
+    "url": "https://book.douban.com/subject/36109174/"
   },
   {
-    "rank": 269,
+    "rank": 277,
     "title": "她对此感到厌烦",
     "author": "未知",
     "country": "美国",
@@ -4030,12 +3598,10 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36392723/",
-    "lat": 35.22559065346971,
-    "lng": -100.0217579675863
+    "url": "https://book.douban.com/subject/36392723/"
   },
   {
-    "rank": 270,
+    "rank": 278,
     "title": "Heated Rivalry",
     "author": "未知",
     "country": "美国",
@@ -4045,12 +3611,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34916088/",
-    "lat": 34.01991246477036,
-    "lng": -90.87490098687346
+    "url": "https://book.douban.com/subject/34916088/"
   },
   {
-    "rank": 271,
+    "rank": 279,
     "title": "长岛",
     "author": "未知",
     "country": "美国",
@@ -4060,12 +3624,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37036115/",
-    "lat": 40.85334219977698,
-    "lng": -95.83116150792915
+    "url": "https://book.douban.com/subject/37036115/"
   },
   {
-    "rank": 272,
+    "rank": 280,
     "title": "长安十二时辰 上",
     "author": "未知",
     "country": "美国",
@@ -4075,12 +3637,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26899537/",
-    "lat": 34.268830788996134,
-    "lng": -99.59618157299975
+    "url": "https://book.douban.com/subject/26899537/"
   },
   {
-    "rank": 273,
+    "rank": 281,
     "title": "她对此感到厌烦2",
     "author": "未知",
     "country": "美国",
@@ -4090,12 +3650,10 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37253398/",
-    "lat": 35.113664235368724,
-    "lng": -90.2228607131521
+    "url": "https://book.douban.com/subject/37253398/"
   },
   {
-    "rank": 274,
+    "rank": 282,
     "title": "世界末日前的谋杀",
     "author": "未知",
     "country": "美国",
@@ -4105,12 +3663,10 @@
     "rating": 7.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36952611/",
-    "lat": 40.838616833567805,
-    "lng": -96.67532986332799
+    "url": "https://book.douban.com/subject/36952611/"
   },
   {
-    "rank": 275,
+    "rank": 283,
     "title": "上瘾谜题",
     "author": "未知",
     "country": "美国",
@@ -4120,12 +3676,10 @@
     "rating": 6.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37367692/",
-    "lat": 33.4109052034626,
-    "lng": -98.95663469941252
+    "url": "https://book.douban.com/subject/37367692/"
   },
   {
-    "rank": 276,
+    "rank": 284,
     "title": "焦虑的人",
     "author": "未知",
     "country": "美国",
@@ -4135,12 +3689,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35539713/",
-    "lat": 36.345720592628034,
-    "lng": -89.81973867419201
+    "url": "https://book.douban.com/subject/35539713/"
   },
   {
-    "rank": 277,
+    "rank": 285,
     "title": "骆驼祥子",
     "author": "未知",
     "country": "美国",
@@ -4150,12 +3702,23 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/1043815/",
-    "lat": 40.63195093364877,
-    "lng": -97.5175122364647
+    "url": "https://book.douban.com/subject/1043815/"
   },
   {
-    "rank": 278,
+    "rank": 286,
+    "title": "不能承受的生命之轻",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.1,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/35764761/"
+  },
+  {
+    "rank": 287,
     "title": "架空犯",
     "author": "未知",
     "country": "美国",
@@ -4165,12 +3728,10 @@
     "rating": 6.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37348704/",
-    "lat": 37.37675981405488,
-    "lng": -92.68141381778362
+    "url": "https://book.douban.com/subject/37348704/"
   },
   {
-    "rank": 279,
+    "rank": 288,
     "title": "人生海海",
     "author": "未知",
     "country": "美国",
@@ -4180,12 +3741,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30475767/",
-    "lat": 40.23389403052522,
-    "lng": -98.31358987817465
+    "url": "https://book.douban.com/subject/30475767/"
   },
   {
-    "rank": 280,
+    "rank": 289,
     "title": "怪屋谜案",
     "author": "未知",
     "country": "美国",
@@ -4195,12 +3754,10 @@
     "rating": 6.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36407256/",
-    "lat": 32.17829779776244,
-    "lng": -97.13993950739066
+    "url": "https://book.douban.com/subject/36407256/"
   },
   {
-    "rank": 281,
+    "rank": 290,
     "title": "一地鸡毛",
     "author": "未知",
     "country": "美国",
@@ -4210,12 +3767,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36061380/",
-    "lat": 38.063603532281086,
-    "lng": -92.71707197367027
+    "url": "https://book.douban.com/subject/36061380/"
   },
   {
-    "rank": 282,
+    "rank": 291,
     "title": "好猫八不",
     "author": "未知",
     "country": "美国",
@@ -4225,12 +3780,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/38192710/",
-    "lat": 39.65521601953771,
-    "lng": -99.01969872679227
+    "url": "https://book.douban.com/subject/38192710/"
   },
   {
-    "rank": 283,
+    "rank": 292,
     "title": "撒旦探戈",
     "author": "未知",
     "country": "美国",
@@ -4240,12 +3793,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26394865/",
-    "lat": 31.880500477604425,
-    "lng": -96.04066651194302
+    "url": "https://book.douban.com/subject/26394865/"
   },
   {
-    "rank": 284,
+    "rank": 293,
     "title": "故乡无用",
     "author": "未知",
     "country": "美国",
@@ -4255,12 +3806,10 @@
     "rating": 7.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37558565/",
-    "lat": 38.74712980826746,
-    "lng": -92.91118470210216
+    "url": "https://book.douban.com/subject/37558565/"
   },
   {
-    "rank": 285,
+    "rank": 294,
     "title": "暗黑之羊",
     "author": "未知",
     "country": "美国",
@@ -4270,12 +3819,10 @@
     "rating": 7.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37448187/",
-    "lat": 38.916793160814166,
-    "lng": -99.59460805507923
+    "url": "https://book.douban.com/subject/37448187/"
   },
   {
-    "rank": 286,
+    "rank": 295,
     "title": "大医·破晓篇",
     "author": "未知",
     "country": "美国",
@@ -4285,12 +3832,23 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36069426/",
-    "lat": 31.830759586330895,
-    "lng": -94.87988647366078
+    "url": "https://book.douban.com/subject/36069426/"
   },
   {
-    "rank": 287,
+    "rank": 296,
+    "title": "倾城之恋",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.3,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/30294357/"
+  },
+  {
+    "rank": 297,
     "title": "山海见诡",
     "author": "未知",
     "country": "美国",
@@ -4300,12 +3858,10 @@
     "rating": 7.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37457874/",
-    "lat": 38.048939545937806,
-    "lng": -100.0020541687208
+    "url": "https://book.douban.com/subject/37457874/"
   },
   {
-    "rank": 288,
+    "rank": 298,
     "title": "公羊的节日",
     "author": "未知",
     "country": "美国",
@@ -4315,12 +3871,10 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34933181/",
-    "lat": 32.041513681626796,
-    "lng": -93.7139836789222
+    "url": "https://book.douban.com/subject/34933181/"
   },
   {
-    "rank": 289,
+    "rank": 299,
     "title": "写父亲",
     "author": "未知",
     "country": "美国",
@@ -4330,12 +3884,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37373645/",
-    "lat": 39.956034189861356,
-    "lng": -93.76528109574237
+    "url": "https://book.douban.com/subject/37373645/"
   },
   {
-    "rank": 290,
+    "rank": 300,
     "title": "克拉拉与太阳",
     "author": "未知",
     "country": "美国",
@@ -4345,12 +3897,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35315153/",
-    "lat": 37.0902,
-    "lng": -100.2129
+    "url": "https://book.douban.com/subject/35315153/"
   },
   {
-    "rank": 291,
+    "rank": 301,
     "title": "名侦探的献祭",
     "author": "未知",
     "country": "美国",
@@ -4360,12 +3910,10 @@
     "rating": 7.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36512989/",
-    "lat": 32.5123090213903,
-    "lng": -92.60176850358846
+    "url": "https://book.douban.com/subject/36512989/"
   },
   {
-    "rank": 292,
+    "rank": 302,
     "title": "黄色墙纸",
     "author": "未知",
     "country": "美国",
@@ -4375,12 +3923,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37138375/",
-    "lat": 40.40950205462106,
-    "lng": -94.3986953469157
+    "url": "https://book.douban.com/subject/37138375/"
   },
   {
-    "rank": 293,
+    "rank": 303,
     "title": "骄阳似我（上）",
     "author": "未知",
     "country": "美国",
@@ -4390,12 +3936,10 @@
     "rating": 7.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/27169750/",
-    "lat": 36.08565037336893,
-    "lng": -100.20699668872794
+    "url": "https://book.douban.com/subject/27169750/"
   },
   {
-    "rank": 294,
+    "rank": 304,
     "title": "宋慈洗冤笔记 第二季 2",
     "author": "未知",
     "country": "美国",
@@ -4405,12 +3949,10 @@
     "rating": 7.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37854741/",
-    "lat": 33.229354322562195,
-    "lng": -91.60151694134325
+    "url": "https://book.douban.com/subject/37854741/"
   },
   {
-    "rank": 295,
+    "rank": 305,
     "title": "冬泳",
     "author": "未知",
     "country": "美国",
@@ -4420,12 +3962,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30362170/",
-    "lat": 40.71995465168713,
-    "lng": -95.13800334097715
+    "url": "https://book.douban.com/subject/30362170/"
   },
   {
-    "rank": 296,
+    "rank": 306,
     "title": "在细雨中呼喊",
     "author": "未知",
     "country": "美国",
@@ -4435,12 +3975,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/20421947/",
-    "lat": 35.08477953672851,
-    "lng": -99.97463541711495
+    "url": "https://book.douban.com/subject/20421947/"
   },
   {
-    "rank": 297,
+    "rank": 307,
     "title": "五只小猪",
     "author": "未知",
     "country": "美国",
@@ -4450,12 +3988,23 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25986273/",
-    "lat": 34.16575706651412,
-    "lng": -90.76793705486234
+    "url": "https://book.douban.com/subject/25986273/"
   },
   {
-    "rank": 298,
+    "rank": 308,
+    "title": "米德尔马契",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.2,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/26986888/"
+  },
+  {
+    "rank": 309,
     "title": "紫颜色",
     "author": "未知",
     "country": "美国",
@@ -4465,12 +4014,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36181310/",
-    "lat": 34.13905253666092,
-    "lng": -99.51749638458895
+    "url": "https://book.douban.com/subject/36181310/"
   },
   {
-    "rank": 299,
+    "rank": 310,
     "title": "乔瓦尼的房间",
     "author": "未知",
     "country": "美国",
@@ -4480,12 +4027,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37023820/",
-    "lat": 35.28245058290656,
-    "lng": -90.14921937967335
+    "url": "https://book.douban.com/subject/37023820/"
   },
   {
-    "rank": 300,
+    "rank": 311,
     "title": "穿行",
     "author": "未知",
     "country": "美国",
@@ -4495,12 +4040,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37660086/",
-    "lat": 40.82094096885493,
-    "lng": -96.79678044696242
+    "url": "https://book.douban.com/subject/37660086/"
   },
   {
-    "rank": 301,
+    "rank": 312,
     "title": "密室偏爱时代的谋杀事件",
     "author": "未知",
     "country": "美国",
@@ -4510,12 +4053,10 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37841158/",
-    "lat": 33.29927484554312,
-    "lng": -98.84902602956356
+    "url": "https://book.douban.com/subject/37841158/"
   },
   {
-    "rank": 302,
+    "rank": 313,
     "title": "初步举证",
     "author": "未知",
     "country": "美国",
@@ -4525,12 +4066,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37254350/",
-    "lat": 36.52978499418825,
-    "lng": -89.78432850078866
+    "url": "https://book.douban.com/subject/37254350/"
   },
   {
-    "rank": 303,
+    "rank": 314,
     "title": "蛙",
     "author": "未知",
     "country": "美国",
@@ -4540,12 +4079,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26904483/",
-    "lat": 40.58666365337502,
-    "lng": -97.63509715966585
+    "url": "https://book.douban.com/subject/26904483/"
   },
   {
-    "rank": 304,
+    "rank": 315,
     "title": "鸟儿如雨般落下",
     "author": "未知",
     "country": "美国",
@@ -4555,12 +4092,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37305380/",
-    "lat": 32.61289221595345,
-    "lng": -97.99420226119123
+    "url": "https://book.douban.com/subject/37305380/"
   },
   {
-    "rank": 305,
+    "rank": 316,
     "title": "牧羊少年奇幻之旅",
     "author": "未知",
     "country": "美国",
@@ -4570,12 +4105,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3608208/",
-    "lat": 37.47371969470677,
-    "lng": -92.6770290139777
+    "url": "https://book.douban.com/subject/3608208/"
   },
   {
-    "rank": 306,
+    "rank": 317,
     "title": "隐墙",
     "author": "未知",
     "country": "美国",
@@ -4585,12 +4118,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37842687/",
-    "lat": 40.161904830136734,
-    "lng": -98.42097208850036
+    "url": "https://book.douban.com/subject/37842687/"
   },
   {
-    "rank": 307,
+    "rank": 318,
     "title": "宋慈洗冤笔记",
     "author": "未知",
     "country": "美国",
@@ -4600,12 +4131,10 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36540441/",
-    "lat": 32.12136838341013,
-    "lng": -96.98867912115571
+    "url": "https://book.douban.com/subject/36540441/"
   },
   {
-    "rank": 308,
+    "rank": 319,
     "title": "作者不详",
     "author": "未知",
     "country": "美国",
@@ -4615,12 +4144,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37381807/",
-    "lat": 38.16230551757635,
-    "lng": -92.73501236625988
+    "url": "https://book.douban.com/subject/37381807/"
   },
   {
-    "rank": 309,
+    "rank": 320,
     "title": "关于女儿",
     "author": "未知",
     "country": "美国",
@@ -4630,12 +4157,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36035671/",
-    "lat": 39.55889805962839,
-    "lng": -99.11077137637479
+    "url": "https://book.douban.com/subject/36035671/"
   },
   {
-    "rank": 310,
+    "rank": 321,
     "title": "解忧杂货店",
     "author": "未知",
     "country": "美国",
@@ -4645,12 +4170,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25862578/",
-    "lat": 31.857783156485397,
-    "lng": -95.877335323774
+    "url": "https://book.douban.com/subject/25862578/"
   },
   {
-    "rank": 311,
+    "rank": 322,
     "title": "涅朵奇卡",
     "author": "未知",
     "country": "美国",
@@ -4660,12 +4183,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36504167/",
-    "lat": 38.842353619581324,
-    "lng": -92.95194768360841
+    "url": "https://book.douban.com/subject/36504167/"
   },
   {
-    "rank": 312,
+    "rank": 323,
     "title": "团圆记",
     "author": "未知",
     "country": "美国",
@@ -4675,12 +4196,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36956148/",
-    "lat": 38.79992166918273,
-    "lng": -99.66383366356955
+    "url": "https://book.douban.com/subject/36956148/"
   },
   {
-    "rank": 313,
+    "rank": 324,
     "title": "九诗心",
     "author": "未知",
     "country": "美国",
@@ -4690,12 +4209,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37077202/",
-    "lat": 31.844786081108804,
-    "lng": -94.71228378011224
+    "url": "https://book.douban.com/subject/37077202/"
   },
   {
-    "rank": 314,
+    "rank": 325,
     "title": "织火焰的手",
     "author": "未知",
     "country": "美国",
@@ -4705,12 +4222,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/38188132/",
-    "lat": 39.4766853865046,
-    "lng": -93.3264146134954
+    "url": "https://book.douban.com/subject/38188132/"
   },
   {
-    "rank": 315,
+    "rank": 326,
     "title": "阅读还有未来吗？",
     "author": "未知",
     "country": "美国",
@@ -4720,12 +4235,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37869114/",
-    "lat": 37.91655159732305,
-    "lng": -100.04478677571352
+    "url": "https://book.douban.com/subject/37869114/"
   },
   {
-    "rank": 316,
+    "rank": 327,
     "title": "看不见的中东",
     "author": "未知",
     "country": "美国",
@@ -4735,12 +4248,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37076175/",
-    "lat": 32.093026063150724,
-    "lng": -93.55042973549362
+    "url": "https://book.douban.com/subject/37076175/"
   },
   {
-    "rank": 317,
+    "rank": 328,
     "title": "收留",
     "author": "未知",
     "country": "美国",
@@ -4750,12 +4261,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37835911/",
-    "lat": 40.028461180747016,
-    "lng": -93.8482227534731
+    "url": "https://book.douban.com/subject/37835911/"
   },
   {
-    "rank": 318,
+    "rank": 329,
     "title": "太阳的阴影",
     "author": "未知",
     "country": "美国",
@@ -4765,12 +4274,10 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37315103/",
-    "lat": 36.948380422762256,
-    "lng": -100.22567212005129
+    "url": "https://book.douban.com/subject/37315103/"
   },
   {
-    "rank": 319,
+    "rank": 330,
     "title": "蟫",
     "author": "未知",
     "country": "美国",
@@ -4780,12 +4287,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37830736/",
-    "lat": 32.60015568121904,
-    "lng": -92.45069184977677
+    "url": "https://book.douban.com/subject/37830736/"
   },
   {
-    "rank": 320,
+    "rank": 331,
     "title": "温柔的讲述者",
     "author": "未知",
     "country": "美国",
@@ -4795,12 +4300,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37447239/",
-    "lat": 40.4632575567009,
-    "lng": -94.49852455592064
+    "url": "https://book.douban.com/subject/37447239/"
   },
   {
-    "rank": 321,
+    "rank": 332,
     "title": "蓝色八开笔记本",
     "author": "未知",
     "country": "美国",
@@ -4810,12 +4313,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37659440/",
-    "lat": 35.941252721298376,
-    "lng": -100.18775420441428
+    "url": "https://book.douban.com/subject/37659440/"
   },
   {
-    "rank": 322,
+    "rank": 333,
     "title": "要有光",
     "author": "未知",
     "country": "美国",
@@ -4825,12 +4326,10 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37407380/",
-    "lat": 33.35048140159475,
-    "lng": -91.47102190123975
+    "url": "https://book.douban.com/subject/37407380/"
   },
   {
-    "rank": 323,
+    "rank": 334,
     "title": "旷野的慰藉",
     "author": "未知",
     "country": "美国",
@@ -4840,12 +4339,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37931089/",
-    "lat": 40.75110324785042,
-    "lng": -95.25042036814772
+    "url": "https://book.douban.com/subject/37931089/"
   },
   {
-    "rank": 324,
+    "rank": 335,
     "title": "圣彼得堡文学地图",
     "author": "未知",
     "country": "美国",
@@ -4855,12 +4352,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37808376/",
-    "lat": 34.945094888730644,
-    "lng": -99.92290582679004
+    "url": "https://book.douban.com/subject/37808376/"
   },
   {
-    "rank": 325,
+    "rank": 336,
     "title": "天色已晚",
     "author": "未知",
     "country": "美国",
@@ -4870,12 +4365,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37890167/",
-    "lat": 34.315298837174126,
-    "lng": -90.66537352294735
+    "url": "https://book.douban.com/subject/37890167/"
   },
   {
-    "rank": 326,
+    "rank": 337,
     "title": "生命的灿烂之书",
     "author": "未知",
     "country": "美国",
@@ -4885,12 +4378,10 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37650721/",
-    "lat": 40.86835765566869,
-    "lng": -96.07004104904377
+    "url": "https://book.douban.com/subject/37650721/"
   },
   {
-    "rank": 327,
+    "rank": 338,
     "title": "我是寨子里长大的女孩",
     "author": "未知",
     "country": "美国",
@@ -4900,12 +4391,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37399110/",
-    "lat": 34.01144212951383,
-    "lng": -99.43447896260707
+    "url": "https://book.douban.com/subject/37399110/"
   },
   {
-    "rank": 328,
+    "rank": 339,
     "title": "小说榫卯",
     "author": "未知",
     "country": "美国",
@@ -4915,12 +4404,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37378639/",
-    "lat": 35.45391716307992,
-    "lng": -90.08077753350473
+    "url": "https://book.douban.com/subject/37378639/"
   },
   {
-    "rank": 329,
+    "rank": 340,
     "title": "伦敦文学地图",
     "author": "未知",
     "country": "美国",
@@ -4930,12 +4417,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37841583/",
-    "lat": 40.7993204135511,
-    "lng": -96.9180662780623
+    "url": "https://book.douban.com/subject/37841583/"
   },
   {
-    "rank": 330,
+    "rank": 341,
     "title": "转空山",
     "author": "未知",
     "country": "美国",
@@ -4945,12 +4430,10 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37545835/",
-    "lat": 33.19078501392597,
-    "lng": -98.73759630977744
+    "url": "https://book.douban.com/subject/37545835/"
   },
   {
-    "rank": 331,
+    "rank": 342,
     "title": "我是自己的死敌：童年生活场景",
     "author": "未知",
     "country": "美国",
@@ -4960,12 +4443,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37893406/",
-    "lat": 36.71534059841,
-    "lng": -89.75468043128322
+    "url": "https://book.douban.com/subject/37893406/"
   },
   {
-    "rank": 332,
+    "rank": 343,
     "title": "故纸浮生.1-2",
     "author": "未知",
     "country": "美国",
@@ -4975,12 +4456,10 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37648813/",
-    "lat": 40.5374718181508,
-    "lng": -97.75161087008024
+    "url": "https://book.douban.com/subject/37648813/"
   },
   {
-    "rank": 333,
+    "rank": 344,
     "title": "为了活下去，我们给自己讲故事",
     "author": "未知",
     "country": "美国",
@@ -4990,12 +4469,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37196746/",
-    "lat": 32.52987165557126,
-    "lng": -97.85882762948796
+    "url": "https://book.douban.com/subject/37196746/"
   },
   {
-    "rank": 334,
+    "rank": 345,
     "title": "游牧身份",
     "author": "未知",
     "country": "美国",
@@ -5005,12 +4482,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37870431/",
-    "lat": 37.57123597999871,
-    "lng": -92.67575835266996
+    "url": "https://book.douban.com/subject/37870431/"
   },
   {
-    "rank": 335,
+    "rank": 346,
     "title": "巴黎文学地图",
     "author": "未知",
     "country": "美国",
@@ -5020,12 +4495,10 @@
     "rating": 6.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37808377/",
-    "lat": 40.08626105870201,
-    "lng": -98.52638860536692
+    "url": "https://book.douban.com/subject/37808377/"
   },
   {
-    "rank": 336,
+    "rank": 347,
     "title": "这不是本小说",
     "author": "未知",
     "country": "美国",
@@ -5035,12 +4508,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37805888/",
-    "lat": 32.06910825982515,
-    "lng": -96.83524697698522
+    "url": "https://book.douban.com/subject/37805888/"
   },
   {
-    "rank": 337,
+    "rank": 348,
     "title": "男流文学论",
     "author": "未知",
     "country": "美国",
@@ -5050,12 +4521,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37487277/",
-    "lat": 38.26083607753728,
-    "lng": -92.75621077487537
+    "url": "https://book.douban.com/subject/37487277/"
   },
   {
-    "rank": 338,
+    "rank": 349,
     "title": "葬礼过后",
     "author": "未知",
     "country": "美国",
@@ -5065,12 +4534,10 @@
     "rating": 7.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37833130/",
-    "lat": 39.459381437646734,
-    "lng": -99.19904462056728
+    "url": "https://book.douban.com/subject/37833130/"
   },
   {
-    "rank": 339,
+    "rank": 350,
     "title": "诗歌与压抑",
     "author": "未知",
     "country": "美国",
@@ -5080,12 +4547,23 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37494992/",
-    "lat": 31.840200000000003,
-    "lng": -95.7129
+    "url": "https://book.douban.com/subject/37494992/"
   },
   {
-    "rank": 340,
+    "rank": 351,
+    "title": "我与地坛",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.3,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/5910656/"
+  },
+  {
+    "rank": 352,
     "title": "漫游在雨中池塘",
     "author": "未知",
     "country": "美国",
@@ -5095,12 +4573,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36973145/",
-    "lat": 38.68049806759781,
-    "lng": -99.72953441903725
+    "url": "https://book.douban.com/subject/36973145/"
   },
   {
-    "rank": 341,
+    "rank": 353,
     "title": "生活的谜语",
     "author": "未知",
     "country": "美国",
@@ -5110,12 +4586,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37339395/",
-    "lat": 31.86416573981801,
-    "lng": -94.54474294232152
+    "url": "https://book.douban.com/subject/37339395/"
   },
   {
-    "rank": 342,
+    "rank": 354,
     "title": "林门郑氏",
     "author": "未知",
     "country": "美国",
@@ -5125,12 +4599,23 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37353424/",
-    "lat": 39.56140364695859,
-    "lng": -93.39228531090176
+    "url": "https://book.douban.com/subject/37353424/"
   },
   {
-    "rank": 343,
+    "rank": 355,
+    "title": "我的阿勒泰",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 8.5,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/35552619/"
+  },
+  {
+    "rank": 356,
     "title": "纽约文学地图",
     "author": "未知",
     "country": "美国",
@@ -5140,12 +4625,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37841584/",
-    "lat": 32.14984429353554,
-    "lng": -93.38814506805471
+    "url": "https://book.douban.com/subject/37841584/"
   },
   {
-    "rank": 344,
+    "rank": 357,
     "title": "一个女人认为自己是行星",
     "author": "未知",
     "country": "美国",
@@ -5155,12 +4638,10 @@
     "rating": 7.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37430704/",
-    "lat": 40.098493384378784,
-    "lng": -93.93380025195246
+    "url": "https://book.douban.com/subject/37430704/"
   },
   {
-    "rank": 345,
+    "rank": 358,
     "title": "云朵的道路",
     "author": "未知",
     "country": "美国",
@@ -5170,12 +4651,10 @@
     "rating": 0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37283458/",
-    "lat": 36.805758946532215,
-    "lng": -100.23396107978007
+    "url": "https://book.douban.com/subject/37283458/"
   },
   {
-    "rank": 346,
+    "rank": 359,
     "title": "猫鱼",
     "author": "未知",
     "country": "美国",
@@ -5185,12 +4664,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36659710/",
-    "lat": 32.69298735612929,
-    "lng": -92.30207224642119
+    "url": "https://book.douban.com/subject/36659710/"
   },
   {
-    "rank": 347,
+    "rank": 360,
     "title": "绝望者的练习",
     "author": "未知",
     "country": "美国",
@@ -5200,12 +4677,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37808423/",
-    "lat": 40.51400345866256,
-    "lng": -94.60043882025019
+    "url": "https://book.douban.com/subject/37808423/"
   },
   {
-    "rank": 348,
+    "rank": 361,
     "title": "历史中的大与小",
     "author": "未知",
     "country": "美国",
@@ -5215,12 +4690,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37869944/",
-    "lat": 35.79707622350818,
-    "lng": -100.16386123311264
+    "url": "https://book.douban.com/subject/37869944/"
   },
   {
-    "rank": 349,
+    "rank": 362,
     "title": "在夜的金枝与星辰下",
     "author": "未知",
     "country": "美国",
@@ -5230,12 +4703,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37866591/",
-    "lat": 33.47600597812493,
-    "lng": -91.34408991346127
+    "url": "https://book.douban.com/subject/37866591/"
   },
   {
-    "rank": 350,
+    "rank": 363,
     "title": "西方谐典",
     "author": "未知",
     "country": "美国",
@@ -5245,12 +4716,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37447501/",
-    "lat": 40.77875707885441,
-    "lng": -95.3642286991549
+    "url": "https://book.douban.com/subject/37447501/"
   },
   {
-    "rank": 351,
+    "rank": 364,
     "title": "生活与命运",
     "author": "未知",
     "country": "美国",
@@ -5260,12 +4729,10 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26394018/",
-    "lat": 34.806687584757874,
-    "lng": -99.86659366340791
+    "url": "https://book.douban.com/subject/26394018/"
   },
   {
-    "rank": 352,
+    "rank": 365,
     "title": "一九八四",
     "author": "未知",
     "country": "美国",
@@ -5275,12 +4742,10 @@
     "rating": 9.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/3815131/",
-    "lat": 34.46840486400412,
-    "lng": -90.56733732281218
+    "url": "https://book.douban.com/subject/3815131/"
   },
   {
-    "rank": 353,
+    "rank": 366,
     "title": "她们的西南联大岁月",
     "author": "未知",
     "country": "美国",
@@ -5290,12 +4755,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37897740/",
-    "lat": 40.870157012008164,
-    "lng": -96.19041961988
+    "url": "https://book.douban.com/subject/37897740/"
   },
   {
-    "rank": 354,
+    "rank": 367,
     "title": "不被大风吹倒",
     "author": "未知",
     "country": "美国",
@@ -5305,12 +4768,10 @@
     "rating": 7.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36978314/",
-    "lat": 33.88614401250691,
-    "lng": -99.34718813235958
+    "url": "https://book.douban.com/subject/36978314/"
   },
   {
-    "rank": 355,
+    "rank": 368,
     "title": "阴郁之人的晴朗之地",
     "author": "未知",
     "country": "美国",
@@ -5320,12 +4781,10 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37664036/",
-    "lat": 35.62790346347065,
-    "lng": -90.01763101256365
+    "url": "https://book.douban.com/subject/37664036/"
   },
   {
-    "rank": 356,
+    "rank": 369,
     "title": "岩石堡远望",
     "author": "未知",
     "country": "美国",
@@ -5335,12 +4794,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37523873/",
-    "lat": 40.77374821045579,
-    "lng": -97.03905895776032
+    "url": "https://book.douban.com/subject/37523873/"
   },
   {
-    "rank": 357,
+    "rank": 370,
     "title": "血与蜜之地",
     "author": "未知",
     "country": "美国",
@@ -5350,12 +4807,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37022123/",
-    "lat": 33.08556587784401,
-    "lng": -98.62243699884775
+    "url": "https://book.douban.com/subject/37022123/"
   },
   {
-    "rank": 358,
+    "rank": 371,
     "title": "玫瑰朝上",
     "author": "未知",
     "country": "美国",
@@ -5365,12 +4820,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37261282/",
-    "lat": 36.9022066069174,
-    "lng": -89.7308532362111
+    "url": "https://book.douban.com/subject/37261282/"
   },
   {
-    "rank": 359,
+    "rank": 372,
     "title": "暮色将尽",
     "author": "未知",
     "country": "美国",
@@ -5380,12 +4833,10 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36020007/",
-    "lat": 40.484398260518105,
-    "lng": -97.86692371581557
+    "url": "https://book.douban.com/subject/36020007/"
   },
   {
-    "rank": 360,
+    "rank": 373,
     "title": "眉隐之灵",
     "author": "未知",
     "country": "美国",
@@ -5395,12 +4846,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37462176/",
-    "lat": 32.45095036716748,
-    "lng": -97.72048258715881
+    "url": "https://book.douban.com/subject/37462176/"
   },
   {
-    "rank": 361,
+    "rank": 374,
     "title": "作家城堡",
     "author": "未知",
     "country": "美国",
@@ -5410,12 +4859,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37458524/",
-    "lat": 37.669208262069894,
-    "lng": -92.67763239524835
+    "url": "https://book.douban.com/subject/37458524/"
   },
   {
-    "rank": 362,
+    "rank": 375,
     "title": "解开我的谜语",
     "author": "未知",
     "country": "美国",
@@ -5425,12 +4872,10 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37648041/",
-    "lat": 40.007015472394514,
-    "lng": -98.62971547239451
+    "url": "https://book.douban.com/subject/37648041/"
   },
   {
-    "rank": 363,
+    "rank": 376,
     "title": "被困住的人",
     "author": "未知",
     "country": "美国",
@@ -5440,12 +4885,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37339382/",
-    "lat": 32.021597786239965,
-    "lng": -96.67978758326234
+    "url": "https://book.douban.com/subject/37339382/"
   },
   {
-    "rank": 364,
+    "rank": 377,
     "title": "被压抑的现代性（增订本）",
     "author": "未知",
     "country": "美国",
@@ -5455,12 +4898,10 @@
     "rating": 9.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37321303/",
-    "lat": 38.35908751057813,
-    "lng": -92.78067397093969
+    "url": "https://book.douban.com/subject/37321303/"
   },
   {
-    "rank": 365,
+    "rank": 378,
     "title": "学生特尔莱斯的困惑",
     "author": "未知",
     "country": "美国",
@@ -5470,12 +4911,10 @@
     "rating": 9.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37532615/",
-    "lat": 39.35674734276116,
-    "lng": -99.28440712487352
+    "url": "https://book.douban.com/subject/37532615/"
   },
   {
-    "rank": 366,
+    "rank": 379,
     "title": "诗人之死",
     "author": "未知",
     "country": "美国",
@@ -5485,12 +4924,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/38179491/",
-    "lat": 31.827797959674427,
-    "lng": -95.54752235345366
+    "url": "https://book.douban.com/subject/38179491/"
   },
   {
-    "rank": 367,
+    "rank": 380,
     "title": "文士的堕落",
     "author": "未知",
     "country": "美国",
@@ -5500,12 +4937,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37378632/",
-    "lat": 39.029891332565164,
-    "lng": -93.04314391856268
+    "url": "https://book.douban.com/subject/37378632/"
   },
   {
-    "rank": 368,
+    "rank": 381,
     "title": "只要我还在创作",
     "author": "未知",
     "country": "美国",
@@ -5515,12 +4950,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/38197773/",
-    "lat": 38.55862888426334,
-    "lng": -99.79161813341658
+    "url": "https://book.douban.com/subject/38197773/"
   },
   {
-    "rank": 369,
+    "rank": 382,
     "title": "罐头厂街",
     "author": "未知",
     "country": "美国",
@@ -5530,12 +4963,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37889502/",
-    "lat": 31.888908424739256,
-    "lng": -94.37743530592473
+    "url": "https://book.douban.com/subject/37889502/"
   },
   {
-    "rank": 370,
+    "rank": 383,
     "title": "目睹飞人的时刻",
     "author": "未知",
     "country": "美国",
@@ -5545,12 +4976,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/38361686/",
-    "lat": 39.64432819209172,
-    "lng": -93.46113309857297
+    "url": "https://book.douban.com/subject/38361686/"
   },
   {
-    "rank": 371,
+    "rank": 384,
     "title": "莉莉亚娜不可战胜的夏天",
     "author": "未知",
     "country": "美国",
@@ -5560,12 +4989,10 @@
     "rating": 8.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37009820/",
-    "lat": 37.646679557025514,
-    "lng": -100.11788927383628
+    "url": "https://book.douban.com/subject/37009820/"
   },
   {
-    "rank": 372,
+    "rank": 385,
     "title": "蜉蝣直上",
     "author": "未知",
     "country": "美国",
@@ -5575,12 +5002,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37415823/",
-    "lat": 32.21193928006869,
-    "lng": -93.22730201392599
+    "url": "https://book.douban.com/subject/37415823/"
   },
   {
-    "rank": 373,
+    "rank": 386,
     "title": "占有",
     "author": "未知",
     "country": "美国",
@@ -5590,12 +5015,10 @@
     "rating": 7.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37433937/",
-    "lat": 40.16603644695397,
-    "lng": -94.02194460390298
+    "url": "https://book.douban.com/subject/37433937/"
   },
   {
-    "rank": 374,
+    "rank": 387,
     "title": "海上无航标",
     "author": "未知",
     "country": "美国",
@@ -5605,12 +5028,10 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37511282/",
-    "lat": 36.662477715967356,
-    "lng": -100.237729129121
+    "url": "https://book.douban.com/subject/37511282/"
   },
   {
-    "rank": 375,
+    "rank": 388,
     "title": "克林索尔的最后夏天",
     "author": "未知",
     "country": "美国",
@@ -5620,12 +5041,23 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/30389968/",
-    "lat": 32.7907361053111,
-    "lng": -92.15607413720232
+    "url": "https://book.douban.com/subject/30389968/"
   },
   {
-    "rank": 376,
+    "rank": 389,
+    "title": "德米安",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 8.9,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/35060088/"
+  },
+  {
+    "rank": 390,
     "title": "诗人十四个",
     "author": "未知",
     "country": "美国",
@@ -5635,12 +5067,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/34463395/",
-    "lat": 35.6532709761565,
-    "lng": -100.13531280077247
+    "url": "https://book.douban.com/subject/34463395/"
   },
   {
-    "rank": 377,
+    "rank": 391,
     "title": "情感的迷惘",
     "author": "未知",
     "country": "美国",
@@ -5650,12 +5080,23 @@
     "rating": 9.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37808385/",
-    "lat": 33.60582339998283,
-    "lng": -91.2208687546442
+    "url": "https://book.douban.com/subject/37808385/"
   },
   {
-    "rank": 378,
+    "rank": 392,
+    "title": "傲慢与偏见",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.1,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/35726760/"
+  },
+  {
+    "rank": 393,
     "title": "爱玛",
     "author": "未知",
     "country": "美国",
@@ -5665,12 +5106,10 @@
     "rating": 9.4,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37309756/",
-    "lat": 34.66970806810699,
-    "lng": -99.80572833840375
+    "url": "https://book.douban.com/subject/37309756/"
   },
   {
-    "rank": 379,
+    "rank": 394,
     "title": "巴黎评论·非虚构作家访谈",
     "author": "未知",
     "country": "美国",
@@ -5680,12 +5119,10 @@
     "rating": 0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37531200/",
-    "lat": 34.62493790183824,
-    "lng": -90.47395136622175
+    "url": "https://book.douban.com/subject/37531200/"
   },
   {
-    "rank": 380,
+    "rank": 395,
     "title": "接纳",
     "author": "未知",
     "country": "美国",
@@ -5695,12 +5132,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37743997/",
-    "lat": 40.8681079027764,
-    "lng": -96.31126182877888
+    "url": "https://book.douban.com/subject/37743997/"
   },
   {
-    "rank": 381,
+    "rank": 396,
     "title": "全球真实故事集 Ⅱ",
     "author": "未知",
     "country": "美国",
@@ -5710,12 +5145,10 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37182247/",
-    "lat": 33.763301065186575,
-    "lng": -99.25568752926806
+    "url": "https://book.douban.com/subject/37182247/"
   },
   {
-    "rank": 382,
+    "rank": 397,
     "title": "她和她的决心",
     "author": "未知",
     "country": "美国",
@@ -5725,12 +5158,23 @@
     "rating": 9.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/38178826/",
-    "lat": 35.80424559196738,
-    "lng": -89.9598706883711
+    "url": "https://book.douban.com/subject/38178826/"
   },
   {
-    "rank": 383,
+    "rank": 398,
+    "title": "绿毛水怪",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.0,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/37535053/"
+  },
+  {
+    "rank": 399,
     "title": "平凡的世界",
     "author": "未知",
     "country": "美国",
@@ -5740,12 +5184,10 @@
     "rating": 9.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/10517238/",
-    "lat": 32.9837449487268,
-    "lng": -98.50364397103583
+    "url": "https://book.douban.com/subject/10517238/"
   },
   {
-    "rank": 384,
+    "rank": 400,
     "title": "白夜",
     "author": "未知",
     "country": "美国",
@@ -5755,12 +5197,10 @@
     "rating": 8.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/25887921/",
-    "lat": 37.0902,
-    "lng": -92.7129
+    "url": "https://book.douban.com/subject/25887921/"
   },
   {
-    "rank": 385,
+    "rank": 401,
     "title": "马孔多在下雨",
     "author": "未知",
     "country": "美国",
@@ -5770,12 +5210,10 @@
     "rating": 8.6,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36946790/",
-    "lat": 40.42747011719786,
-    "lng": -97.98090642963335
+    "url": "https://book.douban.com/subject/36946790/"
   },
   {
-    "rank": 386,
+    "rank": 402,
     "title": "我恋禾谷",
     "author": "未知",
     "country": "美国",
@@ -5785,12 +5223,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37819327/",
-    "lat": 32.37623321654657,
-    "lng": -97.57929148211133
+    "url": "https://book.douban.com/subject/37819327/"
   },
   {
-    "rank": 387,
+    "rank": 403,
     "title": "恐慌集",
     "author": "未知",
     "country": "美国",
@@ -5800,12 +5236,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37808465/",
-    "lat": 37.767534764536265,
-    "lng": -92.68267845418019
+    "url": "https://book.douban.com/subject/37808465/"
   },
   {
-    "rank": 388,
+    "rank": 404,
     "title": "她比时代快半步",
     "author": "未知",
     "country": "美国",
@@ -5815,12 +5249,10 @@
     "rating": 8.8,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37660646/",
-    "lat": 39.924225018544774,
-    "lng": -98.73083011752465
+    "url": "https://book.douban.com/subject/37660646/"
   },
   {
-    "rank": 389,
+    "rank": 405,
     "title": "哲学家的最后一课",
     "author": "未知",
     "country": "美国",
@@ -5830,12 +5262,10 @@
     "rating": 0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37269363/",
-    "lat": 31.978912837420165,
-    "lng": -96.5224483565832
+    "url": "https://book.douban.com/subject/37269363/"
   },
   {
-    "rank": 390,
+    "rank": 406,
     "title": "我本芬芳",
     "author": "未知",
     "country": "美国",
@@ -5845,12 +5275,10 @@
     "rating": 8.2,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/35695541/",
-    "lat": 38.456951525923884,
-    "lng": -92.80840516158408
+    "url": "https://book.douban.com/subject/35695541/"
   },
   {
-    "rank": 391,
+    "rank": 407,
     "title": "月亮与六便士",
     "author": "未知",
     "country": "美国",
@@ -5860,12 +5288,10 @@
     "rating": 8.7,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/26954760/",
-    "lat": 39.251080809860326,
-    "lng": -99.36674990463175
+    "url": "https://book.douban.com/subject/26954760/"
   },
   {
-    "rank": 392,
+    "rank": 408,
     "title": "奥德赛：寻找自我之路",
     "author": "未知",
     "country": "美国",
@@ -5875,12 +5301,10 @@
     "rating": 7.9,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37869669/",
-    "lat": 31.82061887389873,
-    "lng": -95.38136605688523
+    "url": "https://book.douban.com/subject/37869669/"
   },
   {
-    "rank": 393,
+    "rank": 409,
     "title": "我在北京送快递",
     "author": "未知",
     "country": "美国",
@@ -5890,12 +5314,10 @@
     "rating": 8.1,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/36150423/",
-    "lat": 39.121986882859616,
-    "lng": -93.0935361339746
+    "url": "https://book.douban.com/subject/36150423/"
   },
   {
-    "rank": 394,
+    "rank": 410,
     "title": "我不会说法语",
     "author": "未知",
     "country": "美国",
@@ -5905,12 +5327,10 @@
     "rating": 8.0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37890140/",
-    "lat": 38.43442392553102,
-    "lng": -99.84999584588392
+    "url": "https://book.douban.com/subject/37890140/"
   },
   {
-    "rank": 395,
+    "rank": 411,
     "title": "俄国文学",
     "author": "未知",
     "country": "美国",
@@ -5920,12 +5340,23 @@
     "rating": 8.5,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37532440/",
-    "lat": 31.919018502629665,
-    "lng": -94.21053289397875
+    "url": "https://book.douban.com/subject/37532440/"
   },
   {
-    "rank": 396,
+    "rank": 412,
+    "title": "动物农场",
+    "author": "未知",
+    "country": "美国",
+    "countryCode": "US",
+    "region": "Americas",
+    "year": 2010,
+    "rating": 9.5,
+    "category": "小说",
+    "publisher": "豆瓣",
+    "url": "https://book.douban.com/subject/4908879/"
+  },
+  {
+    "rank": 413,
     "title": "猎人笔记",
     "author": "未知",
     "country": "美国",
@@ -5935,12 +5366,10 @@
     "rating": 8.3,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37455866/",
-    "lat": 37.50945253583399,
-    "lng": -100.14812855230673
+    "url": "https://book.douban.com/subject/37455866/"
   },
   {
-    "rank": 397,
+    "rank": 414,
     "title": "跑外卖",
     "author": "未知",
     "country": "美国",
@@ -5950,8 +5379,6 @@
     "rating": 0,
     "category": "小说",
     "publisher": "豆瓣",
-    "url": "https://book.douban.com/subject/37462151/",
-    "lat": 32.27927632655919,
-    "lng": -93.06807232918159
+    "url": "https://book.douban.com/subject/37462151/"
   }
 ]
