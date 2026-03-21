@@ -31,6 +31,30 @@ const regionColors = {
     "Oceania": "#9b59b6"
 };
 
+// 地区中英文映射
+const regionCNToEN = {
+    "亚洲": "Asia",
+    "欧洲": "Europe",
+    "美洲": "Americas",
+    "非洲": "Africa",
+    "大洋洲": "Oceania",
+    "亚": "Asia",
+    "欧": "Europe",
+    "美": "Americas",
+    "非": "Africa",
+    "大洋": "Oceania"
+};
+
+// 将中文地区名转换为英文
+function normalizeRegion(value) {
+    if (!value) return '';
+    // 如果已经是英文，直接返回
+    if (regionColors[value]) return value;
+    // 查找对应的英文名
+    const en = regionCNToEN[value];
+    return en || value;
+}
+
 // 国家坐标映射（使用首都坐标）
 const countryCoords = {
     "中国": { lat: 39.9042, lng: 116.4074 },      // 北京
@@ -422,8 +446,8 @@ function applyFilters() {
                 return false;
             }
         }
-        // 地区筛选 - 下拉框优先，其次输入框模糊匹配
-        const regionValue = currentRegion || currentRegionInput;
+        // 地区筛选 - 下拉框优先，其次输入框模糊匹配，支持中英文
+        const regionValue = normalizeRegion(currentRegion || currentRegionInput);
         if (regionValue && !book.region.includes(regionValue)) {
             return false;
         }
