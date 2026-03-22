@@ -82,6 +82,22 @@ COUNTRY_COORDS = {
     "以色列": {"lat": 31.7683, "lng": 35.2137, "capital": "特拉维夫"},
     "沙特阿拉伯": {"lat": 24.7136, "lng": 46.6753, "capital": "利雅得"},
     "阿联酋": {"lat": 24.4539, "lng": 54.3773, "capital": "阿布扎比"},
+    "台湾": {"lat": 25.0330, "lng": 121.5654, "capital": "台北"},
+    "阿富汗": {"lat": 34.5553, "lng": 69.2075, "capital": "喀布尔"},
+    "白俄罗斯": {"lat": 53.9045, "lng": 27.5615, "capital": "明斯克"},
+    "罗马尼亚": {"lat": 44.4268, "lng": 26.1025, "capital": "布加勒斯特"},
+    "乌克兰": {"lat": 50.4501, "lng": 30.5234, "capital": "基辅"},
+    "哈萨克斯坦": {"lat": 51.1694, "lng": 71.4491, "capital": "阿斯塔纳"},
+    "乌兹别克斯坦": {"lat": 41.2995, "lng": 69.2456, "capital": "塔什干"},
+    "格鲁吉亚": {"lat": 41.7151, "lng": 44.8271, "capital": "第比利斯"},
+    "亚美尼亚": {"lat": 40.1792, "lng": 44.4991, "capital": "埃里温"},
+    "阿塞拜疆": {"lat": 40.4093, "lng": 49.8671, "capital": "巴库"},
+    "塞尔维亚": {"lat": 44.7866, "lng": 20.4489, "capital": "贝尔格莱德"},
+    "克罗地亚": {"lat": 45.8150, "lng": 15.9819, "capital": "萨格勒布"},
+    "斯洛文尼亚": {"lat": 46.0569, "lng": 14.5058, "capital": "卢布尔雅那"},
+    "斯洛伐克": {"lat": 48.1486, "lng": 17.1077, "capital": "布拉迪斯拉发"},
+    "卢森堡": {"lat": 49.6116, "lng": 6.1319, "capital": "卢森堡"},
+    "冰岛": {"lat": 64.1466, "lng": -21.9426, "capital": "雷克雅未克"},
 }
 
 # 城市 -> 坐标 (常用城市)
@@ -102,6 +118,50 @@ CITY_COORDS = {
     "香港": {"lat": 22.3193, "lng": 114.1694},
     "澳门": {"lat": 22.1987, "lng": 113.5439},
     "台北": {"lat": 25.0330, "lng": 121.5654},
+
+    # 中国省会及主要城市
+    "昆明": {"lat": 25.0389, "lng": 102.7183},
+    "乌鲁木齐": {"lat": 43.8256, "lng": 87.6168},
+    "太原": {"lat": 37.8706, "lng": 112.5489},
+    "无锡": {"lat": 31.4912, "lng": 120.3119},
+    "绍兴": {"lat": 30.0302, "lng": 120.5801},
+    "阳泉": {"lat": 37.8560, "lng": 113.5803},
+    "包头": {"lat": 40.6571, "lng": 109.8403},
+    "赤峰": {"lat": 42.2586, "lng": 118.8867},
+    "丽江": {"lat": 26.8721, "lng": 100.2300},
+    "攀枝花": {"lat": 26.5818, "lng": 101.7188},
+    "安庆": {"lat": 30.5433, "lng": 117.0634},
+    "怀宁": {"lat": 30.2230, "lng": 116.6102},
+    "菏泽": {"lat": 35.2333, "lng": 115.4412},
+    "高密": {"lat": 36.3833, "lng": 119.7550},
+    "桂林": {"lat": 25.2738, "lng": 110.2906},
+    "丹徒": {"lat": 32.1300, "lng": 119.5300},
+    "吴江": {"lat": 31.1500, "lng": 120.6300},
+    "宜兴": {"lat": 31.3400, "lng": 119.8200},
+    "江阴": {"lat": 31.9110, "lng": 120.2860},
+    "盐城": {"lat": 33.3477, "lng": 120.1616},
+    "高邮": {"lat": 32.7810, "lng": 119.4600},
+    "新乡": {"lat": 35.3026, "lng": 113.9268},
+    "邓州": {"lat": 32.6880, "lng": 112.0870},
+    "富阳": {"lat": 30.0700, "lng": 119.9500},
+    "海宁": {"lat": 30.5090, "lng": 120.6820},
+    "宜昌": {"lat": 30.6918, "lng": 111.2868},
+    "汉口": {"lat": 30.5854, "lng": 114.3055},
+    "襄阳": {"lat": 32.0090, "lng": 112.1226},
+    "凤凰": {"lat": 27.9470, "lng": 109.5990},
+    "湘阴": {"lat": 28.6750, "lng": 112.8500},
+    "衡东": {"lat": 27.0900, "lng": 112.9500},
+    "衡阳": {"lat": 26.8933, "lng": 112.5719},
+    "长沙": {"lat": 28.2282, "lng": 112.9388},
+    "宁德": {"lat": 26.6656, "lng": 119.5477},
+    "泉州": {"lat": 24.8739, "lng": 118.6758},
+    "漳州": {"lat": 24.5093, "lng": 117.6470},
+    "沈阳": {"lat": 41.8052, "lng": 123.4315},
+    "汉中": {"lat": 33.0676, "lng": 107.0230},
+    "清涧": {"lat": 37.1230, "lng": 110.1200},
+    "西宁": {"lat": 36.6232, "lng": 101.7783},
+    "呼兰": {"lat": 46.0080, "lng": 126.4870},
+    "漠河": {"lat": 52.9720, "lng": 122.5370},
 
     # 日本城市
     "东京": {"lat": 35.6762, "lng": 139.6503},
@@ -669,6 +729,19 @@ class BookListParser:
 class CoordinateResolver:
     """坐标解析器"""
 
+    # 中国省份 -> 省会城市 映射
+    CHINA_PROVINCE_TO_CAPITAL = {
+        "云南": "昆明",
+        "新疆": "乌鲁木齐",
+        "内蒙古": "呼和浩特",
+        "广西": "南宁",
+        "西藏": "拉萨",
+        "宁夏": "银川",
+        "香港": "香港",
+        "澳门": "澳门",
+        "台湾": "台北",
+    }
+
     def resolve(self, country: str, city: Optional[str] = None) -> Optional[Dict[str, float]]:
         """
         根据国家和城市解析坐标
@@ -699,7 +772,48 @@ class CoordinateResolver:
 
     def _find_city_coords(self, city: str) -> Optional[Dict[str, float]]:
         """查找城市坐标"""
-        return CITY_COORDS.get(city)
+        # 直接匹配
+        if city in CITY_COORDS:
+            return CITY_COORDS.get(city)
+
+        # 处理 "省份,城市" 格式 (如 "江苏,无锡", "浙江,绍兴")
+        if ',' in city:
+            parts = [p.strip() for p in city.split(',')]
+            for part in parts:
+                if part in CITY_COORDS:
+                    return CITY_COORDS.get(part)
+                # 处理带"省"、"市"后缀的情况
+                if part.endswith('省'):
+                    short = part[:-1]
+                    if short in CITY_COORDS:
+                        return CITY_COORDS.get(short)
+                if part.endswith('市'):
+                    short = part[:-1]
+                    if short in CITY_COORDS:
+                        return CITY_COORDS.get(short)
+
+        # 处理中国省份 -> 省会城市映射
+        if city in self.CHINA_PROVINCE_TO_CAPITAL:
+            capital = self.CHINA_PROVINCE_TO_CAPITAL[city]
+            if capital in CITY_COORDS:
+                return CITY_COORDS.get(capital)
+
+        # 处理带"省"、"市"后缀的情况
+        if city.endswith('省'):
+            short = city[:-1]
+            # 先查省份映射
+            if short in self.CHINA_PROVINCE_TO_CAPITAL:
+                capital = self.CHINA_PROVINCE_TO_CAPITAL[short]
+                if capital in CITY_COORDS:
+                    return CITY_COORDS.get(capital)
+            if short in CITY_COORDS:
+                return CITY_COORDS.get(short)
+        if city.endswith('市'):
+            short = city[:-1]
+            if short in CITY_COORDS:
+                return CITY_COORDS.get(short)
+
+        return None
 
 
 class RegionResolver:
