@@ -729,6 +729,16 @@ class BookListParser:
 class CoordinateResolver:
     """坐标解析器"""
 
+    # 国家别名映射
+    COUNTRY_ALIASES = {
+        "中国台湾": "台湾",
+        "台湾": "台湾",
+        "英属印度": "印度",
+        "苏联": "俄罗斯",
+        "US": "美国",
+        "USA": "美国",
+    }
+
     # 中国省份 -> 省会城市 映射
     CHINA_PROVINCE_TO_CAPITAL = {
         "云南": "昆明",
@@ -761,7 +771,9 @@ class CoordinateResolver:
 
         # 使用国家首都坐标
         if country:
-            country_data = COUNTRY_COORDS.get(country)
+            # 先检查别名映射
+            resolved_country = self.COUNTRY_ALIASES.get(country, country)
+            country_data = COUNTRY_COORDS.get(resolved_country)
             if country_data:
                 return {
                     "lat": country_data["lat"],
