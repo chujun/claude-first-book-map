@@ -300,9 +300,6 @@ function initGlobe() {
         .pointColor(d => regionColors[d.region] || '#3498db')
         .pointAltitude(0.02)
         .pointRadius(2.0)
-        .pointRadiusMin(1.5)
-        .pointRadiusMax(4)
-        .pointSurfacePoints(12)
         .pointLabel(d => `
             <div style="
                 background: rgba(26, 26, 46, 0.95);
