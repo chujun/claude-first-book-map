@@ -194,8 +194,9 @@ def import_books(conn: sqlite3.Connection, books: List[Dict]):
             cursor.execute("""
                 INSERT OR REPLACE INTO books (
                     rank, title, author, country, country_code, region,
-                    year, rating, category, publisher, url, lat, lng
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    year, rating, rating_count, category, publisher, url, lat, lng,
+                    price
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 book.get("rank", 0),
                 title,
@@ -205,11 +206,13 @@ def import_books(conn: sqlite3.Connection, books: List[Dict]):
                 region,
                 book.get("year"),
                 book.get("rating", 0),
+                book.get("rating_count"),
                 book.get("category", "文学"),
                 book.get("publisher", ""),
                 book.get("url", ""),
                 lat,
-                lng
+                lng,
+                book.get("price", "")
             ))
             imported += 1
         except sqlite3.Error as e:

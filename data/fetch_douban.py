@@ -318,6 +318,8 @@ class BookDetailParser:
             'isbn': str,
             'translator': str,
             'rating': float,
+            'rating_count': int,
+            'price': str,
             'category': str
         }
         """
@@ -379,6 +381,12 @@ class BookDetailParser:
             rating_elem = soup.find("span", class_="rating_nums")
             rating = float(rating_elem.get_text()) if rating_elem else 0.0
 
+            # 解析评价人数 (格式: "xxx人评价")
+            rating_count = self._extract_rating_count(soup)
+
+            # 解析定价
+            price = self._extract_field(info_text, "定价:")
+
             # 解析类别
             category = self._extract_category(soup)
 
@@ -392,6 +400,8 @@ class BookDetailParser:
                 "isbn": isbn,
                 "translator": translator,
                 "rating": rating,
+                "rating_count": rating_count,
+                "price": price,
                 "category": category,
             }
         except Exception as e:
@@ -462,6 +472,31 @@ class BookDetailParser:
             if match:
                 return match.group(1)
         return "文学"
+
+    def _extract_rating_count(self, soup) -> Optional[int]:
+        """提取评价人数 (格式: "xxx人评价")"""
+        try:
+            # 评价人数通常在评分后面，格式为 "(xxx人评价)"
+            rating_sum_elem = soup.find("span", class_="rating_sum")
+            if rating_sum_elem:
+                # 格式: "<span class="rating_sum">评价人数: <span>12,345</span></span>"
+                span = rating_sum_elem.find("span")
+                if span:
+                    text = span.get_text().replace(",", "").strip()
+                    match = re.search(r"(\d+)", text)
+                    if match:
+                        return int(match.group(1))
+
+            # 备选方案: 在整个页面搜索 "(xxx人评价)" 格式
+            page_text = soup.get_text()
+            match = re.search(r"\((\d+[,，]?\d*)\s*人评价\)", page_text)
+            if match:
+                text = match.group(1).replace(",", "").replace("，", "")
+                return int(text)
+
+            return None
+        except (ValueError, AttributeError):
+            return None
 
 
 class AuthorParser:

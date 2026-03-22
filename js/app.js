@@ -531,7 +531,8 @@ function showBookDetail(book) {
         <span class="book-detail-country" style="background: ${regionColors[book.region] || '#3498db'};">${escapeHtml(book.country)} | ${escapeHtml(book.region)}</span>
         <div class="book-detail-description">
             <p><strong>📅 出版年份：</strong>${escapeHtml(book.year) || '未知'}</p>
-            <p><strong>⭐ 评分：</strong>${book.rating}</p>
+            <p><strong>⭐ 评分：</strong>${book.rating} ${book.rating_count ? '(' + escapeHtml(book.rating_count) + '人评价)' : ''}</p>
+            <p><strong>💰 定价：</strong>${escapeHtml(book.price) || '未知'}</p>
             <p><strong>📚 类别：</strong>${escapeHtml(book.category) || '未知'}</p>
             <p><strong>🏢 出版社：</strong>${escapeHtml(book.publisher) || '未知'}</p>
             <p><strong>📖 页数：</strong>${escapeHtml(book.pages) || '未知'}</p>

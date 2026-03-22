@@ -10,11 +10,13 @@ CREATE TABLE IF NOT EXISTS books (
     region TEXT NOT NULL,
     year INTEGER,
     rating REAL,
+    rating_count INTEGER,
     category TEXT,
     publisher TEXT,
     url TEXT,
     lat REAL,
     lng REAL,
+    price TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

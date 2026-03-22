@@ -47,6 +47,7 @@ class Book(BaseModel):
     region: str
     year: Optional[int]
     rating: float
+    rating_count: Optional[int]
     category: Optional[str]
     publisher: Optional[str]
     url: Optional[str]
@@ -59,6 +60,7 @@ class Book(BaseModel):
     author_birth_date: Optional[str]
     author_country: Optional[str]
     author_birthplace: Optional[str]
+    price: Optional[str]
 
 
 class CountryStats(BaseModel):
@@ -154,8 +156,8 @@ def get_books(
 
     query = f"""
         SELECT id, rank, title, author, country, country_code, region,
-               year, rating, category, publisher, url, lat, lng,
-               pages, isbn, translator,
+               year, rating, rating_count, category, publisher, url, lat, lng,
+               pages, isbn, translator, price,
                author_gender, author_birth_date, author_country, author_birthplace
         FROM books
         WHERE {where_clause}
@@ -179,8 +181,8 @@ def get_book(book_id: int):
 
     cursor.execute("""
         SELECT id, rank, title, author, country, country_code, region,
-               year, rating, category, publisher, url, lat, lng,
-               pages, isbn, translator,
+               year, rating, rating_count, category, publisher, url, lat, lng,
+               pages, isbn, translator, price,
                author_gender, author_birth_date, author_country, author_birthplace
         FROM books WHERE id = ?
     """, (book_id,))
