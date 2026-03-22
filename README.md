@@ -57,6 +57,8 @@ book-map/
 │   ├── fetch_douban.py   # 豆瓣爬虫
 │   ├── fetch_geonames.py # GeoNames 坐标获取
 │   └── import_to_db.py   # 数据导入脚本
+├── docs/
+│   └── douban-spider-architecture.md  # 豆瓣爬虫业务逻辑文档
 ├── tests/
 │   ├── test_api.py       # API 单元测试 (pytest)
 │   └── book-map.spec.js  # E2E 测试 (Playwright)
@@ -168,6 +170,8 @@ curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
 1. **书籍详情页面** - 获取书名、出版社、出版时间、评分、排名、类别、译者、ISBN、页数
 2. **作者页面** - 获取作者姓名、性别、出生日期、国家、出生地
 3. **坐标信息** - 根据作者国家和出生地确定经纬度
+
+> **详细业务逻辑文档**: [豆瓣爬虫架构文档](./docs/douban-spider-architecture.md)
 
 ### 数据格式
 
