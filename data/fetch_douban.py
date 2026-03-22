@@ -15,7 +15,7 @@ import time
 import random
 import json
 import re
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional
 
 
 BASE_URL = "https://book.douban.com"
@@ -285,11 +285,18 @@ class BookDetailParser:
             # 解析作者
             author_name = ""
             author_url = ""
+            # 首先在 #info 区域查找作者链接
             if info_div:
                 author_link = info_div.find("a", href=re.compile(r"/author/\d+"))
                 if author_link:
                     author_name = author_link.get_text().strip()
                     author_url = author_link.get("href", "")
+            # 如果在 #info 区域没找到，在整个页面查找
+            if not author_url:
+                page_author_link = soup.find("a", href=re.compile(r"/author/\d+"))
+                if page_author_link:
+                    author_name = page_author_link.get_text().strip()
+                    author_url = page_author_link.get("href", "")
 
             # 解析出版社
             publisher = self._extract_field(info_text, "出版社:")
@@ -512,44 +519,47 @@ class AuthorParserWithPlaywright:
                 'birthplace': ''
             }
 
-            # 获取作者名（从 h1 或 title）
-            title = page.title()
-            if '作者' in title or 'author' in title.lower():
-                # 从标题提取作者名
-                name_match = title.split('(')[0].strip()
-                result['name'] = name_match
-
-            # 获取 h1 内容
+            # 获取作者名（从 h1）
             h1 = page.locator('h1')
             if h1.count() > 0:
                 h1_text = h1.inner_text()
-                if not result['name']:
-                    result['name'] = h1_text.split()[0] if h1_text else ''
+                if h1_text:
+                    result['name'] = h1_text.split()[0]
 
-            # 获取作者描述信息（包含性别、出生日期、国家等）
-            # 尝试多种选择器
-            selectors = [
-                '.article .desc',
-                '.author-desc',
-                '.intro',
-                '.bd',
-            ]
-            for sel in selectors:
-                elem = page.locator(sel)
-                if elem.count() > 0:
-                    text = elem.inner_text()
-                    if text and len(text) > 10:
-                        # 尝试解析性别
-                        if '男' in text:
-                            result['gender'] = '男'
-                        elif '女' in text:
-                            result['gender'] = '女'
-                        # 尝试解析出生日期（匹配各种格式）
-                        import re
-                        year_match = re.search(r'((?:约)?\d{4})(?:年|-)', text)
-                        if year_match:
-                            result['birth_date'] = year_match.group(1) + '年'
+            # 如果 h1 没有，从 title 提取
+            if not result['name']:
+                title = page.title()
+                if title and '作者' in title:
+                    result['name'] = title.split('(')[0].strip()
+
+            # 方法1: 查找地点信息 - 从 span 元素中查找包含逗号的地点
+            spans = page.locator('span').all()
+            for span in spans:
+                text = span.inner_text().strip()
+                # 格式如: "中国,山西,阳泉" - 排除版权信息
+                if text and ',' in text and not text.startswith('©') and 'douban.com' not in text:
+                    parts = [p.strip() for p in text.split(',')]
+                    if len(parts) >= 1:
+                        result['country'] = parts[0]  # 第一部分是国家
+                    if len(parts) >= 2:
+                        result['birthplace'] = ','.join(parts[1:])  # 剩余部分是出生地
+                    break
+
+            # 方法2: 查找性别信息
+            if not result['gender']:
+                for span in spans:
+                    text = span.inner_text().strip()
+                    if text == '男' or text == '女':
+                        result['gender'] = text
                         break
+
+            # 方法3: 查找出生日期 - 格式如 "1963年6月23日"
+            for span in spans:
+                text = span.inner_text().strip()
+                import re
+                if re.match(r'\d{4}年\d{1,2}月\d{0,2}日?', text):
+                    result['birth_date'] = text
+                    break
 
             page.close()
             return result if result['name'] else None
