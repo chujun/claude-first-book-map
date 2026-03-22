@@ -204,22 +204,73 @@ function showGlobeError() {
     }
 }
 
-// 为每本书添加随机偏移避免重叠
+// 为每本书计算坐标，避免重叠
 function addRandomOffset(books) {
-    return books.map((book, index) => {
+    // 按坐标分组，检测重叠的书本
+    const coordGroups = new Map();
+    books.forEach((book, index) => {
+        // 优先使用书籍的实际坐标
+        let baseLat = book.lat;
+        let baseLng = book.lng;
+
+        // 如果坐标无效(0,0或null)，使用国家首都坐标
+        if (!baseLat || !baseLng || (baseLat === 0 && baseLng === 0)) {
+            const coords = countryCoords[book.country];
+            if (coords) {
+                baseLat = coords.lat;
+                baseLng = coords.lng;
+            } else {
+                baseLat = 0;
+                baseLng = 0;
+            }
+        }
+
+        // 使用唯一标识符分组（同坐标的书本）
+        const key = `${baseLat.toFixed(4)}_${baseLng.toFixed(4)}`;
+        if (!coordGroups.has(key)) {
+            coordGroups.set(key, []);
+        }
+        coordGroups.get(key).push({ book, index, baseLat, baseLng });
+    });
+
+    // 处理重叠：同一坐标的书本使用螺旋式分布
+    const result = books.map((book, index) => {
         const coords = countryCoords[book.country] || { lat: 0, lng: 0 };
-        // 使用 rank + index + year 生成更随机的偏移
-        const seed = (book.rank * 12345 + index * 6789 + (book.year % 100) * 111) % 1000;
-        const angle = (seed / 1000) * Math.PI * 2;
-        // 偏移半径 8-15 度，确保点分散开
-        const radius = 8 + (seed % 700) / 100;
+        let baseLat = book.lat;
+        let baseLng = book.lng;
+
+        if (!baseLat || !baseLng || (baseLat === 0 && baseLng === 0)) {
+            baseLat = coords.lat || 0;
+            baseLng = coords.lng || 0;
+        }
+
+        // 检测是否有重叠
+        const key = `${baseLat.toFixed(4)}_${baseLng.toFixed(4)}`;
+        const group = coordGroups.get(key);
+        const groupIndex = group.findIndex(g => g.index === index);
+
+        let finalLat = baseLat;
+        let finalLng = baseLng;
+
+        // 如果有重叠的书本，使用螺旋式偏移
+        if (group.length > 1 && groupIndex > 0) {
+            // 黄金角度螺旋分布，避免重叠
+            const goldenAngle = Math.PI * (3 - Math.sqrt(5)); // ~2.39996 弧度
+            const radius = 2 + groupIndex * 1.5; // 每本书向外偏移1.5度
+            const angle = groupIndex * goldenAngle;
+
+            finalLat = baseLat + Math.sin(angle) * radius;
+            finalLng = baseLng + Math.cos(angle) * radius;
+        }
 
         return {
             ...book,
-            lat: coords.lat + Math.sin(angle) * radius,
-            lng: coords.lng + Math.cos(angle) * radius
+            lat: finalLat,
+            lng: finalLng
         };
     });
+
+    return result;
 }
 
 // 初始化 3D 地球
@@ -247,8 +298,11 @@ function initGlobe() {
         .pointLat(d => d.lat)
         .pointLng(d => d.lng)
         .pointColor(d => regionColors[d.region] || '#3498db')
-        .pointAltitude(0.015)
-        .pointRadius(1.2)
+        .pointAltitude(0.02)
+        .pointRadius(2.0)
+        .pointRadiusMin(1.5)
+        .pointRadiusMax(4)
+        .pointSurfacePoints(12)
         .pointLabel(d => `
             <div style="
                 background: rgba(26, 26, 46, 0.95);
@@ -482,16 +536,22 @@ function updateGlobe() {
 // 聚焦书籍
 function focusOnBook(book) {
     if (!globe || !globe.pointOfView) return;
-    const coords = countryCoords[book.country] || { lat: 0, lng: 0 };
-    const seed = book.rank * 12345;
-    const r = (seed % 1000) / 1000;
-    const angle = r * Math.PI * 2;
-    const radius = 4 + r * 4;
+
+    // 优先使用书籍的实际坐标
+    let baseLat = book.lat;
+    let baseLng = book.lng;
+
+    // 如果坐标无效，使用国家首都坐标
+    if (!baseLat || !baseLng || (baseLat === 0 && baseLng === 0)) {
+        const coords = countryCoords[book.country] || { lat: 0, lng: 0 };
+        baseLat = coords.lat || 0;
+        baseLng = coords.lng || 0;
+    }
 
     globe.pointOfView({
-        lat: coords.lat + Math.sin(angle) * radius,
-        lng: coords.lng + Math.cos(angle) * radius,
-        altitude: 1.5
+        lat: baseLat,
+        lng: baseLng,
+        altitude: 2
     }, 1000);
 }
 
