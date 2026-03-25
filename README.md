@@ -9,6 +9,7 @@
 
 ### 核心功能
 - **3D 地球仪展示** - 使用 Globe.gl 渲染交互式 3D 地球
+- **智能聚类展示** - 同一坐标多本书自动聚合为数字标记，点击展开查看全部
 - **全球 Top 414 书籍** - 展示来自全球 23 个国家/地区的经典著作
 - **智能筛选** - 支持年代模糊匹配、国家/地区模糊匹配
 - **实时搜索** - 按书名或作者搜索
@@ -58,7 +59,10 @@ book-map/
 │   ├── fetch_geonames.py # GeoNames 坐标获取
 │   └── import_to_db.py   # 数据导入脚本
 ├── docs/
-│   └── douban-spider-architecture.md  # 豆瓣爬虫业务逻辑文档
+│   ├── douban-spider-architecture.md  # 豆瓣爬虫业务逻辑文档
+│   └── CODEMAPS/                      # 架构文档
+│       └── architecture.md            # 系统架构图
+├── demo-presentation.html             # 功能演示幻灯片
 ├── tests/
 │   ├── test_api.py       # API 单元测试 (pytest)
 │   └── book-map.spec.js  # E2E 测试 (Playwright)
@@ -223,7 +227,7 @@ curl "http://localhost:8000/api/books?sort_by=rating&order=desc&limit=10"
 |---------|--------|
 | API 单元测试 | **98%** |
 | 爬虫单元测试 | **83%** |
-| E2E 测试 | 30 passed |
+| E2E 测试 | 35 passed (含聚类功能测试) |
 
 ### API 测试覆盖
 

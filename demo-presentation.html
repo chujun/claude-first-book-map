@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球书籍地图 - 演示</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           VIEWPORT FITTING: MANDATORY BASE STYLES
+           =========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-height: 100%;
+            overflow: hidden;
+            padding: var(--slide-padding);
+            text-align: center;
+        }
+
+        :root {
+            --slide-padding: clamp(1.5rem, 5vw, 4rem);
+            --content-gap: clamp(1rem, 3vw, 3rem);
+            --element-gap: clamp(0.5rem, 1.5vw, 1.5rem);
+        }
+
+        /* ===========================================
+           DARK BOTANICAL PRESET
+           =========================================== */
+        .slide {
+            background: linear-gradient(135deg, #0d0d12 0%, #1a1a24 50%, #0d0d12 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(139, 90, 43, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -20%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle at center, rgba(120, 80, 50, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f5f0e8 0%, #d4c5b0 50%, #e8dcc8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: #f5f0e8;
+            margin-bottom: var(--content-gap);
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 500;
+            color: #c9b896;
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: #a0998a;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            color: #8a7b6a;
+            margin-top: var(--element-gap);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: clamp(0.4rem, 1vw, 0.7rem) clamp(1rem, 2vw, 1.5rem);
+            background: rgba(139, 90, 43, 0.3);
+            border: 1px solid rgba(139, 90, 43, 0.5);
+            border-radius: 50px;
+            font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+            color: #c9a86c;
+            margin-bottom: var(--content-gap);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: var(--element-gap);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: clamp(1.2rem, 2.5vw, 2rem);
+            text-align: left;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 90, 43, 0.5);
+        }
+
+        .feature-card h3 {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 0.5rem;
+            color: #e8dcc8;
+        }
+
+        .feature-card p {
+            font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+            color: #8a7b6a;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: clamp(2rem, 5vw, 4rem);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #c9a86c;
+        }
+
+        .stat-label {
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            color: #8a7b6a;
+            margin-top: 0.3rem;
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-style: italic;
+            color: #e8dcc8;
+            max-width: 800px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: clamp(4rem, 10vw, 8rem);
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            color: rgba(139, 90, 43, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .attribution {
+            margin-top: var(--element-gap);
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: #8a7b6a;
+        }
+
+        /* ===========================================
+           NAVIGATION
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(1rem, 3vw, 2rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot:hover,
+        .nav-dot.active {
+            background: #c9a86c;
+            transform: scale(1.3);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: clamp(1rem, 2vw, 2rem);
+            right: clamp(1rem, 3vw, 2rem);
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'JetBrains Mono', monospace;
+            z-index: 100;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .slide-content > *:nth-child(2) { animation-delay: 0.15s; opacity: 0; }
+        .slide-content > *:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+        .slide-content > *:nth-child(4) { animation-delay: 0.45s; opacity: 0; }
+        .slide-content > *:nth-child(5) { animation-delay: 0.6s; opacity: 0; }
+
+        /* ===========================================
+           RESPONSIVE
+           =========================================== */
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .nav-dots {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Dots -->
+    <nav class="nav-dots" aria-label="幻灯片导航">
+        <span class="nav-dot active" data-slide="0"></span>
+        <span class="nav-dot" data-slide="1"></span>
+        <span class="nav-dot" data-slide="2"></span>
+        <span class="nav-dot" data-slide="3"></span>
+        <span class="nav-dot" data-slide="4"></span>
+    </nav>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">5</span>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <section class="slide" id="slide-0">
+        <div class="slide-content">
+            <span class="badge">🌍 经典文学作品展示</span>
+            <h1>全球书籍地图</h1>
+            <p class="subtitle">用 3D 地球探索世界文学的地理分布</p>
+        </div>
+    </section>
+
+    <!-- Slide 2: Statistics -->
+    <section class="slide" id="slide-1">
+        <div class="slide-content">
+            <h2>数据概览</h2>
+            <div class="stat-row">
+                <div class="stat-item">
+                    <div class="stat-number">414</div>
+                    <div class="stat-label">经典书籍</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">坐标覆盖率</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45+</div>
+                    <div class="stat-label">国家地区</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Features -->
+    <section class="slide" id="slide-2">
+        <div class="slide-content">
+            <h2>核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🗺️ 3D 地球展示</h3>
+                    <p>基于 Globe.gl 的沉浸式 3D 地球，旋转缩放自如</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 智能聚类</h3>
+                    <p>同地点多本书自动聚合，点击展开详细查看</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔍 多维筛选</h3>
+                    <p>按年代、地区、国家多维度筛选书籍</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📖 详情展示</h3>
+                    <p>作者信息、评分、出版信息完整呈现</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Quote -->
+    <section class="slide" id="slide-3">
+        <div class="slide-content">
+            <p class="quote">书籍是人类进步的阶梯，而地图让知识有了坐标</p>
+            <p class="attribution">— 全球书籍地图的愿景</p>
+        </div>
+    </section>
+
+    <!-- Slide 5: Closing -->
+    <section class="slide" id="slide-4">
+        <div class="slide-content">
+            <h2>立即探索</h2>
+            <p>访问 localhot:8080 体验完整功能</p>
+            <span class="badge" style="margin-top: var(--content-gap);">技术栈: Globe.gl + Vanilla JS</span>
+        </div>
+    </section>
+
+    <script>
+        // Presentation Controller
+        class PresentationController {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.dots = document.querySelectorAll('.nav-dot');
+                this.currentSlideEl = document.getElementById('current-slide');
+                this.totalSlidesEl = document.getElementById('total-slides');
+                this.currentIndex = 0;
+
+                this.init();
+            }
+
+            init() {
+                this.totalSlidesEl.textContent = this.slides.length;
+                this.bindEvents();
+                this.observeSlides();
+            }
+
+            bindEvents() {
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevSlide();
+                    }
+                });
+
+                // Touch/swipe navigation
+                let touchStartY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const touchEndY = e.changedTouches[0].clientY;
+                    const diff = touchStartY - touchEndY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+
+                // Dot navigation
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                // Mouse wheel
+                let wheelTimeout;
+                document.addEventListener('wheel', (e) => {
+                    clearTimeout(wheelTimeout);
+                    wheelTimeout = setTimeout(() => {
+                        if (e.deltaY > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }, 50);
+                }, { passive: true });
+            }
+
+            observeSlides() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = Array.from(this.slides).indexOf(entry.target);
+                            this.setCurrentSlide(index);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setCurrentSlide(index) {
+                this.currentIndex = index;
+                this.currentSlideEl.textContent = index + 1;
+
+                this.dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            nextSlide() {
+                if (this.currentIndex < this.slides.length - 1) {
+                    this.slides[this.currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            prevSlide() {
+                if (this.currentIndex > 0) {
+                    this.slides[this.currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            goToSlide(index) {
+                this.slides[index].scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            new PresentationController();
+        });
+    </script>
+</body>
+</html>
