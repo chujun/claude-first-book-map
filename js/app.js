@@ -18,6 +18,7 @@ let currentRegion = ''; // 当前筛选的地区（下拉框）
 let currentRegionInput = ''; // 当前筛选的地区（输入框）
 let currentCountry = ''; // 当前筛选的国家/地区（下拉框）
 let currentCountryInput = ''; // 当前筛选的国家/地区（输入框）
+let expandedClusterKey = null; // 当前展开的聚类键（格式：lat_lng）
 
 // API 配置 - 优先使用环境变量，否则自动检测当前主机
 const API_BASE = window.API_BASE || (window.location.protocol + '//' + window.location.hostname + ':8000');
@@ -204,73 +205,121 @@ function showGlobeError() {
     }
 }
 
-// 为每本书计算坐标，避免重叠
-function addRandomOffset(books) {
-    // 按坐标分组，检测重叠的书本
+// 获取书籍的基础坐标（用于聚类分组）
+function getBaseCoords(book) {
+    let baseLat = book.lat;
+    let baseLng = book.lng;
+
+    // 如果坐标无效(0,0或null)，使用国家首都坐标
+    if (!baseLat || !baseLng || (baseLat === 0 && baseLng === 0)) {
+        const coords = countryCoords[book.country];
+        if (coords) {
+            baseLat = coords.lat;
+            baseLng = coords.lng;
+        } else {
+            baseLat = 0;
+            baseLng = 0;
+        }
+    }
+
+    return { lat: baseLat, lng: baseLng };
+}
+
+// 按坐标分组
+function groupBooksByCoords(books) {
     const coordGroups = new Map();
     books.forEach((book, index) => {
-        // 优先使用书籍的实际坐标
-        let baseLat = book.lat;
-        let baseLng = book.lng;
-
-        // 如果坐标无效(0,0或null)，使用国家首都坐标
-        if (!baseLat || !baseLng || (baseLat === 0 && baseLng === 0)) {
-            const coords = countryCoords[book.country];
-            if (coords) {
-                baseLat = coords.lat;
-                baseLng = coords.lng;
-            } else {
-                baseLat = 0;
-                baseLng = 0;
-            }
-        }
-
-        // 使用唯一标识符分组（同坐标的书本）
-        const key = `${baseLat.toFixed(4)}_${baseLng.toFixed(4)}`;
+        const { lat, lng } = getBaseCoords(book);
+        const key = `${lat.toFixed(4)}_${lng.toFixed(4)}`;
         if (!coordGroups.has(key)) {
             coordGroups.set(key, []);
         }
-        coordGroups.get(key).push({ book, index, baseLat, baseLng });
+        coordGroups.get(key).push({ book, index, baseLat: lat, baseLng: lng });
     });
+    return coordGroups;
+}
 
-    // 处理重叠：同一坐标的书本使用螺旋式分布
-    const result = books.map((book, index) => {
-        const coords = countryCoords[book.country] || { lat: 0, lng: 0 };
-        let baseLat = book.lat;
-        let baseLng = book.lng;
-
-        if (!baseLat || !baseLng || (baseLat === 0 && baseLng === 0)) {
-            baseLat = coords.lat || 0;
-            baseLng = coords.lng || 0;
+// 展开聚类中的书籍位置（螺旋分布）
+function expandClusterBooks(cluster) {
+    const goldenAngle = Math.PI * (3 - Math.sqrt(5)); // ~2.39996 弧度
+    return cluster.map((item, i) => {
+        // 第一本书保持在原位，其他书螺旋展开
+        if (i === 0) {
+            return { ...item.book, lat: item.baseLat, lng: item.baseLng };
         }
-
-        // 检测是否有重叠
-        const key = `${baseLat.toFixed(4)}_${baseLng.toFixed(4)}`;
-        const group = coordGroups.get(key);
-        const groupIndex = group.findIndex(g => g.index === index);
-
-        let finalLat = baseLat;
-        let finalLng = baseLng;
-
-        // 如果有重叠的书本，使用螺旋式偏移
-        if (group.length > 1 && groupIndex > 0) {
-            // 黄金角度螺旋分布，避免重叠
-            const goldenAngle = Math.PI * (3 - Math.sqrt(5)); // ~2.39996 弧度
-            const radius = 2 + groupIndex * 1.5; // 每本书向外偏移1.5度
-            const angle = groupIndex * goldenAngle;
-
-            finalLat = baseLat + Math.sin(angle) * radius;
-            finalLng = baseLng + Math.cos(angle) * radius;
-        }
-
+        const radius = 1.5 + i * 1.2; // 初始1.5度，每本增加1.2度
+        const angle = i * goldenAngle;
         return {
-            ...book,
-            lat: finalLat,
-            lng: finalLng
+            ...item.book,
+            lat: item.baseLat + Math.sin(angle) * radius,
+            lng: item.baseLng + Math.cos(angle) * radius
         };
+    });
+}
+
+// 处理数据：支持聚类和展开
+function processGlobeData(books) {
+    const coordGroups = groupBooksByCoords(books);
+
+    // 如果有展开的聚类，先处理展开的书籍
+    if (expandedClusterKey) {
+        const expandedGroup = coordGroups.get(expandedClusterKey);
+        if (expandedGroup && expandedGroup.length > 1) {
+            // 展开该聚类，其他聚类正常偏移
+            const result = [];
+            coordGroups.forEach((group, key) => {
+                if (key === expandedClusterKey) {
+                    // 展开的聚类，使用螺旋分布
+                    const expanded = expandClusterBooks(group);
+                    expanded.forEach(book => result.push(book));
+                } else {
+                    // 其他聚类，只显示第一本书作为聚类标记
+                    const clusterMarker = {
+                        ...group[0].book,
+                        lat: group[0].baseLat,
+                        lng: group[0].baseLng,
+                        _isCluster: true,
+                        _clusterSize: group.length,
+                        _clusterKey: key
+                    };
+                    result.push(clusterMarker);
+                }
+            });
+            return result;
+        }
+    }
+
+    // 正常模式：检查是否有聚类需要显示数字标签
+    const result = [];
+    coordGroups.forEach((group, key) => {
+        if (group.length === 1) {
+            // 只有一本书，正常显示
+            result.push({
+                ...group[0].book,
+                lat: group[0].baseLat,
+                lng: group[0].baseLng,
+                _isCluster: false
+            });
+        } else {
+            // 多本书，显示聚类标记（第一本书作为代表）
+            const clusterMarker = {
+                ...group[0].book,
+                lat: group[0].baseLat,
+                lng: group[0].baseLng,
+                _isCluster: true,
+                _clusterSize: group.length,
+                _clusterKey: key
+            };
+            result.push(clusterMarker);
+        }
     });
 
     return result;
+}
+
+// 兼容旧接口的函数
+function addRandomOffset(books) {
+    return processGlobeData(books);
 }
 
 // 初始化 3D 地球
@@ -298,35 +347,80 @@ function initGlobe() {
         .pointLat(d => d.lat)
         .pointLng(d => d.lng)
         .pointColor(d => regionColors[d.region] || '#3498db')
-        .pointAltitude(0.02)
-        .pointRadius(2.0)
-        .pointLabel(d => `
-            <div style="
-                background: rgba(26, 26, 46, 0.95);
-                color: white;
-                padding: 12px;
-                border-radius: 10px;
-                font-family: 'Noto Sans SC', sans-serif;
-                min-width: 180px;
-                border: 1px solid ${regionColors[d.region] || '#3498db'};
-            ">
-                <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">
-                    ${d.title}
+        .pointAltitude(d => d._isCluster ? 0.03 : 0.02)
+        .pointRadius(d => d._isCluster ? 3.0 : 2.0)
+        .pointLabel(d => {
+            // 聚类标记显示数字
+            if (d._isCluster) {
+                return `
+                    <div style="
+                        background: rgba(26, 26, 46, 0.95);
+                        color: white;
+                        padding: 8px 14px;
+                        border-radius: 50%;
+                        font-family: 'Noto Sans SC', sans-serif;
+                        font-weight: bold;
+                        font-size: 16px;
+                        min-width: 40px;
+                        text-align: center;
+                        border: 2px solid ${regionColors[d.region] || '#3498db'};
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+                    ">
+                        ${d._clusterSize}
+                    </div>
+                `;
+            }
+            // 正常书籍显示详情
+            return `
+                <div style="
+                    background: rgba(26, 26, 46, 0.95);
+                    color: white;
+                    padding: 12px;
+                    border-radius: 10px;
+                    font-family: 'Noto Sans SC', sans-serif;
+                    min-width: 180px;
+                    border: 1px solid ${regionColors[d.region] || '#3498db'};
+                ">
+                    <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">
+                        ${d.title}
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.9;">
+                        ${d.author}
+                    </div>
+                    <div style="font-size: 11px; margin-top: 5px; color: #888;">
+                        ${d.country} | ${d.year} | ⭐ ${d.rating}
+                    </div>
                 </div>
-                <div style="font-size: 12px; opacity: 0.9;">
-                    ${d.author}
-                </div>
-                <div style="font-size: 11px; margin-top: 5px; color: #888;">
-                    ${d.country} | ${d.year} | ⭐ ${d.rating}
-                </div>
-            </div>
-        `)
+            `;
+        })
         .onPointClick(d => {
+            if (!d) return;
+
+            // 如果点击的是聚类标记，展开/收起
+            if (d._isCluster) {
+                if (expandedClusterKey === d._clusterKey) {
+                    // 再次点击同一聚类，收起
+                    expandedClusterKey = null;
+                } else {
+                    // 展开新聚类
+                    expandedClusterKey = d._clusterKey;
+                }
+                updateGlobe();
+                return;
+            }
+
+            // 如果当前有展开的聚类，点击其他书籍时收起聚类
+            if (expandedClusterKey) {
+                expandedClusterKey = null;
+                updateGlobe();
+            }
+
+            // 正常书籍点击处理
             if (d && d.rank) {
                 showBookDetail(d);
                 highlightBook(d.rank);
             }
-        });
+        })
 
     // 设置初始视角
     setTimeout(() => {

@@ -66,10 +66,10 @@
     "description": "优化地图标记显示",
     "steps": [
       "实现标记聚类避免重叠",
-      "添加标记动画效果",
+      "点击聚类展开显示所有书籍",
       "优化弹出框样式"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "feature",
